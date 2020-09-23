@@ -12,13 +12,13 @@ router.post('/', upsert)
 
 // Internal functions
 
-async function upsert (req, res) {
-  try {
-    const upsert = await Controller.upsert(req.body)
-    response.success(req, res, upsert, 200)
-  } catch (error) {
-    response.error(req, res, error.message, 500)
-  }
+async function upsert(req, res) {
+    try {
+        const upsert = await Controller.upsert(req.body);
+        response.success(req, res, upsert, 201);
+    } catch (error) {
+        response.error(req, res, error.message, 500);
+    }
 }
 
 module.exports = router
