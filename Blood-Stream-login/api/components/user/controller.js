@@ -12,8 +12,8 @@ module.exports = function (injectedStore) {
   const store = injectedStore
 
   async function list () {
-    const { Users } = await store(config(false)).catch(utils.handleFatalError)
     console.log(config(false))
+    const { Users } = await store(config(false)).catch(utils.handleFatalError)
     users = await Users.findAll().catch(utils.handleFatalError)
     return users
   }
