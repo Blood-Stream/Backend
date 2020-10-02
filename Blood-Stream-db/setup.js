@@ -2,7 +2,6 @@
 
 const db = require('./index')
 const chalk = require('chalk')
-const inquirer = require('inquirer')
 const config = require('../config/config')
 const utils = require('./utils/index')
 

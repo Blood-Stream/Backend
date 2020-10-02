@@ -12,8 +12,8 @@ module.exports = {
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASS || 'password',
-    database: process.env.DB_NAME || 'bloodstreamdb',
-/* 
+    database: process.env.DB_NAME || 'bloodstreamdb'
+    /*
     host: process.env.MYSQL_HOST || 'localhost',
     user: process.env.MYSQL_USER || 'root',
     password: process.env.MYSQL_PASS || '',

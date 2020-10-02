@@ -12,12 +12,6 @@ module.exports = function config (configExtra) {
       password: process.env.DB_PASS || 'password',
       host: process.env.DB_HOST || 'localhost',
       dialect: 'postgres',
-      /* dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false
-        }
-      }, */
       loggin: s => debug(s),
       setup: true
     }
@@ -28,27 +22,18 @@ module.exports = function config (configExtra) {
       password: process.env.DB_PASS || 'password',
       host: process.env.DB_HOST || 'localhost',
       dialect: 'postgres',
-      /* dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false
-        }
-      }, */
-	    dialect: 'postgres',
       logging: s => debug(s)
     }
   }
 
-  console.log(process.env.NODE_ENV)
   if (process.env.NODE_ENV === 'production') {
-    console.log('hola')
-    Object.assign(config, { 
+    Object.assign(config, {
       dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
+        ssl: {
+          require: true,
+          rejectUnauthorized: false
         }
-      }, 
+      }
     })
   }
 

@@ -1,11 +1,9 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
-const bcrypt = require('bcrypt')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 const controller = require('../auth/index')
-const auth = require('../../../auth')
 let users
 
 module.exports = function (injectedStore) {
@@ -69,10 +67,6 @@ module.exports = function (injectedStore) {
       Level: body.level
     }
     await AccessRol.createOrUpdate(accessRols).catch(utils.handleFatalError)
-    const pass = {
-      uuid: uuidPassword,
-      JWT_Password: body.password
-    }
 
     const authData = {
       uuid: uuidPassword,
