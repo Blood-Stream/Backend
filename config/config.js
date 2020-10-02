@@ -7,11 +7,10 @@ module.exports = function config (configExtra) {
 
   if (configExtra) {
     config = {
-      // url: proccess.env.DATABASE_URL || '',
       database: process.env.DB_NAME || 'bloodstreamdb',
       username: process.env.DB_USER || 'postgres',
-      password: process.env.DB_PASS || 'master01',
-      host: process.env.DB_HOST || 'database-1.cpchb6koet7f.us-east-2.rds.amazonaws.com',
+      password: process.env.DB_PASS || 'password',
+      hostname: process.env.DB_HOST || 'localhost',
       dialect: 'postgres',
       dialectOptions: {
         ssl: {
@@ -24,12 +23,10 @@ module.exports = function config (configExtra) {
     }
   } else {
     config = {
-
-      // url: proccess.env.DATABASE_URL || '',
       database: process.env.DB_NAME || 'bloodstreamdb',
       username: process.env.DB_USER || 'postgres',
-      password: process.env.DB_PASS || 'master01',
-      host: process.env.DB_HOST || 'database-1.cpchb6koet7f.us-east-2.rds.amazonaws.com',
+      password: process.env.DB_PASS || 'password',
+      hostname: process.env.DB_HOST || 'localhost',
       dialect: 'postgres',
       dialectOptions: {
         ssl: {
