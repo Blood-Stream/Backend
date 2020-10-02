@@ -10,7 +10,7 @@ module.exports = function config (configExtra) {
       database: process.env.DB_NAME || 'bloodstreamdb',
       username: process.env.DB_USER || 'postgres',
       password: process.env.DB_PASS || 'password',
-      hostname: process.env.DB_HOST || 'localhost',
+      host: process.env.DB_HOST || 'localhost',
       dialect: 'postgres',
       dialectOptions: {
         ssl: {
@@ -26,7 +26,7 @@ module.exports = function config (configExtra) {
       database: process.env.DB_NAME || 'bloodstreamdb',
       username: process.env.DB_USER || 'postgres',
       password: process.env.DB_PASS || 'password',
-      hostname: process.env.DB_HOST || 'localhost',
+      host: process.env.DB_HOST || 'localhost',
       dialect: 'postgres',
       dialectOptions: {
         ssl: {
