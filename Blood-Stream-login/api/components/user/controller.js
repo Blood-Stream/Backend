@@ -13,7 +13,7 @@ module.exports = function (injectedStore) {
 
   async function list () {
     const { Users } = await store(config(false)).catch(utils.handleFatalError)
-    console.log('listing users')
+    console.log(config(false))
     users = await Users.findAll().catch(utils.handleFatalError)
     return users
   }

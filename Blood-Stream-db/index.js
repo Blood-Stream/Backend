@@ -52,7 +52,6 @@ module.exports = async function (config) {
   })
 
   const sequelize = setupDatabase(config)
-
   const MessagesModel = setupMessageModel(config)
   const PasswordModel = setupPasswordModel(config)
   const UsersModel = setupUsersModel(config)
