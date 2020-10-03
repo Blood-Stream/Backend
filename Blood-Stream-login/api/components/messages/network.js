@@ -7,10 +7,10 @@ const Controller = require('./index')
 const router = express.Router()
 
 // Routes
-router.get('/message', list)
-router.get('/message/:nickname', get)
-router.post('/message/', upsert)
-router.delete('/message/:nickname', deleteMessage)
+router.get('/', list)
+router.get('/:nickname', get)
+router.post('/', upsert)
+router.delete('/:nickname', deleteMessage)
 
 // Internal Functions
 function list (req, res, next) {
