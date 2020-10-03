@@ -15,7 +15,7 @@ router.post('/', upsert)
 async function upsert (req, res) {
   try {
     const upsert = await Controller.upsert(req.body)
-    response.success(req, res, upsert, 200)
+    response.success(req, res, upsert, 201)
   } catch (error) {
     response.error(req, res, error.message, 500)
   }
