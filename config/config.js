@@ -12,11 +12,13 @@ module.exports = function config (configExtra) {
     dialect: 'postgres',
     loggin: s => debug(s)
   }
+  
   if (configExtra) {
     Object.assign(config, {
       setup: true
     })
   }
+  
   if (process.env.NODE_ENV === 'production') {
     Object.assign(config, {
       dialectOptions: {
