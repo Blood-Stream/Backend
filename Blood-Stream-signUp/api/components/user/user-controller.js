@@ -2,8 +2,8 @@
 
 const { nanoid } = require('nanoid')
 const auth = require('../auth')
-const utils = require('../../../../Blood-Stream-db/utils/index')
-const config = require('../../../../config/config')
+// const utils = require('../../../../Blood-Stream-db/utils/index')
+// const config = require('../../../../config/config')
 
 
 const TABLE = 'user'
