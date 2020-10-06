@@ -9,7 +9,6 @@ const user = require('./api/components/user/network')
 const message = require('./api/components/messages/network')
 const errors = require('./network/errors')
 const app = express()
-const conf = require('../config/config')
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -26,6 +25,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
 app.use(errors)
 
 app.listen(config.api.port, () => {
-  console.log(conf(false))
   console.log(`Api escuchando en el puerto ${config.api.port}`)
 })

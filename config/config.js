@@ -9,7 +9,8 @@ module.exports = function config (configExtra) {
     password: process.env.DB_PASS,
     host: process.env.DB_HOST,
     dialect: 'postgres',
-    loggin: s => debug(s)
+    logging: s => debug(s)
+
   }
 
   if (configExtra) {

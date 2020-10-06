@@ -52,7 +52,7 @@ async function run () {
 
   let game
   let el
-  console.log('Comienza book1')
+  /* console.log('Comienza book1')
 
   for (const element in book1) {
     el = book1[element]
@@ -390,7 +390,7 @@ async function run () {
     })
     console.log(game)
     console.log('-------------------------------------')
-  }
+  } */
 
   console.log('Comienza User1')
   for (const element in user1) {

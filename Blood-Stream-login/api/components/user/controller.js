@@ -19,8 +19,24 @@ module.exports = function (injectedStore) {
   }
 
   async function get (nickname) {
-    const { Users } = await store(config(false)).catch(utils.handleFatalError)
-    return Users.findByNickname(nickname).catch(utils.handleFatalError)
+    const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
+    let users = await Users.findByNickname(nickname).catch(utils.handleFatalError)
+    const contacts = await Contact.findById(users.contactId).catch(utils.handleFatalError)
+    const platform = await Platform.findById(users.platformId).catch(utils.handleFatalError)
+    const accessRols = await AccessRol.findById(users.accessRolId).catch(utils.handleFatalError)
+    let authData = await Password.findById(users.passwordId).catch(utils.handleFatalError)
+
+    authData = {
+      id: authData.id,
+      uuid: authData.uuid
+    }
+
+    users.platformId = platform
+    users.contactId = contacts
+    users.accessRolId = accessRols
+    users.passwordId = authData
+
+    return users
   }
 
   async function upsert (body) {
