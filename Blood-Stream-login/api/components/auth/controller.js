@@ -62,7 +62,6 @@ module.exports = function (injectedStore) {
 
     authData = await Password.createOrUpdate(authData)
     return authData
-
   }
 
   return {

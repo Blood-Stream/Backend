@@ -9,14 +9,14 @@ let users
 
 module.exports = function (injectedStore) {
   const store = injectedStore
-  
+
   async function list () {
     const { Message } = await store(config(false)).catch(utils.handleFatalError)
     return Message.findAll().catch(utils.handleFatalError)
   }
 
   async function get (nickname) {
-   
+
   }
 
   async function upsert (body) {
@@ -33,7 +33,7 @@ module.exports = function (injectedStore) {
     }
     const userUuid = await Users.findByNickname(body.nickname)
 
-    Object.assign(message,{
+    Object.assign(message, {
       Message: body.message,
       Post_Like: false
     })
@@ -41,12 +41,10 @@ module.exports = function (injectedStore) {
     const result = await Message.createOrUpdate(message, userUuid.id)
 
     return result
-
-
   }
 
   async function deleteMessage (nickname) {
-    
+
   }
 
   return {

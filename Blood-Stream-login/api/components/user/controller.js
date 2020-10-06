@@ -65,7 +65,6 @@ module.exports = function (injectedStore) {
 
       contacts = { uuid: uuidContact, email: body.email, phone: body.phone }
       accessRols = { uuid: uuidRol, Rol: body.rol }
-
     } else {
       user.uuid = body.uuid
       const users = await Users.findByUuid(user.uuid).catch(utils.handleFatalError)

@@ -3,7 +3,6 @@ require('dotenv').config()
 const debug = require('debug')('Blood-Stream:db:setup')
 
 module.exports = function config (configExtra) {
-
   const config = {
     database: process.env.DB_NAME,
     username: process.env.DB_USER,
