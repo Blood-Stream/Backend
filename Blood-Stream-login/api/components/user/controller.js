@@ -1,8 +1,11 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
+const { use } = require('passport')
+const contact = require('../../../../Blood-Stream-db/models/contact')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
+const auth = require('../../../auth')
 const controller = require('../auth/index')
 let users
 
@@ -21,62 +24,99 @@ module.exports = function (injectedStore) {
   }
 
   async function upsert (body) {
-    const { Users, Contact, AccessRol, Platform } = await store(config(false)).catch(utils.handleFatalError)
+    const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
 
-    const userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
-    const contactExist = await Contact.findByEmail(body.email).catch(utils.handleFatalError)
-    if (userExist || contactExist) {
-      return 'User or Email Exist'
-    }
+    let uuidPlatform = null
+    let uuidContact = null
+    let uuidUser = null
+    let uuidRol = null
+    let uuidPassword = null
 
-    const uuidPlatform = nanoid()
-    const uuidContact = nanoid()
-    const uuidUser = nanoid()
-    const uuidRol = nanoid()
-    const uuidPassword = nanoid()
-    const user = {
+    let user = {
       Nickname: body.nickname,
       Country: body.country,
       Postal_Code: body.postal_Code,
       Birthday: body.birthday,
-      Status: body.status
+      Status: body.status,
+      Avatar: body.avatar,
+      level: body.level
     }
-    if (body.uuid) {
-      user.uuid = body.uuid
-    } else {
+
+    let platform = null
+    let contacts = null
+    let accessRols = null
+    let authData = null
+    let usersCheck = {
+      passwordId: null
+    }
+
+    if (!body.uuid) {
+      const userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
+      const contactExist = await Contact.findByEmail(body.email).catch(utils.handleFatalError)
+      if (userExist || contactExist) {
+        return 'User or Email Exist'
+      }
+
+      uuidContact = nanoid()
+      uuidUser = nanoid()
+      uuidPassword = nanoid()
+
       user.uuid = uuidUser
+
+      contacts = { uuid: uuidContact, email: body.email, phone: body.phone }
+      accessRols = { uuid: uuidRol, Rol: body.rol }
+
+    } else {
+      user.uuid = body.uuid
+      const users = await Users.findByUuid(user.uuid).catch(utils.handleFatalError)
+      contacts = await Contact.findById(users.contactId).catch(utils.handleFatalError)
+      if (contacts.email !== body.email) contacts.email = body.email
+      if (contacts.phone !== body.phone) contacts.phone = body.phone
+      uuidContact = contacts.uuid
+      usersCheck = users
     }
-    const platform = {
-      uuid: uuidPlatform,
-      Platform: body.platform
+
+    platform = await Platform.findByPlatform(body.platform)
+    if (!platform) {
+      uuidPlatform = nanoid()
+      platform = { uuid: uuidPlatform, Platform: body.platform }
+      platform = await Platform.createOrUpdate(platform).catch(utils.handleFatalError)
+    } else {
+      uuidPlatform = platform.uuid
     }
 
-    await Platform.createOrUpdate(platform).catch(utils.handleFatalError)
-
-    const contacts = {
-      uuid: uuidContact,
-      email: body.email,
-      phone: body.phone
+    accessRols = await AccessRol.findByRol(body.rol)
+    if (!accessRols) {
+      uuidRol = nanoid()
+      accessRols = { uuid: uuidRol, Rol: body.rol }
+      accessRols = await AccessRol.createOrUpdate(accessRols).catch(utils.handleFatalError)
+    } else {
+      uuidRol = accessRols.uuid
     }
 
-    await Contact.createOrUpdate(contacts).catch(utils.handleFatalError)
-
-    const accessRols = {
-      uuid: uuidRol,
-      Rol: body.rol,
-      Level: body.level
+    if (usersCheck.passwordId !== null) {
+      authData = await Password.findById(usersCheck.passwordId).catch(utils.handleFatalError)
+    } else {
+      if (!body.password) return 'Need password to create a user'
+      authData = { uuid: uuidPassword, password: body.password }
+      authData = await controller.upsert(authData).catch(utils.handleFatalError)
     }
-    await AccessRol.createOrUpdate(accessRols).catch(utils.handleFatalError)
 
-    const authData = {
-      uuid: uuidPassword,
-      password: body.password
+    authData = {
+      id: authData.id,
+      uuid: authData.uuid
     }
-    await controller.upsert(authData)
 
-    const result = await Users.createOrUpdate(user, uuidPlatform, uuidRol, uuidContact, uuidPassword)
+    contacts = await Contact.createOrUpdate(contacts).catch(utils.handleFatalError)
 
-    return result
+    user = await Users.createOrUpdate(user, uuidPlatform, uuidRol, uuidContact, uuidPassword)
+
+    user.platformId = platform
+    user.contactId = contacts
+    user.accessRolId = accessRols
+    user.passwordId = authData
+
+    return user
   }
 
   async function deleteTable (nickname) {

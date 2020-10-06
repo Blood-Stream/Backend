@@ -34,6 +34,10 @@ module.exports = function setupUsersModel (config) {
     Avatar: {
       type: Sequelize.STRING,
       allowNull: true
+    },
+    Level: {
+      type: Sequelize.INTEGER,
+      allowNull: true
     }
 
   })

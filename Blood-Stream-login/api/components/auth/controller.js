@@ -51,7 +51,7 @@ module.exports = function (injectedStore) {
   }
 
   async function upsert (data) {
-    const authData = {
+    let authData = {
       uuid: data.uuid
     }
 
@@ -60,7 +60,9 @@ module.exports = function (injectedStore) {
     }
     const { Password } = await store(config(false)).catch(utils.handleFatalError)
 
-    await Password.createOrUpdate(authData)
+    authData = await Password.createOrUpdate(authData)
+    return authData
+
   }
 
   return {
