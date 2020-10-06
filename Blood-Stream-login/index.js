@@ -9,7 +9,7 @@ const user = require('./api/components/user/network')
 const message = require('./api/components/messages/network')
 const errors = require('./network/errors')
 const app = express()
-
+const conf = require('../config/config')
 app.use(cors())
 app.use(bodyParser.json())
 
