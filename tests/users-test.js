@@ -8,7 +8,7 @@ const config = {
 }
 
 test.beforeEach(async () => {
-  const setupDatabase = require('../index')
+  const setupDatabase = require('../Blood-Stream-db/index')
   db = await setupDatabase(config)
 })
 
