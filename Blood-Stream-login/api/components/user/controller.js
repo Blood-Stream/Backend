@@ -55,7 +55,7 @@ module.exports = function (injectedStore) {
       Birthday: body.birthday,
       Status: body.status,
       Avatar: body.avatar,
-      level: body.level
+      Level: body.level
     }
 
     let platform = null
