@@ -1,3 +1,5 @@
+'use strict'
+
 const swaggerUi = require('swagger-ui-express')
 const message = require('../api/components/messages/network')
 const user = require('../api/components/user/network')
