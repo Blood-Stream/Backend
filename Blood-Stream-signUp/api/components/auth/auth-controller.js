@@ -1,24 +1,22 @@
 'use strict'
 
 const bcrypt = require('bcrypt')
-const TABLE = 'auth'
+const utils = require('../../../../Blood-Stream-db/utils')
+const config = require('../../../../config/config')
 
-module.exports = function (injectedStore = require('../../../store/dummy')) {
+module.exports = function (injectedStore) {
   return {
     upsert: async (data) => {
       const authData = {
-        id: data.id
-      }
-
-      if (data.username) {
-        authData.username = data.username
+        uuid: data.uuid
       }
 
       if (data.password) {
-        authData.password = await bcrypt.hash(data.password, 10)
+        authData.JWT_Password = await bcrypt.hash(data.password, 5)
       }
+      const { Password } = await injectedStore(config(false)).catch(utils.handleFatalError)
 
-      return injectedStore.upsert(TABLE, authData)
+      await Password.createOrUpdate(authData)
     }
   }
 }
