@@ -5,7 +5,6 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const config = require('./config')
 const routes = require('./routes/routes')
-const errors = require('./network/errors')
 const app = express()
 
 app.use(cors())
