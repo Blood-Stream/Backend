@@ -14,10 +14,6 @@ module.exports = function setupAccessRolModel (config) {
     Rol: {
       type: Sequelize.STRING,
       allowNull: false
-    },
-    Level: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     }
   })
 }

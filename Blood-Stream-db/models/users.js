@@ -17,11 +17,11 @@ module.exports = function setupUsersModel (config) {
     },
     Country: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     Postal_Code: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     Birthday: {
       type: Sequelize.DATE,
@@ -30,6 +30,14 @@ module.exports = function setupUsersModel (config) {
     Status: {
       type: Sequelize.BOOLEAN,
       allowNull: false
+    },
+    Avatar: {
+      type: Sequelize.STRING,
+      allowNull: true
+    },
+    Level: {
+      type: Sequelize.INTEGER,
+      allowNull: true
     }
 
   })

@@ -34,6 +34,14 @@ module.exports = function setupAccessRol (AccessRolModel) {
     })
   }
 
+  async function findByRol (Rol) {
+    return await AccessRolModel.findOne({
+      where: {
+        Rol
+      }
+    })
+  }
+
   async function findAll () {
     return await AccessRolModel.findAll()
   }
@@ -51,6 +59,7 @@ module.exports = function setupAccessRol (AccessRolModel) {
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByRol
   }
 }

@@ -1,29 +1,22 @@
 'use strict'
-
+require('dotenv').config()
 const debug = require('debug')('Blood-Stream:db:setup')
 
 module.exports = function config (configExtra) {
-  let config = null
+  const config = {
+    database: process.env.DB_NAME,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    host: process.env.DB_HOST,
+    dialect: 'postgres',
+    logging: s => debug(s)
+
+  }
 
   if (configExtra) {
-    config = {
-      database: process.env.DB_NAME || 'bloodstreamdb',
-      username: process.env.DB_USER || 'postgres',
-      password: process.env.DB_PASS || 'password',
-      host: process.env.DB_HOST || 'localhost',
-      dialect: 'postgres',
-      loggin: s => debug(s),
+    Object.assign(config, {
       setup: true
-    }
-  } else {
-    config = {
-      database: process.env.DB_NAME || 'bloodstreamdb',
-      username: process.env.DB_USER || 'postgres',
-      password: process.env.DB_PASS || 'password',
-      host: process.env.DB_HOST || 'localhost',
-      dialect: 'postgres',
-      logging: s => debug(s)
-    }
+    })
   }
 
   if (process.env.NODE_ENV === 'production') {

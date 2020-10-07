@@ -13,7 +13,6 @@ module.exports = function (injectedStore) {
     const { Password, Users } = await store(config(false)).catch(utils.handleFatalError)
     const users = await Users.findByNickname(username).catch(utils.handleFatalError)
     if (users) {
-      console.log(users.passwordId)
       const pass = await Password.findById(users.passwordId).catch(utils.handleFatalError)
       return bcrypt.compare(password, pass.JWT_Password)
         .then(areEquals => {
@@ -51,7 +50,7 @@ module.exports = function (injectedStore) {
   }
 
   async function upsert (data) {
-    const authData = {
+    let authData = {
       uuid: data.uuid
     }
 
@@ -60,7 +59,8 @@ module.exports = function (injectedStore) {
     }
     const { Password } = await store(config(false)).catch(utils.handleFatalError)
 
-    await Password.createOrUpdate(authData)
+    authData = await Password.createOrUpdate(authData)
+    return authData
   }
 
   return {
