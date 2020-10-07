@@ -5,7 +5,6 @@ const auth = require('../auth')
 // const utils = require('../../../../Blood-Stream-db/utils/index')
 // const config = require('../../../../config/config')
 
-
 const TABLE = 'user'
 
 module.exports = function (injectedStore) {
