@@ -40,6 +40,12 @@ module.exports = function (injectedStore) {
 
     const result = await Message.createOrUpdate(message, userUuid.id)
 
+    result.userId = {
+      id: userUuid.id,
+      uuid: userUuid.uuid,
+      Nickname: userUuid.Nickname
+    }
+
     return result
   }
 

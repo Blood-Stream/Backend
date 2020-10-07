@@ -8,12 +8,6 @@ module.exports = function setupMessages (messagesModel, usersModel) {
       }
     }
 
-    /* const existingusers = await usersModel.findOne({
-      where: {
-        uuid
-      }
-    }) */
-
     const existingmessages = await messagesModel.findOne(cond)
     if (existingmessages) {
       const updated = await messagesModel.update(messages, cond)
