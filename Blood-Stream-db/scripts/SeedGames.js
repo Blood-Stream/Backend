@@ -1,58 +1,43 @@
+/**
+ * Usar el siguiente codigo desde la terminal
+ * situado en la carpeta principal
+ * para crear juegos en la base de datos
+ *
+ * DEBUG=app:* node Blood-Stream-db/scripts/SeedGames.js
+ */
+
 'use strict'
 
 const db = require('../index')
 const config = require('../../config/config')
-const utils = require('../utils/index')
 const { nanoid } = require('nanoid')
-const Controller = require('../../Blood-Stream-login/api/components/user/index')
-const book1 = require('../../../CSVtoJSON/JS/Book1')
-const book2 = require('../../../CSVtoJSON/JS/Book2')
-const book3 = require('../../../CSVtoJSON/JS/Book3')
-const book4 = require('../../../CSVtoJSON/JS/Book4')
-const book5 = require('../../../CSVtoJSON/JS/Book5')
-const book6 = require('../../../CSVtoJSON/JS/Book6')
-const book7 = require('../../../CSVtoJSON/JS/Book7')
-const book8 = require('../../../CSVtoJSON/JS/Book8')
-const book9 = require('../../../CSVtoJSON/JS/Book9')
-const book10 = require('../../../CSVtoJSON/JS/Book10')
-const book11 = require('../../../CSVtoJSON/JS/Book11')
-const book12 = require('../../../CSVtoJSON/JS/Book12')
-const book13 = require('../../../CSVtoJSON/JS/Book13')
-const book14 = require('../../../CSVtoJSON/JS/Book14')
-const book15 = require('../../../CSVtoJSON/JS/Book15')
-const book16 = require('../../../CSVtoJSON/JS/Book16')
-const book17 = require('../../../CSVtoJSON/JS/Book17')
-const user1 = require('../../../CSVtoJSON/JS-Users/MOCK_DATA')
-const user2 = require('../../../CSVtoJSON/JS-Users/My Saved Schema')
-const user3 = require('../../../CSVtoJSON/JS-Users/My Saved Schema (1)')
-const user4 = require('../../../CSVtoJSON/JS-Users/My Saved Schema (2)')
-const user5 = require('../../../CSVtoJSON/JS-Users/My Saved Schema (3)')
-const user6 = require('../../../CSVtoJSON/JS-Users/My Saved Schema (4)')
-const user7 = require('../../../CSVtoJSON/JS-Users/My Saved Schema (5)')
+const utils = require('../utils/index')
+const book1 = require('./Mocks/Games/Book1')
+const book2 = require('./Mocks/Games/Book2')
+const book3 = require('./Mocks/Games/Book3')
+const book4 = require('./Mocks/Games/Book4')
+const book5 = require('./Mocks/Games/Book5')
+const book6 = require('./Mocks/Games/Book6')
+const book7 = require('./Mocks/Games/Book7')
+const book8 = require('./Mocks/Games/Book8')
+const book9 = require('./Mocks/Games/Book9')
+const book10 = require('./Mocks/Games/Book10')
+const book11 = require('./Mocks/Games/Book11')
+const book12 = require('./Mocks/Games/Book12')
+const book13 = require('./Mocks/Games/Book13')
+const book14 = require('./Mocks/Games/Book14')
+const book15 = require('./Mocks/Games/Book15')
+const book16 = require('./Mocks/Games/Book16')
+const book17 = require('./Mocks/Games/Book17')
 
 async function run () {
   const {
-    // Message,
-    // Password,
-    // Users,
-    // GamesCollection,
-    // Contact,
-    // AccessRol,
-    // Platform,
-    // PlatformGames,
-    // Lenguages,
-    // LenguagesGames,
-    // Genres,
-    // GenresGames,
     Games
-    // UserRating,
-    // GamesRating,
-    // GameRating
   } = await db(config(false)).catch(utils.handleFatalError)
 
   let game
   let el
-  /* console.log('Comienza book1')
+  console.log('Comienza book1')
 
   for (const element in book1) {
     el = book1[element]
@@ -390,148 +375,8 @@ async function run () {
     })
     console.log(game)
     console.log('-------------------------------------')
-  } */
+  }
 
-  console.log('Comienza User1')
-  for (const element in user1) {
-    el = user1[element]
-    game = await Controller.upsert({
-      nickname: el.nickname,
-      country: el.country,
-      postal_Code: el.postal_Code,
-      birthday: el.birthday,
-      status: el.status,
-      avatar: el.avatar,
-      platform: el.platform,
-      email: el.email,
-      phone: el.phone,
-      rol: el.rol,
-      level: el.level,
-      password: el.password
-    }).catch(utils.handleFatalError)
-    console.log(game)
-    console.log('-------------------------------------')
-  }
-  console.log('Comienza User2')
-  for (const element in user2) {
-    el = user2[element]
-    game = await Controller.upsert({
-      nickname: el.nickname,
-      country: el.country,
-      postal_Code: el.postal_Code,
-      birthday: el.birthday,
-      status: el.status,
-      avatar: el.avatar,
-      platform: el.platform,
-      email: el.email,
-      phone: el.phone,
-      rol: el.rol,
-      level: el.level,
-      password: el.password
-    }).catch(utils.handleFatalError)
-    console.log(game)
-    console.log('-------------------------------------')
-  }
-  console.log('Comienza User3')
-  for (const element in user3) {
-    el = user3[element]
-    game = await Controller.upsert({
-      nickname: el.nickname,
-      country: el.country,
-      postal_Code: el.postal_Code,
-      birthday: el.birthday,
-      status: el.status,
-      avatar: el.avatar,
-      platform: el.platform,
-      email: el.email,
-      phone: el.phone,
-      rol: el.rol,
-      level: el.level,
-      password: el.password
-    }).catch(utils.handleFatalError)
-    console.log(game)
-    console.log('-------------------------------------')
-  }
-  console.log('Comienza User4')
-  for (const element in user4) {
-    el = user4[element]
-    game = await Controller.upsert({
-      nickname: el.nickname,
-      country: el.country,
-      postal_Code: el.postal_Code,
-      birthday: el.birthday,
-      status: el.status,
-      avatar: el.avatar,
-      platform: el.platform,
-      email: el.email,
-      phone: el.phone,
-      rol: el.rol,
-      level: el.level,
-      password: el.password
-    }).catch(utils.handleFatalError)
-    console.log(game)
-    console.log('-------------------------------------')
-  }
-  console.log('Comienza User5')
-  for (const element in user5) {
-    el = user5[element]
-    game = await Controller.upsert({
-      nickname: el.nickname,
-      country: el.country,
-      postal_Code: el.postal_Code,
-      birthday: el.birthday,
-      status: el.status,
-      avatar: el.avatar,
-      platform: el.platform,
-      email: el.email,
-      phone: el.phone,
-      rol: el.rol,
-      level: el.level,
-      password: el.password
-    }).catch(utils.handleFatalError)
-    console.log(game)
-    console.log('-------------------------------------')
-  }
-  console.log('Comienza User6')
-  for (const element in user6) {
-    el = user6[element]
-    game = await Controller.upsert({
-      nickname: el.nickname,
-      country: el.country,
-      postal_Code: el.postal_Code,
-      birthday: el.birthday,
-      status: el.status,
-      avatar: el.avatar,
-      platform: el.platform,
-      email: el.email,
-      phone: el.phone,
-      rol: el.rol,
-      level: el.level,
-      password: el.password
-    }).catch(utils.handleFatalError)
-    console.log(game)
-    console.log('-------------------------------------')
-  }
-  console.log('Comienza User7')
-  for (const element in user7) {
-    el = user7[element]
-    game = await Controller.upsert({
-      nickname: el.nickname,
-      country: el.country,
-      postal_Code: el.postal_Code,
-      birthday: el.birthday,
-      status: el.status,
-      avatar: el.avatar,
-      platform: el.platform,
-      email: el.email,
-      phone: el.phone,
-      rol: el.rol,
-      level: el.level,
-      password: el.password
-    }).catch(utils.handleFatalError)
-    console.log(game)
-    console.log('-------------------------------------')
-  }
 }
 
 run()
