@@ -1,3 +1,5 @@
+'use strict'
+
 const gamesCollection = [
   {
     "Game": "Bitcoin exchange simulator",

@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = [
   {
     "Game": "Rush (Rise up special heroes)",

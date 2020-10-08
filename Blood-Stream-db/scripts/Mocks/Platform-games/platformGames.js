@@ -1,3 +1,5 @@
+'use strict'
+
 const platform = [
   {
     "Game": "Silent Depth Submarine Sim",

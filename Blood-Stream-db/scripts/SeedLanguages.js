@@ -12,7 +12,7 @@ const db = require('../index')
 const config = require('../../config/config')
 const { nanoid } = require('nanoid')
 const utils = require('../utils/index')
-const language = require('./Mocks/languajes')
+const language = require('./Mocks/lenguages/languajes')
 
 const run = async () => {
   const {
