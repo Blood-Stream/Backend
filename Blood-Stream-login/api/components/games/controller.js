@@ -25,7 +25,6 @@ module.exports = (injectedStore) => {
     const genre = await GenresGames.findByGame(game.id).catch(utils.handleFatalError)
     const lenguage = await LenguagesGames.findByGame(game.id).catch(utils.handleFatalError)
     const platform = await PlatformGames.findByGame(game.id).catch(utils.handleFatalError)
-
     for (const element in genre) {
       const el = genre[element]
       value = await Genres.findById(el.genreId).catch(utils.handleFatalError)
@@ -55,7 +54,7 @@ module.exports = (injectedStore) => {
 
     for (const element in platform) {
       const el = platform[element]
-      value = await Platform.findById(el.platformId).catch(utils.handleFatalError)
+      value = await Platform.findById(el.platformGameId).catch(utils.handleFatalError)
       value = {
         uuid: value.uuid,
         Platform: value.Platform
