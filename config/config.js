@@ -10,7 +10,6 @@ module.exports = function config (configExtra) {
     host: process.env.DB_HOST,
     dialect: 'postgres',
     logging: s => debug(s)
-
   }
 
   if (configExtra) {
