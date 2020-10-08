@@ -20,6 +20,7 @@ routes(app).genreGamesRoute()
 routes(app).lengugeRoute()
 routes(app).gamesRoute()
 routes(app).platformRoute()
+routes(app).gameCollectionRoute()
 
 routes(app).errorsRoute()
 
