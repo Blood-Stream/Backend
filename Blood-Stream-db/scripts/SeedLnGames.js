@@ -9,7 +9,7 @@
 'use strict'
 
 const utils = require('../utils/index')
-const Controller = require('../../Blood-Stream-login/api/components/genres-games/index')
+const Controller = require('../../Blood-Stream-login/api/components/lenguages/index')
 const lenguage = require('./Mocks/Languages-Games/LGames')
 
 async function run () {

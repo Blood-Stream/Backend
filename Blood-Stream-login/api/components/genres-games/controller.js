@@ -21,7 +21,6 @@ module.exports = (injectedStore) => {
   }
 
   const upsert = async (body) => {
-    console.log(body)
     const { GenresGames, Genres, Games } = await store(config(false)).catch(utils.handleFatalError)
     const genre = await Genres.findByGenre(body.genre).catch(utils.handleFatalError)
     let games = await Games.findByUrl(body.game).catch(utils.handleFatalError)
@@ -35,13 +34,12 @@ module.exports = (injectedStore) => {
       gnGm.uuid = nanoid()
     } else {
       return 'Exist'
-      // gnGm.uuid = genGame.uuid
     }
 
     games = {
       id: games.id,
       uuid: games.uuid,
-      Url_game: games.Url_game,
+      Url_game: games.Url_Game,
       Name: games.Name,
       Developer: games.Developer
     }

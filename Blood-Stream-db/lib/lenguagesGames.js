@@ -20,10 +20,10 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
     })
 
     if (games) {
-      Object.assign(lenguagesGames, { gamesId: games.id })
+      Object.assign(lenguagesGames, { gameId: games.id })
     }
     if (lenguages) {
-      Object.assign(lenguagesGames, { lenguagesId: lenguages.id })
+      Object.assign(lenguagesGames, { lenguageId: lenguages.id })
     }
 
     const existingusers = await lenguagesGamesModel.findOne(cond)
@@ -40,6 +40,15 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
     return lenguagesGamesModel.findOne({
       where: {
         id
+      }
+    })
+  }
+
+  async function findByLnGm (lenguagesId, gameId) {
+    return await lenguagesGamesModel.findOne({
+      where: {
+        lenguageId: lenguagesId,
+        gameId: gameId
       }
     })
   }
@@ -69,6 +78,7 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByLnGm
   }
 }

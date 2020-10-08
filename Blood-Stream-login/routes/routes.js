@@ -7,6 +7,7 @@ const auth = require('../api/components/auth/network')
 const swaggerDoc = require('../api/swagger.json')
 const errors = require('../network/errors')
 const genreGame = require('../api/components/genres-games/network')
+const lenguage = require('../api/components/lenguages/network')
 
 const routes = (app) => {
   const messageRoute = () => app.use('/message', message)
@@ -15,6 +16,7 @@ const routes = (app) => {
   const swaggerRoute = () => app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
   const errorsRoute = () => app.use(errors)
   const genreGamesRoute = () => app.use('/genre-games', genreGame)
+  const lengugeRoute = () => app.use('/lenguage', lenguage)
 
   return {
     messageRoute,
@@ -22,7 +24,8 @@ const routes = (app) => {
     authRoute,
     swaggerRoute,
     errorsRoute,
-    genreGamesRoute
+    genreGamesRoute,
+    lengugeRoute
   }
 }
 
