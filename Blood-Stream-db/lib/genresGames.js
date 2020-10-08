@@ -49,6 +49,14 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
     })
   }
 
+  async function findByGame (gameId) {
+    return await genreGamesModel.findAll({
+      where: {
+        gameId: gameId
+      }
+    })
+  }
+
   async function findByGnGm (genresGameId, gameId) {
     return await genreGamesModel.findOne({
       where: {
@@ -76,6 +84,7 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
     findByUuid,
     findAll,
     deleteById,
-    findByGnGm
+    findByGnGm,
+    findByGame
   }
 }

@@ -18,6 +18,7 @@ routes(app).messageRoute()
 routes(app).swaggerRoute()
 routes(app).genreGamesRoute()
 routes(app).lengugeRoute()
+routes(app).gamesRoute()
 
 routes(app).errorsRoute()
 

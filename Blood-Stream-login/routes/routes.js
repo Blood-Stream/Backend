@@ -8,6 +8,7 @@ const swaggerDoc = require('../api/swagger.json')
 const errors = require('../network/errors')
 const genreGame = require('../api/components/genres-games/network')
 const lenguage = require('../api/components/lenguages/network')
+const games = require('../api/components/games/network')
 
 const routes = (app) => {
   const messageRoute = () => app.use('/message', message)
@@ -17,6 +18,7 @@ const routes = (app) => {
   const errorsRoute = () => app.use(errors)
   const genreGamesRoute = () => app.use('/genre-games', genreGame)
   const lengugeRoute = () => app.use('/lenguage', lenguage)
+  const gamesRoute = () => app.use('/game', games)
 
   return {
     messageRoute,
@@ -25,7 +27,8 @@ const routes = (app) => {
     swaggerRoute,
     errorsRoute,
     genreGamesRoute,
-    lengugeRoute
+    lengugeRoute,
+    gamesRoute
   }
 }
 

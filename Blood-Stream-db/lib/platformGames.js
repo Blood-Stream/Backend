@@ -52,6 +52,14 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     })
   }
 
+  async function findByGame (gameId) {
+    return await platformGamesModel.findAll({
+      where: {
+        gameId: gameId
+      }
+    })
+  }
+
   function findAll () {
     return platformGamesModel.findAll()
   }
@@ -69,6 +77,7 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByGame
   }
 }

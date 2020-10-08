@@ -1,11 +1,31 @@
 'use strict'
 
-module.exports = function setupGamesRating (gamesRatingModel) {
-  async function createOrUpdate (gamesRating) {
+module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesModel) {
+  async function createOrUpdate (gamesRating, uuidUser, uuidGames) {
     const cond = {
       where: {
         uuid: gamesRating.uuid
       }
+    }
+
+    const games = await gamesModel.findOne({
+      where: {
+        uuid: uuidGames
+      }
+    })
+
+    const user = await UsersModel.findOne({
+      where: {
+        uuid: uuidUser
+      }
+    })
+
+    if (games) {
+      Object.assign(lenguagesGames, { gameId: games.id })
+    }
+
+    if (user) {
+      Object.assign(lenguagesGames, { userId: games.id })
     }
 
     const existinggamesRating = await gamesRatingModel.findOne(cond)

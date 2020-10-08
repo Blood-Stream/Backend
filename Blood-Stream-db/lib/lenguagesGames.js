@@ -53,6 +53,14 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
     })
   }
 
+  async function findByGame (gameId) {
+    return await lenguagesGamesModel.findAll({
+      where: {
+        gameId: gameId
+      }
+    })
+  }
+
   function findByUuid (uuid) {
     return lenguagesGamesModel.findOne({
       where: {
@@ -79,6 +87,7 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
     findByUuid,
     findAll,
     deleteById,
-    findByLnGm
+    findByLnGm,
+    findByGame
   }
 }

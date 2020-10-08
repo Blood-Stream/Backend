@@ -52,12 +52,6 @@ test('GenresGames', t => {
 test('Games', t => {
   t.truthy(db.Games, 'Games table should exist')
 })
-test('UserRating', t => {
-  t.truthy(db.UserRating, 'UserRating table should exist')
-})
 test('GamesRating', t => {
   t.truthy(db.GamesRating, 'GamesRating table should exist')
-})
-test('GameRating', t => {
-  t.truthy(db.GameRating, 'GameRating table should exist')
 })
