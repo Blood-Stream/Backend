@@ -11,6 +11,7 @@ const lenguage = require('../api/components/lenguages/network')
 const games = require('../api/components/games/network')
 const platform = require('../api/components/platform-games/network')
 const gameCollection = require('../api/components/game-collection/network')
+const gamesRating = require('../api/components/games-rating/network')
 
 const routes = (app) => {
   const messageRoute = () => app.use('/message', message)
@@ -23,6 +24,7 @@ const routes = (app) => {
   const gamesRoute = () => app.use('/game', games)
   const platformRoute = () => app.use('/platform', platform)
   const gameCollectionRoute = () => app.use('/game-collection', gameCollection)
+  const gamesRatingRoute = () => app.use('/game-rating', gamesRating)
 
   return {
     messageRoute,
@@ -34,7 +36,8 @@ const routes = (app) => {
     lengugeRoute,
     gamesRoute,
     platformRoute,
-    gameCollectionRoute
+    gameCollectionRoute,
+    gamesRatingRoute
   }
 }
 

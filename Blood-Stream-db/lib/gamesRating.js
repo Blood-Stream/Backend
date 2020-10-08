@@ -8,29 +8,18 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
       }
     }
 
-    const games = await gamesModel.findOne({
-      where: {
-        uuid: uuidGames
-      }
-    })
-
-    const user = await UsersModel.findOne({
-      where: {
-        uuid: uuidUser
-      }
-    })
-
-    if (games) {
-      Object.assign(lenguagesGames, { gameId: games.id })
+    if (uuidUser) {
+      Object.assign(gamesRating, { userId: uuidUser })
     }
 
-    if (user) {
-      Object.assign(lenguagesGames, { userId: games.id })
+    if (uuidGames) {
+      Object.assign(gamesRating, { gameId: uuidGames })
     }
+
 
     const existinggamesRating = await gamesRatingModel.findOne(cond)
     if (existinggamesRating) {
-      const updated = await gamesRatingModel.update(cond)
+      const updated = await gamesRatingModel.update(gamesRating, cond)
       return updated ? gamesRatingModel.findOne(cond) : existinggamesRating
     }
     const result = await gamesRatingModel.create(gamesRating)
@@ -53,6 +42,23 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
     })
   }
 
+  async function findByGame (gameId) {
+    return await gamesRatingModel.findAll({
+      where: {
+        gameId: gameId
+      }
+    })
+  }
+
+  async function findByUsGm (userId, gameId) {
+    return await gamesRatingModel.findOne({
+      where: {
+        userId: userId,
+        gameId: gameId
+      }
+    })
+  }
+
   async function findAll () {
     return await gamesRatingModel.findAll()
   }
@@ -70,6 +76,8 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByGame,
+    findByUsGm
   }
 }
