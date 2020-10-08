@@ -35,6 +35,22 @@ module.exports = function setupGames (gamesModel) {
     })
   }
 
+  async function findByUrl (Url_Game) {
+    return await gamesModel.findOne({
+      where: {
+        Url_Game
+      }
+    })
+  }
+
+  async function findByName (Name) {
+    return await gamesModel.findOne({
+      where: {
+        Name
+      }
+    })
+  }
+
   async function findAll () {
     return await gamesModel.findAll()
   }
@@ -52,6 +68,8 @@ module.exports = function setupGames (gamesModel) {
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByName,
+    findByUrl
   }
 }

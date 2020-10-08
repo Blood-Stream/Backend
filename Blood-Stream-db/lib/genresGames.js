@@ -1,5 +1,6 @@
 
 'use strict'
+const { Op } = require("sequelize");
 
 module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesModel) {
   async function createOrUpdate (uuidGames, uuidGenres, genreGames) {
@@ -8,8 +9,7 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
         uuid: genreGames.uuid
       }
     }
-
-    const games = await gamesModel.findOne({
+    const game = await gamesModel.findOne({
       where: {
         uuid: uuidGames
       }
@@ -20,19 +20,15 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
       }
     })
 
-    if (games) {
-      Object.assign(genreGames, { gamesId: games.id })
-    }
-    if (genre) {
-      Object.assign(genreGames, { genreId: genre.id })
-    }
+    Object.assign(genreGames, { genreId: genre.id })
+    Object.assign(genreGames, { gameId: game.id })
 
     const existingusers = await genreGamesModel.findOne(cond)
     if (existingusers) {
       const updated = await genreGamesModel.update(genreGames, cond)
       return updated ? genreGamesModel.findOne(cond) : existingusers
     }
-
+    console.log(genreGames)
     const result = await genreGamesModel.create(genreGames)
     return result.toJSON()
   }
@@ -49,6 +45,15 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
     return await genreGamesModel.findOne({
       where: {
         uuid
+      }
+    })
+  }
+
+  async function findByGnGm (genresGameId, gameId) {
+    return await genreGamesModel.findOne({
+      where: {
+        genreId: genresGameId,
+        gameId: gameId
       }
     })
   }
@@ -70,6 +75,7 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByGnGm
   }
 }

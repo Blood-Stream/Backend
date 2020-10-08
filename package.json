@@ -9,7 +9,8 @@
     "dev": "nodemon index.js",
     "lint": "standard",
     "lint-fix": "standard --fix",
-    "test": "DEBUG=Blood-Stream:* &&  nyc --reporte=lcov ava tests/* --verbose"
+    "test": "DEBUG=Blood-Stream:* &&  nyc --reporte=lcov ava tests/* --verbose",
+    "Add-info": "DEBUG=app:* node Blood-Stream-db/scripts/SeedGames.js && node Blood-Stream-db/scripts/SeedGenres.js && node Blood-Stream-db/scripts/SeedLanguages.js && node Blood-Stream-db/scripts/SeedUsers.js && node Blood-Stream-db/scripts/SeedMessage.js && node Blood-Stream-db/scripts/SeedGenreGames.js"
   },
   "repository": {
     "type": "git",

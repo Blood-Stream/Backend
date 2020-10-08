@@ -6,6 +6,7 @@ const user = require('../api/components/user/network')
 const auth = require('../api/components/auth/network')
 const swaggerDoc = require('../api/swagger.json')
 const errors = require('../network/errors')
+const genreGame = require('../api/components/genres-games/network')
 
 const routes = (app) => {
   const messageRoute = () => app.use('/message', message)
@@ -13,13 +14,15 @@ const routes = (app) => {
   const authRoute = () => app.use('/user', auth)
   const swaggerRoute = () => app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
   const errorsRoute = () => app.use(errors)
+  const genreGamesRoute = () => app.use('/genre-games', genreGame)
 
   return {
     messageRoute,
     userRoute,
     authRoute,
     swaggerRoute,
-    errorsRoute
+    errorsRoute,
+    genreGamesRoute
   }
 }
 

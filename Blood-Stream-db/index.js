@@ -80,7 +80,7 @@ module.exports = async function (config) {
   PlatformGamesModel.belongsTo(PlatformGamesModel)
   PlatformGamesModel.belongsTo(GamesModel)
 
-  GenresGamesModel.belongsTo(GenresGamesModel)
+  GenresGamesModel.belongsTo(GenresModel)
   GenresGamesModel.belongsTo(GamesModel)
 
   GamesCollectionModel.belongsTo(UsersModel)
