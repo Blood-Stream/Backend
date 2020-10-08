@@ -20,10 +20,10 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     })
 
     if (games) {
-      Object.assign(platformsGames, { gamesId: games.id })
+      Object.assign(platformsGames, { gameId: games.id })
     }
     if (platform) {
-      Object.assign(platformsGames, { platformId: platform.id })
+      Object.assign(platformsGames, { platformGameId: platform.id })
     }
 
     const existingusers = await platformGamesModel.findOne(cond)
@@ -52,6 +52,31 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     })
   }
 
+  function findByPlatform (platform) {
+    return platformGamesModel.findOne({
+      where: {
+        platformGameId: platform
+      }
+    })
+  }
+
+  async function findByPlGm (platformId, gameId) {
+    return await platformGamesModel.findOne({
+      where: {
+        platformGameId: platformId,
+        gameId: gameId
+      }
+    })
+  }
+
+  async function findByGame (gameId) {
+    return await platformGamesModel.findAll({
+      where: {
+        gameId: gameId
+      }
+    })
+  }
+
   function findAll () {
     return platformGamesModel.findAll()
   }
@@ -69,6 +94,9 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByGame,
+    findByPlGm,
+    findByPlatform
   }
 }

@@ -1,16 +1,25 @@
 'use strict'
 
-module.exports = function setupGamesRating (gamesRatingModel) {
-  async function createOrUpdate (gamesRating) {
+module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesModel) {
+  async function createOrUpdate (gamesRating, uuidUser, uuidGames) {
     const cond = {
       where: {
         uuid: gamesRating.uuid
       }
     }
 
+    if (uuidUser) {
+      Object.assign(gamesRating, { userId: uuidUser })
+    }
+
+    if (uuidGames) {
+      Object.assign(gamesRating, { gameId: uuidGames })
+    }
+
+
     const existinggamesRating = await gamesRatingModel.findOne(cond)
     if (existinggamesRating) {
-      const updated = await gamesRatingModel.update(cond)
+      const updated = await gamesRatingModel.update(gamesRating, cond)
       return updated ? gamesRatingModel.findOne(cond) : existinggamesRating
     }
     const result = await gamesRatingModel.create(gamesRating)
@@ -33,6 +42,23 @@ module.exports = function setupGamesRating (gamesRatingModel) {
     })
   }
 
+  async function findByGame (gameId) {
+    return await gamesRatingModel.findAll({
+      where: {
+        gameId: gameId
+      }
+    })
+  }
+
+  async function findByUsGm (userId, gameId) {
+    return await gamesRatingModel.findOne({
+      where: {
+        userId: userId,
+        gameId: gameId
+      }
+    })
+  }
+
   async function findAll () {
     return await gamesRatingModel.findAll()
   }
@@ -50,6 +76,8 @@ module.exports = function setupGamesRating (gamesRatingModel) {
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByGame,
+    findByUsGm
   }
 }

@@ -1,3 +1,5 @@
+'use strict'
+
 const utils = require('../../Blood-Stream-db/utils/index')
 const config = require('../../config/config')
 const db = require('../../Blood-Stream-db/setup')

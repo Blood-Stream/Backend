@@ -7,19 +7,19 @@ const config = require('../../../../config/config')
 const controller = require('../auth/index')
 let users
 
-module.exports = function (injectedStore) {
+module.exports = (injectedStore) => {
   const store = injectedStore
 
-  async function list () {
+  const list = async () => {
     const { Message } = await store(config(false)).catch(utils.handleFatalError)
     return Message.findAll().catch(utils.handleFatalError)
   }
 
-  async function get (nickname) {
+  const get = async (nickname) => {
 
   }
 
-  async function upsert (body) {
+  const upsert = async (body) => {
     const { Message, Users } = await store(config(false)).catch(utils.handleFatalError)
     let message
     if (body.uuid) {
@@ -49,7 +49,7 @@ module.exports = function (injectedStore) {
     return result
   }
 
-  async function deleteMessage (nickname) {
+  const deleteMessage = async (nickname) => {
 
   }
 

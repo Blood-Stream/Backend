@@ -15,9 +15,7 @@ const setupLenguagesGamesModel = require('./models/lenguagesGames')
 const setupGenresModel = require('./models/genres')
 const setupGenresGamesModel = require('./models/genresGames')
 const setupGamesModel = require('./models/games')
-const setupUserRatingModel = require('./models/userRating')
 const setupGamesRatingModel = require('./models/gamesRating')
-const setupGameRatingModel = require('./models/gameRating')
 
 const defaults = require('defaults')
 
@@ -34,9 +32,7 @@ const setupLenguagesGames = require('./lib/lenguagesGames')
 const setupGenres = require('./lib/genres')
 const setupGenresGames = require('./lib/genresGames')
 const setupGames = require('./lib/games')
-const setupUserRating = require('./lib/userRating')
 const setupGamesRating = require('./lib/gamesRating')
-const setupGameRating = require('./lib/gameRating')
 
 module.exports = async function (config) {
   config = defaults(config, {
@@ -66,8 +62,6 @@ module.exports = async function (config) {
   const GenresModel = setupGenresModel(config)
   const GamesCollectionModel = setupGamesCollectionModel(config)
   const GamesRatingModel = setupGamesRatingModel(config)
-  const UserRatingModel = setupUserRatingModel(config)
-  const GameRatingModel = setupGameRatingModel(config)
 
   UsersModel.hasMany(MessagesModel)
   UsersModel.belongsTo(PlatformsModel)
@@ -80,17 +74,14 @@ module.exports = async function (config) {
   PlatformGamesModel.belongsTo(PlatformGamesModel)
   PlatformGamesModel.belongsTo(GamesModel)
 
-  GenresGamesModel.belongsTo(GenresGamesModel)
+  GenresGamesModel.belongsTo(GenresModel)
   GenresGamesModel.belongsTo(GamesModel)
 
   GamesCollectionModel.belongsTo(UsersModel)
   GamesCollectionModel.belongsTo(GamesModel)
 
-  UserRatingModel.belongsTo(UsersModel)
-  UserRatingModel.belongsTo(GamesRatingModel)
-
-  GameRatingModel.belongsTo(GamesModel)
-  GameRatingModel.belongsTo(GamesRatingModel)
+  GamesRatingModel.belongsTo(GamesModel)
+  GamesRatingModel.belongsTo(UsersModel)
 
   await sequelize.authenticate()
 
@@ -113,9 +104,7 @@ module.exports = async function (config) {
   const GenresGames = setupGenresGames(GenresGamesModel, GenresModel, GamesModel)
   const Genres = setupGenres(GenresModel)
   const GamesCollection = setupGamesCollection(GamesCollectionModel, UsersModel, GamesModel)
-  const GamesRating = setupGamesRating(GamesRatingModel)
-  const UserRating = setupUserRating(UserRatingModel, GamesRatingModel, UsersModel)
-  const GameRating = setupGameRating(GameRatingModel, GamesRatingModel, GamesModel)
+  const GamesRating = setupGamesRating(GamesRatingModel, UsersModel, GamesModel)
 
   return {
     Message,
@@ -131,8 +120,6 @@ module.exports = async function (config) {
     Genres,
     GenresGames,
     Games,
-    UserRating,
     GamesRating,
-    GameRating
   }
 }

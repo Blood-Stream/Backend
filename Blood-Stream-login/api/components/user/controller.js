@@ -9,16 +9,16 @@ const auth = require('../../../auth')
 const controller = require('../auth/index')
 let users
 
-module.exports = function (injectedStore) {
+module.exports = (injectedStore) => {
   const store = injectedStore
 
-  async function list () {
+  const list = async () => {
     const { Users } = await store(config(false)).catch(utils.handleFatalError)
     users = await Users.findAll().catch(utils.handleFatalError)
     return users
   }
 
-  async function get (nickname) {
+  const get = async (nickname) => {
     const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
     let users = await Users.findByNickname(nickname).catch(utils.handleFatalError)
     const contacts = await Contact.findById(users.contactId).catch(utils.handleFatalError)
@@ -39,7 +39,7 @@ module.exports = function (injectedStore) {
     return users
   }
 
-  async function upsert (body) {
+  const upsert = async (body) => {
     const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
 
     let uuidPlatform = null
@@ -134,7 +134,7 @@ module.exports = function (injectedStore) {
     return user
   }
 
-  async function deleteTable (nickname) {
+  const deleteTable = async (nickname) => {
     const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
     const user = await Users.findByNickname(nickname).catch(utils.handleFatalError)
     if (user) {

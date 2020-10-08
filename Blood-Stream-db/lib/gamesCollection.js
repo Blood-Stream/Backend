@@ -20,10 +20,10 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
     })
 
     if (games) {
-      Object.assign(gamesCollection, { gamesId: games.id })
+      Object.assign(gamesCollection, { gameId: games.id })
     }
     if (users) {
-      Object.assign(gamesCollection, { usersId: users.id })
+      Object.assign(gamesCollection, { userId: users.id })
     }
 
     const existingusers = await gamesCollectionModel.findOne(cond)
@@ -52,6 +52,23 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
     })
   }
 
+  async function findByGame (gameId) {
+    return await gamesCollectionModel.findAll({
+      where: {
+        gameId: gameId
+      }
+    })
+  }
+
+  async function findByUsGm (userId, gameId) {
+    return await gamesCollectionModel.findOne({
+      where: {
+        userId: userId,
+        gameId: gameId
+      }
+    })
+  }
+
   async function findAll () {
     return await gamesCollectionModel.findAll()
   }
@@ -69,6 +86,8 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByUsGm,
+    findByGame
   }
 }

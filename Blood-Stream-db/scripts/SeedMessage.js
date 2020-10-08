@@ -10,7 +10,7 @@
 
 const utils = require('../utils/index')
 const Controller = require('../../Blood-Stream-login/api/components/messages')
-const message = require('./Mocks/Message')
+const message = require('./Mocks/message/Message')
 
 async function run () {
 

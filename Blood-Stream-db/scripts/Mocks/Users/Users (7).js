@@ -1,3 +1,5 @@
+'use strict'
+
 const users = [{"nickname":"Marnia","country":"China","postal_Code":"1111","birthday":"2001-12-09","status":false,"avatar":"http://dummyimage.com/118x237.bmp/5fa2dd/ffffff","platform":"pc","email":"mjacobovitz0@phpbb.com","phone":"775-620-9647","rol":"master","level":69,"password":"miIrfqtpcvGv"},
 {"nickname":"Roxine","country":"China","postal_Code":"1111","birthday":"2010-04-04","status":true,"avatar":"http://dummyimage.com/166x198.jpg/5fa2dd/ffffff","platform":"pc","email":"rarnal1@bandcamp.com","phone":"808-621-9924","rol":"administrador","level":91,"password":"ldWfVo"},
 {"nickname":"Beatrice","country":"Malaysia","postal_Code":"50762","birthday":"1988-02-05","status":false,"avatar":"http://dummyimage.com/154x106.png/5fa2dd/ffffff","platform":"pc","email":"bshellshear2@va.gov","phone":"459-871-1686","rol":"usuario","level":52,"password":"iD03Db2tduLD"},

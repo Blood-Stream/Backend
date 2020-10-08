@@ -1,3 +1,5 @@
+'use strict'
+
 const users = [{"nickname":"Starlin","country":"Indonesia","postal_Code":"1111","birthday":"1991-08-29","status":true,"avatar":"http://dummyimage.com/199x208.jpg/dddddd/000000","platform":"android","email":"stommasuzzi0@usa.gov","phone":"806-397-3967","rol":"administrador","level":76,"password":"S15DYERxCZf"},
 {"nickname":"Christy","country":"Indonesia","postal_Code":"1111","birthday":"2008-12-14","status":true,"avatar":"http://dummyimage.com/114x176.bmp/ff4444/ffffff","platform":"xbox","email":"cdryburgh1@dmoz.org","phone":"999-529-3274","rol":"usuario","level":10,"password":"psakdrFevi"},
 {"nickname":"Nicolea","country":"Argentina","postal_Code":"5209","birthday":"2010-11-15","status":true,"avatar":"http://dummyimage.com/188x136.bmp/cc0000/ffffff","platform":"pc","email":"nchippin2@about.me","phone":"548-811-7516","rol":"usuario","level":43,"password":"rRs1EctNTp"},

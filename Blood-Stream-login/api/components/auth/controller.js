@@ -6,10 +6,10 @@ const utils = require('../../../../Blood-Stream-db/utils')
 const auth = require('../../../auth/index')
 const config = require('../../../../config/config')
 
-module.exports = function (injectedStore) {
+module.exports = (injectedStore) => {
   const store = injectedStore
 
-  async function login (username, password) {
+  const login = async (username, password) => {
     const { Password, Users } = await store(config(false)).catch(utils.handleFatalError)
     const users = await Users.findByNickname(username).catch(utils.handleFatalError)
     if (users) {
@@ -27,7 +27,7 @@ module.exports = function (injectedStore) {
     return 'The user does not exits'
   }
 
-  async function retrievePass (username, password) {
+  const retrievePass = async (username, password) => {
     const { Password, Users } = await store(config(false)).catch(utils.handleFatalError)
     const users = await Users.findByNickname(username).catch(utils.handleFatalError)
 
@@ -49,7 +49,7 @@ module.exports = function (injectedStore) {
     return `The password for the user ${username} was changed successfull`
   }
 
-  async function upsert (data) {
+  const upsert = async (data) => {
     let authData = {
       uuid: data.uuid
     }
