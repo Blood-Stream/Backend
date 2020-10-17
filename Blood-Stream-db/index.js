@@ -46,6 +46,7 @@ module.exports = async function (config) {
       raw: true
     }
   })
+  console.log(config)
 
   const sequelize = setupDatabase(config)
   const MessagesModel = setupMessageModel(config)
@@ -71,7 +72,8 @@ module.exports = async function (config) {
 
   LenguagesGamesModel.belongsTo(LenguagesModel)
   LenguagesGamesModel.belongsTo(GamesModel)
-  PlatformGamesModel.belongsTo(PlatformGamesModel)
+
+  PlatformGamesModel.belongsTo(PlatformsModel)
   PlatformGamesModel.belongsTo(GamesModel)
 
   GenresGamesModel.belongsTo(GenresModel)
@@ -86,7 +88,6 @@ module.exports = async function (config) {
   await sequelize.authenticate()
 
   sequelize.sync()
-
   if (config.setup) {
     await sequelize.sync({ force: true })
   }

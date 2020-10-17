@@ -5,13 +5,20 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const config = require('./config')
 const routes = require('./routes/routes')
+const session = require('express-session')
+const passport = require('passport')
 const app = express()
+const con = require('../config/config')
+const helmet = require('helmet')
 
 app.use(cors())
 app.use(bodyParser.json())
+app.use(session({ session: con(false).sessionSecret }))
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(helmet())
 
 // ROUTER
-
 routes(app).userRoute()
 routes(app).authRoute()
 routes(app).messageRoute()
