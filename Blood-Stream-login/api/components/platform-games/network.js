@@ -1,10 +1,12 @@
 'use strict'
 
 const express = require('express')
-
+const passport = require('passport')
 const response = require('../../../network/response')
 const Controller = require('./index')
 const router = express.Router()
+
+require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {

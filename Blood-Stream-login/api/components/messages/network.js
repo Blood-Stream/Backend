@@ -1,10 +1,12 @@
 'use strict'
 
 const express = require('express')
-
+const passport = require('passport')
 const response = require('../../../network/response')
 const Controller = require('./index')
 const router = express.Router()
+
+require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {
@@ -40,9 +42,9 @@ const deleteMessage = (req, res, next) => {
   }
 
 // Routes
-router.get('/', list)
-router.get('/:nickname', get)
-router.post('/', upsert)
-router.delete('/:nickname', deleteMessage)
+router.get('/', passport.authenticate('jwt', { session: false }), list)
+router.get('/:nickname', passport.authenticate('jwt', { session: false }), get)
+router.post('/', passport.authenticate('jwt', { session: false }), upsert)
+router.delete('/:nickname', passport.authenticate('jwt', { session: false }), deleteMessage)
 
 module.exports = router
