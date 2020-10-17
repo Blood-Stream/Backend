@@ -20,7 +20,7 @@ const routes = (app) => {
   const swaggerRoute = () => app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
   const errorsRoute = () => app.use(errors)
   const genreGamesRoute = () => app.use('/genre-games', genreGame)
-  const lengugeRoute = () => app.use('/lenguage', lenguage)
+  const lenguageRoute = () => app.use('/lenguage', lenguage)
   const gamesRoute = () => app.use('/game', games)
   const platformRoute = () => app.use('/platform', platform)
   const gameCollectionRoute = () => app.use('/game-collection', gameCollection)
@@ -33,7 +33,7 @@ const routes = (app) => {
     swaggerRoute,
     errorsRoute,
     genreGamesRoute,
-    lengugeRoute,
+    lenguageRoute,
     gamesRoute,
     platformRoute,
     gameCollectionRoute,

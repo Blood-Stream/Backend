@@ -13,7 +13,7 @@ passport.use(
     clientSecret: config(false).googleClientSecret,
     callbackURL: 'auth/google/callback'
   },
-  (accessToken, refreshToken, profile, cb) => {
+  async (accessToken, refreshToken, profile, cb) => {
     const { data, status } = await axios({
       url: `${config(false).apiUrl}/api/auth/sign-provider`,
       method: 'post',
