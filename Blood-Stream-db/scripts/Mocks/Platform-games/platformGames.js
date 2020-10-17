@@ -22,7 +22,7 @@ const platform = [
     "Platform": "xbox"
   },
   {
-    "Game": "Tanks and Turrets 2 HD",
+    "Game": "101 Chess Checkmate Puzzles - 15 Chess Puzzles FREE",
     "Platform": "switch"
   },
   {
@@ -31,7 +31,7 @@ const platform = [
   },
   {
     "Game": "Cartoon Wars Lite",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bugs",
@@ -51,7 +51,7 @@ const platform = [
   },
   {
     "Game": "Gobang Play",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Hidden Objects Holiday Cleaning Tips",
@@ -63,11 +63,11 @@ const platform = [
   },
   {
     "Game": "Flight City\\u2122",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "3D Glamour Crush (WC 2018)",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Northern Tale HD",
@@ -75,11 +75,11 @@ const platform = [
   },
   {
     "Game": "Minesweeper Lv99",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Futoshiki Japanese Puzzles",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Finding..",
@@ -135,11 +135,11 @@ const platform = [
   },
   {
     "Game": "Youtubers Life: Gaming Channel",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "IGI Commando War Frontline Sniper Mountain War",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tales of Chessia Lite",
@@ -147,7 +147,7 @@ const platform = [
   },
   {
     "Game": "Recuse Hostage: Shooting Snipe",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Peak duel",
@@ -159,7 +159,7 @@ const platform = [
   },
   {
     "Game": "Hive 5",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Callisto Security Escape",
@@ -179,7 +179,7 @@ const platform = [
   },
   {
     "Game": "Zone of Fire",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "MARVEL Collect! by Topps",
@@ -207,7 +207,7 @@ const platform = [
   },
   {
     "Game": "Steampunk Tower",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Factory Inc.",
@@ -227,7 +227,7 @@ const platform = [
   },
   {
     "Game": "Ultimate Sudoku Contest",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mobile Legends: Adventure",
@@ -235,7 +235,7 @@ const platform = [
   },
   {
     "Game": "Trainz Trouble",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Modern battle 2",
@@ -243,7 +243,7 @@ const platform = [
   },
   {
     "Game": "Military Helicopter Gunner 3D",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Stoneropoly",
@@ -295,7 +295,7 @@ const platform = [
   },
   {
     "Game": "Space Dots - The Line Puzzle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "System Lords",
@@ -303,7 +303,7 @@ const platform = [
   },
   {
     "Game": "Game of Tag with radar and chat",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Blackjack Trainer: All in one",
@@ -387,7 +387,7 @@ const platform = [
   },
   {
     "Game": "SkinCraft - Boys Girls Skins for Minecraft PE",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Trackstone - Deck tracker",
@@ -399,7 +399,7 @@ const platform = [
   },
   {
     "Game": "Luzbel - Interactive Book app scary horror story",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Ravels - Humor",
@@ -411,11 +411,11 @@ const platform = [
   },
   {
     "Game": "Sea Adventure: Kingdom of Glory HD",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Warfare Tower Defence Pro!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tap Space: Earth Defence",
@@ -427,7 +427,7 @@ const platform = [
   },
   {
     "Game": "Circle Two",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Honey Battle - Protect the Beehive from the Bears",
@@ -467,7 +467,7 @@ const platform = [
   },
   {
     "Game": "Racing Team Owner",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Circus Ball",
@@ -487,7 +487,7 @@ const platform = [
   },
   {
     "Game": "Robot Troopers",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Shoot Bubble Royal Deluxe",
@@ -503,7 +503,7 @@ const platform = [
   },
   {
     "Game": "Diamond Storm",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Girl Clickers - Click Your Way And Win A Cookie",
@@ -535,7 +535,7 @@ const platform = [
   },
   {
     "Game": "P1 Select",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "FlipPix Jigsaw - Glaciers",
@@ -559,7 +559,7 @@ const platform = [
   },
   {
     "Game": "Oh Marbles! A Simple Old Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mibster",
@@ -571,7 +571,7 @@ const platform = [
   },
   {
     "Game": "Fire it! Fit in the Hole of Ball",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Wedding Dress Designer - Bridal Gown Fashion Game",
@@ -599,7 +599,7 @@ const platform = [
   },
   {
     "Game": "ARCHON-9 : Alien Defence",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Dungeon Warfare 2",
@@ -611,7 +611,7 @@ const platform = [
   },
   {
     "Game": "Farm Mania 3: Hot Vacation",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sea Adventure: Kingdom of Glory HD",
@@ -643,7 +643,7 @@ const platform = [
   },
   {
     "Game": "Squirrel Eat Nuts",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "X-Mas Tree Decoration - Free",
@@ -679,7 +679,7 @@ const platform = [
   },
   {
     "Game": "Falling Farm Heads FREE - Selfie Zoo Puzzle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Monster Warrior Defence",
@@ -703,11 +703,11 @@ const platform = [
   },
   {
     "Game": "Heroes Castle: Battle Strategy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Galaxy Conquest Phoenix Awaken",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Basra!",
@@ -719,7 +719,7 @@ const platform = [
   },
   {
     "Game": "Demon Keeper 2",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Reiner Knizia Tigris&Euphrates",
@@ -735,7 +735,7 @@ const platform = [
   },
   {
     "Game": "Black Operations HD",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sea Shark Survival Simulator 3D Full",
@@ -763,7 +763,7 @@ const platform = [
   },
   {
     "Game": "Just A Kernel",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Vimala Defense Warlords",
@@ -787,7 +787,7 @@ const platform = [
   },
   {
     "Game": "Spinners!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Super Yatzy - Six Dice of Fun!",
@@ -799,7 +799,7 @@ const platform = [
   },
   {
     "Game": "Ausome Sports Pick & Challenge",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Makibot Forest Journey",
@@ -807,7 +807,7 @@ const platform = [
   },
   {
     "Game": "Travelling Spaceman - A Great Puzzle Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Snake Break Original",
@@ -843,7 +843,7 @@ const platform = [
   },
   {
     "Game": "2d BasketBall Hoops",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Cartoon Wars Lite",
@@ -867,7 +867,7 @@ const platform = [
   },
   {
     "Game": "E.G. Chess",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Domino Merge - Block Puzzle, Quadris 1010",
@@ -883,7 +883,7 @@ const platform = [
   },
   {
     "Game": "Monster Factory Plus",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tile Slide - Watch Game",
@@ -971,7 +971,7 @@ const platform = [
   },
   {
     "Game": "3D Dominoes",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Lawn Leader - Mow That Grass",
@@ -987,7 +987,7 @@ const platform = [
   },
   {
     "Game": "Rabbit 3D Free Edition",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "MineSweeper HD",
@@ -1023,11 +1023,11 @@ const platform = [
   },
   {
     "Game": "Kingturn RPG Plus",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Banner Saga",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Madagascar Versus Online -  New Multiplayer Match 3 Puzzle Game with Monster Matching Battle",
@@ -1051,7 +1051,7 @@ const platform = [
   },
   {
     "Game": "DropBall.",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mighty Solitaire",
@@ -1067,7 +1067,7 @@ const platform = [
   },
   {
     "Game": "Lazy Contractors",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tactigon",
@@ -1079,7 +1079,7 @@ const platform = [
   },
   {
     "Game": "War Evolution",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Paper Soccer X - Multiplayer Online Game",
@@ -1111,11 +1111,11 @@ const platform = [
   },
   {
     "Game": "Star Collector",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Touch Tag",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pineapple - 13 Card Poker",
@@ -1151,11 +1151,11 @@ const platform = [
   },
   {
     "Game": "Room Escape: 100 Levels",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Separatio",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Ambit",
@@ -1191,7 +1191,7 @@ const platform = [
   },
   {
     "Game": "Connect 5",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "SWIPR",
@@ -1199,7 +1199,7 @@ const platform = [
   },
   {
     "Game": "HYEmoji Tic Tac Toe - Armenia Tic Tac Toe Stickers",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Survival Heroes Gamota",
@@ -1235,7 +1235,7 @@ const platform = [
   },
   {
     "Game": "HD Minesweeper Fast",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Catch The Pou Free",
@@ -1279,7 +1279,7 @@ const platform = [
   },
   {
     "Game": "Crazy Harbor",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Candy Jewel Cream",
@@ -1295,7 +1295,7 @@ const platform = [
   },
   {
     "Game": "Tower rush :: Clash of heroes",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Vaccine Case",
@@ -1311,7 +1311,7 @@ const platform = [
   },
   {
     "Game": "Easy Checkers Fun!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Red Moon Extreme",
@@ -1359,7 +1359,7 @@ const platform = [
   },
   {
     "Game": "Pioneer Lands HD lite: western settlers strategy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Evil Defenders",
@@ -1371,7 +1371,7 @@ const platform = [
   },
   {
     "Game": "Idle Knights",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Atomic Lumen",
@@ -1387,7 +1387,7 @@ const platform = [
   },
   {
     "Game": "Diamond Shoot - Match Diamonds!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Brexit - a game",
@@ -1399,7 +1399,7 @@ const platform = [
   },
   {
     "Game": "Cooking Madness-Kitchen Frenzy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sky Clash: Lords of Clans 3D",
@@ -1407,7 +1407,7 @@ const platform = [
   },
   {
     "Game": "Aydens Attic",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Animal Vs Zombies",
@@ -1415,7 +1415,7 @@ const platform = [
   },
   {
     "Game": "Business Empire: City Manager",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tank Toy Battlefield",
@@ -1439,7 +1439,7 @@ const platform = [
   },
   {
     "Game": "Pokeprice",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Longevity : 4-in-a-row",
@@ -1447,7 +1447,7 @@ const platform = [
   },
   {
     "Game": "SuperScaryStory3 For Reasoning",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bloons TD",
@@ -1467,11 +1467,11 @@ const platform = [
   },
   {
     "Game": "TrafficVille 3D",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Arcade Portal",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Can You Escape The Locked Prison Cell ? - Season 2",
@@ -1547,7 +1547,7 @@ const platform = [
   },
   {
     "Game": "Amazing Dino Slayer - Archery Shooting Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Warlords: Call To Arms",
@@ -1555,11 +1555,11 @@ const platform = [
   },
   {
     "Game": "Defense Shadow Monsters",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Stick-Man 2d Skate Boarding",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sea Fortress - Fleet War",
@@ -1571,7 +1571,7 @@ const platform = [
   },
   {
     "Game": "Oops! Bubble Tea\\u4e4b\\u6c34\\u5df7\\u8336\\u5f04",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Defend Your Life!",
@@ -1587,7 +1587,7 @@ const platform = [
   },
   {
     "Game": "Link Jewels - Draw Pipe Lines",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Ball Line Shoot Games 2019",
@@ -1595,7 +1595,7 @@ const platform = [
   },
   {
     "Game": "Zombie Combat Shooting",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "One Touch Draw Drawing: A strategy puzzle Game",
@@ -1635,7 +1635,7 @@ const platform = [
   },
   {
     "Game": "Hack RUN 2 - Hack ZERO",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Cooking Trip",
@@ -1695,7 +1695,7 @@ const platform = [
   },
   {
     "Game": "Hungry Sloth",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Oil mob",
@@ -1715,7 +1715,7 @@ const platform = [
   },
   {
     "Game": "Gem Defense:Battle Of Monsters",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Color Conquest - Watch Game",
@@ -1759,7 +1759,7 @@ const platform = [
   },
   {
     "Game": "Universal Paperclips\\u2122",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Big Deuce - Big 2 Classic",
@@ -1799,7 +1799,7 @@ const platform = [
   },
   {
     "Game": "Travelling Spaceman - A Great Puzzle Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "THEFT Inc. Stealth Thief Game",
@@ -1807,7 +1807,7 @@ const platform = [
   },
   {
     "Game": "Tower Conquest",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Oil Tycoon - Gas Idle Factory",
@@ -1823,7 +1823,7 @@ const platform = [
   },
   {
     "Game": "Onymax",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Knife Throw",
@@ -1835,7 +1835,7 @@ const platform = [
   },
   {
     "Game": "European War Lite",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Call of War: Multiplayer RTS",
@@ -1867,7 +1867,7 @@ const platform = [
   },
   {
     "Game": "Barn and Silo Calculator for Hay Day",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "8 Ball Pool 3D Live Tour",
@@ -1891,7 +1891,7 @@ const platform = [
   },
   {
     "Game": "Big Game Deer Hunting Shooter Challenge Pro",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Christmas Tree Construction Simulator 3D",
@@ -1919,7 +1919,7 @@ const platform = [
   },
   {
     "Game": "Tower Defense: Infinite War",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "SquareBit - A SQUARE OrBITing A Circle",
@@ -1927,15 +1927,15 @@ const platform = [
   },
   {
     "Game": "Pocket Tanks Deluxe",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Battle Mobile",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Oil, Inc.- Idle Clicker Tycoon",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Hockey Shootout!",
@@ -1947,7 +1947,7 @@ const platform = [
   },
   {
     "Game": "Clear Tactic",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bottle Chain",
@@ -1983,7 +1983,7 @@ const platform = [
   },
   {
     "Game": "RISK: TV Edition",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Memoreon Free",
@@ -1991,7 +1991,7 @@ const platform = [
   },
   {
     "Game": "2012 Election Game - Rise of The President",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Princess Favorite Place Hidden Objects Games",
@@ -2003,7 +2003,7 @@ const platform = [
   },
   {
     "Game": "Rail Nation",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mutant Fighting Cup 2",
@@ -2075,11 +2075,11 @@ const platform = [
   },
   {
     "Game": "Great Zombie War - The Undead Carnage Army Attack",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "To Russia With Love",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "FlipPix Jigsaw - Sibs",
@@ -2111,7 +2111,7 @@ const platform = [
   },
   {
     "Game": "Galaxy Wars Multiplayer",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "City Road Builder 3D",
@@ -2151,7 +2151,7 @@ const platform = [
   },
   {
     "Game": "Mini Metro",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Go Over",
@@ -2163,7 +2163,7 @@ const platform = [
   },
   {
     "Game": "Tank Hero Block Laser Wars",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Teddy Bear Escape Game - a boy escape game",
@@ -2223,7 +2223,7 @@ const platform = [
   },
   {
     "Game": "Connect Four Multiplayer",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sudoku!",
@@ -2235,7 +2235,7 @@ const platform = [
   },
   {
     "Game": "Heo Bay",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tap Tap Pixel Zombies",
@@ -2271,7 +2271,7 @@ const platform = [
   },
   {
     "Game": "BTS Wars - Battle Tendy Star",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Plumber Puzzle Crack The Code",
@@ -2307,7 +2307,7 @@ const platform = [
   },
   {
     "Game": "Sudoku (Free)",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Malachai: Jumpscare Horror Game",
@@ -2315,7 +2315,7 @@ const platform = [
   },
   {
     "Game": "Arma Tactics Lite",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Idle Funny Factory",
@@ -2343,7 +2343,7 @@ const platform = [
   },
   {
     "Game": "Legend Defense - World Combat",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "LinkSys - Draw flow puzzle",
@@ -2355,7 +2355,7 @@ const platform = [
   },
   {
     "Game": "A.C.O.R.N.S.",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Catch the balls",
@@ -2367,7 +2367,7 @@ const platform = [
   },
   {
     "Game": "VPET Gen2",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mafia Life: crime games!",
@@ -2379,7 +2379,7 @@ const platform = [
   },
   {
     "Game": "Brave Warriors - Palm Loops with Hot Spot Marbles",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "War with Goblins: Domination",
@@ -2427,7 +2427,7 @@ const platform = [
   },
   {
     "Game": "New Ball Blast Challenge",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Ancient buzzland",
@@ -2447,15 +2447,15 @@ const platform = [
   },
   {
     "Game": "Fruit Line Link Quest Match Puzzle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Warship Girls",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Classic Nim",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Guardian Kingdoms",
@@ -2499,7 +2499,7 @@ const platform = [
   },
   {
     "Game": "Big Elephant Simulator: Wild African Animal 3D Full",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Arba3meyeh 400 Scoreboard",
@@ -2555,11 +2555,11 @@ const platform = [
   },
   {
     "Game": "Birds and the Bees",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Lemonade Hero",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Paragon Kingdom: Arena",
@@ -2571,7 +2571,7 @@ const platform = [
   },
   {
     "Game": "Candy Sweets Blast - 3 puzzle match splash mania",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Cooking City - Chefs Game",
@@ -2603,11 +2603,11 @@ const platform = [
   },
   {
     "Game": "Dead Zone: Zombie Crisis",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Black vs White for iMessage",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tank Battle: East Front",
@@ -2679,7 +2679,7 @@ const platform = [
   },
   {
     "Game": "Dragon.io Legends Pro - Classic Crazy Battle of Glwoing Snakes",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bug Bash Challenge",
@@ -2695,7 +2695,7 @@ const platform = [
   },
   {
     "Game": "Police Toss - Throw Paper and don`t get in Jail",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Digfender",
@@ -2711,11 +2711,11 @@ const platform = [
   },
   {
     "Game": "Little Warlock School",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sea Battle Multiplayer - Play online with friends",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Missile Defense Japan",
@@ -2755,7 +2755,7 @@ const platform = [
   },
   {
     "Game": "911 Operator",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Unroll Your Ball:Brainstorming",
@@ -2799,7 +2799,7 @@ const platform = [
   },
   {
     "Game": "Zombies Drop - Join The Shooter Mania And Make Em Disappear Like Stupid Bubbles",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Hamsters vs Zombie Cats",
@@ -2831,7 +2831,7 @@ const platform = [
   },
   {
     "Game": "DropBall.",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Idle Tower Tycoon",
@@ -2855,7 +2855,7 @@ const platform = [
   },
   {
     "Game": "Tank Raid Online",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pico100",
@@ -2883,7 +2883,7 @@ const platform = [
   },
   {
     "Game": "Dots N Lines",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Slip away Even Harder",
@@ -2899,7 +2899,7 @@ const platform = [
   },
   {
     "Game": "Navy Gunner Warship",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "TRADE ON - Social trading",
@@ -2931,7 +2931,7 @@ const platform = [
   },
   {
     "Game": "Jewels legend Star 2",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Checkers: Online Board Game",
@@ -3019,7 +3019,7 @@ const platform = [
   },
   {
     "Game": "Call of Nations : War Duty",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Arctic Defences - Defend Your Island And Beach From The Zombie Dictator",
@@ -3091,7 +3091,7 @@ const platform = [
   },
   {
     "Game": "Viruses in War",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Feed My Cat : Cat games for Cat lovers",
@@ -3099,7 +3099,7 @@ const platform = [
   },
   {
     "Game": "Flying Guardian Rush - Tappy Grub Mania",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Minesweeper!",
@@ -3107,7 +3107,7 @@ const platform = [
   },
   {
     "Game": "Tic Tac Four",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Shooting Arrows",
@@ -3131,11 +3131,11 @@ const platform = [
   },
   {
     "Game": "Dont Catch The Mask",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Fish Balls",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Knights Reforged",
@@ -3171,7 +3171,7 @@ const platform = [
   },
   {
     "Game": "Snow Army Sniper Shooting War",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Nail Inspiration",
@@ -3191,7 +3191,7 @@ const platform = [
   },
   {
     "Game": "CW_Fliporama",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "DJ Speedball - Fast Arcade Ball Action",
@@ -3219,7 +3219,7 @@ const platform = [
   },
   {
     "Game": "Mighty Little War Dragon - A Game Set in the Age of Magic",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Idle Hoarding 2",
@@ -3243,7 +3243,7 @@ const platform = [
   },
   {
     "Game": "Super Jewel Mania 3 : Egypt Quest Match 3 Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Quad-Core Brain",
@@ -3251,7 +3251,7 @@ const platform = [
   },
   {
     "Game": "Breakout the Prison:Puzzle Escape",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "LarvaGame",
@@ -3283,7 +3283,7 @@ const platform = [
   },
   {
     "Game": "Pixel Driller",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Robot Invasion SF",
@@ -3315,11 +3315,11 @@ const platform = [
   },
   {
     "Game": "Lines Challenge",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Junkyard Futbol World Play for the Cup - Fun VIrtual Flick Simulator",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "NumberLogicStrategy",
@@ -3363,11 +3363,11 @@ const platform = [
   },
   {
     "Game": "Light GO 13x",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Go Jump Pro",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Clash of Legends: Heroes",
@@ -3391,7 +3391,7 @@ const platform = [
   },
   {
     "Game": "Pragmatic Leadership",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Infect Them All 2 : Zombies",
@@ -3415,7 +3415,7 @@ const platform = [
   },
   {
     "Game": "TowrCraft HD",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "LINE I Love Coffee",
@@ -3471,7 +3471,7 @@ const platform = [
   },
   {
     "Game": "Dice Slide",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Neighbors",
@@ -3491,7 +3491,7 @@ const platform = [
   },
   {
     "Game": "Emoji Fun - Tic Tac Toe",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Crazy Animal Pop: Bubble Shooter",
@@ -3531,7 +3531,7 @@ const platform = [
   },
   {
     "Game": "Formula Clicker Idle Tycoon",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "REVLUX Reverseit",
@@ -3539,7 +3539,7 @@ const platform = [
   },
   {
     "Game": "Battle-Boats Extreme",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Drago Fruit",
@@ -3551,7 +3551,7 @@ const platform = [
   },
   {
     "Game": "Donkey Toy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Double Rainbow - The dangerously addicting (and colorful) game",
@@ -3567,7 +3567,7 @@ const platform = [
   },
   {
     "Game": "Wild Defense - TD Idle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Alpha-Beta",
@@ -3579,7 +3579,7 @@ const platform = [
   },
   {
     "Game": "Stacky Block",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Generals. Art of War",
@@ -3667,7 +3667,7 @@ const platform = [
   },
   {
     "Game": "Bird Control - Wings And Fly!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Kings Bounty Legions: Tactics",
@@ -3723,7 +3723,7 @@ const platform = [
   },
   {
     "Game": "World Zombie Contest",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "PCK OIL IN",
@@ -3791,7 +3791,7 @@ const platform = [
   },
   {
     "Game": "Blindfold Wildcard",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Super Chef World",
@@ -3843,7 +3843,7 @@ const platform = [
   },
   {
     "Game": "Idle Funny Factory",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Red Conquest! (Episodes 1 & 2!)",
@@ -3851,7 +3851,7 @@ const platform = [
   },
   {
     "Game": "Onymax",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "To Russia With Love",
@@ -3867,7 +3867,7 @@ const platform = [
   },
   {
     "Game": "Colored-Path",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "DoMiNo",
@@ -3891,7 +3891,7 @@ const platform = [
   },
   {
     "Game": "Hold a Second - Reaction Time Challenge Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Girl Clickers - Click Your Way And Win A Cookie",
@@ -3907,7 +3907,7 @@ const platform = [
   },
   {
     "Game": "Doge Miner - Doge Coin Clicker",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Castles War",
@@ -3923,7 +3923,7 @@ const platform = [
   },
   {
     "Game": "MNARH",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bees Gone Bonkers Full",
@@ -3951,7 +3951,7 @@ const platform = [
   },
   {
     "Game": "Idle Football Match",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Th\\u1ea7n Long 3Q - Chu\\u1ea9n Tam Qu\\u1ed1c",
@@ -3983,7 +3983,7 @@ const platform = [
   },
   {
     "Game": "Chess at ICC, play & learn",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Acentua\\xe7\\xe3o das parox\\xedtonas",
@@ -4027,7 +4027,7 @@ const platform = [
   },
   {
     "Game": "MechWarrior: Tactical Command",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tower Blockade - Simple TD, Challenge With Friends",
@@ -4035,7 +4035,7 @@ const platform = [
   },
   {
     "Game": "Rome Defenders: The First Wave",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mahjongg - China",
@@ -4043,11 +4043,11 @@ const platform = [
   },
   {
     "Game": "AdriftAtSea",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tower Builder : Top Fun Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Snakes.io",
@@ -4075,7 +4075,7 @@ const platform = [
   },
   {
     "Game": "Raiden Fighter Hero",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Big Ball !",
@@ -4119,7 +4119,7 @@ const platform = [
   },
   {
     "Game": "Stack Away - Organize As The Plan States",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pimple Popping : Warning Highly Explosive and a Little Gross!",
@@ -4143,11 +4143,11 @@ const platform = [
   },
   {
     "Game": "ZiggerZagger",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Turn - Escape from enemy! Collect coins!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Air Hockey 3D Game",
@@ -4155,7 +4155,7 @@ const platform = [
   },
   {
     "Game": "Going Back Home",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Guide for Final Fantasy",
@@ -4163,7 +4163,7 @@ const platform = [
   },
   {
     "Game": "Surch",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "CometSwap",
@@ -4227,7 +4227,7 @@ const platform = [
   },
   {
     "Game": "Tap n Pop 3: Balloon Adventures",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tic Tac Toe - Noughts or Crosses",
@@ -4239,7 +4239,7 @@ const platform = [
   },
   {
     "Game": "RC Tank Battle-Ground War-fare",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "ChartFight SP",
@@ -4247,7 +4247,7 @@ const platform = [
   },
   {
     "Game": "Super Leprechauns Gold Rush - Rainbow World Mayhem Free",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Inside Trader Lite 3",
@@ -4263,7 +4263,7 @@ const platform = [
   },
   {
     "Game": "Royal Survival Strike Force",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Demonic Flower TD - Kingdom Defense",
@@ -4295,7 +4295,7 @@ const platform = [
   },
   {
     "Game": "Crab Race Turbo Challenge",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Rentopoly Milwaukee",
@@ -4303,7 +4303,7 @@ const platform = [
   },
   {
     "Game": "Callisto Security Escape",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Rising Billionaire - You are the next Billionaire, the road to $ Riches and Money & croft",
@@ -4335,7 +4335,7 @@ const platform = [
   },
   {
     "Game": "Hexas!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bubble Zombie Animal Safari Shooter",
@@ -4403,11 +4403,11 @@ const platform = [
   },
   {
     "Game": "Off-Road Transport Trailer",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Fire Emblem Heroes",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Play Perfect Video Poker Lite",
@@ -4483,7 +4483,7 @@ const platform = [
   },
   {
     "Game": "Backgammon Gold PREMIUM",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "WarOfBugs",
@@ -4511,7 +4511,7 @@ const platform = [
   },
   {
     "Game": "Stormfall: Rise of Balur",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Trackstone - Deck tracker",
@@ -4563,7 +4563,7 @@ const platform = [
   },
   {
     "Game": "Christmas Advent Calendar 2019",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "World War-Epic 3D Naval Battle",
@@ -4571,15 +4571,15 @@ const platform = [
   },
   {
     "Game": "Warship City 1945\\xae",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Jeans Club Deluxe",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mage&Maze",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Snake: Retro",
@@ -4623,7 +4623,7 @@ const platform = [
   },
   {
     "Game": "Mutility Life Counter for MTG",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Heroes: Forgotten Realm -- a traditional turn-based strategy game",
@@ -4647,7 +4647,7 @@ const platform = [
   },
   {
     "Game": "Ghost Bricks App - Fun games in the after life",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Kullurz: Loops",
@@ -4659,7 +4659,7 @@ const platform = [
   },
   {
     "Game": "BubblePop",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Aetherspace - Starship combat",
@@ -4679,11 +4679,11 @@ const platform = [
   },
   {
     "Game": "Odds4Poker - 7-Card Stud",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pop The Camz",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "C-Wipe",
@@ -4699,11 +4699,11 @@ const platform = [
   },
   {
     "Game": "Epic Clicker - Saga Of Middle Earth",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Puzzling Rush",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mexico Simulator 2",
@@ -4743,7 +4743,7 @@ const platform = [
   },
   {
     "Game": "Undead Nation: Last Shelter",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Ball Breaker Pop",
@@ -4771,11 +4771,11 @@ const platform = [
   },
   {
     "Game": "Parking Challenges - Car Parking Simulation Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Robosop",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Empire Expansion - Spartas Invasion",
@@ -4783,11 +4783,11 @@ const platform = [
   },
   {
     "Game": "Groove Planet - Rhythm Clicker",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Star Nomad 2",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Airport Ops - Chaos Management",
@@ -4803,11 +4803,11 @@ const platform = [
   },
   {
     "Game": "Miss Milligan",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Trader Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Squarely",
@@ -4815,7 +4815,7 @@ const platform = [
   },
   {
     "Game": "Laser Logic 3D",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Football Crew",
@@ -4827,7 +4827,7 @@ const platform = [
   },
   {
     "Game": "INVASION: \\u0635\\u0642\\u0648\\u0631 \\u0627\\u0644\\u0639\\u0631\\u0628",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sniper Safari Hunting Warrior",
@@ -4855,7 +4855,7 @@ const platform = [
   },
   {
     "Game": "FefePicole Drinking game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "SimInvest",
@@ -4875,7 +4875,7 @@ const platform = [
   },
   {
     "Game": "Croco Evolution Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Zombie Warehouse - Z Battle for the Death of the Mystery Kingdom - Free version",
@@ -4887,7 +4887,7 @@ const platform = [
   },
   {
     "Game": "Super Tank - Battle 1990",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Crossy Bounce Trap Pro",
@@ -4907,7 +4907,7 @@ const platform = [
   },
   {
     "Game": "Ball-Toss",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Flags and Cities of the World",
@@ -4927,7 +4927,7 @@ const platform = [
   },
   {
     "Game": "Tower Defense: Invasion",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Fish Craft",
@@ -4935,7 +4935,7 @@ const platform = [
   },
   {
     "Game": "Smiley Blocks - Paint Puzzles",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Marshmallow Star Free",
@@ -4987,7 +4987,7 @@ const platform = [
   },
   {
     "Game": "Thief",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Penguin Beach Danger Dash Blitz",
@@ -5027,7 +5027,7 @@ const platform = [
   },
   {
     "Game": "Hero Masters - Idle RPG Battle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Crabby Coast",
@@ -5039,11 +5039,11 @@ const platform = [
   },
   {
     "Game": "Traffic Crossing",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Rich Mans China",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Forest Defense",
@@ -5071,7 +5071,7 @@ const platform = [
   },
   {
     "Game": "Grizzly Bear Hunt-ing Bullet Juggle Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Diamond Clicker - Crafting Edition Minigame",
@@ -5091,7 +5091,7 @@ const platform = [
   },
   {
     "Game": "Heroes of Order & Chaos",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Niggle (Oh Hell)",
@@ -5103,7 +5103,7 @@ const platform = [
   },
   {
     "Game": "Pay The King",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Skimpy Ninja",
@@ -5143,7 +5143,7 @@ const platform = [
   },
   {
     "Game": "Fix It New Baby Born House Makeover",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mayor! Mayor! Lite",
@@ -5159,7 +5159,7 @@ const platform = [
   },
   {
     "Game": "Haze of War",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Crazy Crawler",
@@ -5251,7 +5251,7 @@ const platform = [
   },
   {
     "Game": "Jump box - the challenge",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Catapult Bird Sling Shooter : A Fly Bubble Birdy Hunter Game",
@@ -5263,7 +5263,7 @@ const platform = [
   },
   {
     "Game": "Rabbit in the moon",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Jewel Forest Candy Pop - FREE Addictive Match 3 Puzzle Game for Kids and Fiends",
@@ -5283,7 +5283,7 @@ const platform = [
   },
   {
     "Game": "Hexapies",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tens\\u2122",
@@ -5311,7 +5311,7 @@ const platform = [
   },
   {
     "Game": "Egg Frenzy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Infection: Humanitys Last Gasp",
@@ -5319,7 +5319,7 @@ const platform = [
   },
   {
     "Game": "Zombie Anarchy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Clean-up",
@@ -5363,7 +5363,7 @@ const platform = [
   },
   {
     "Game": "Flaming Go - Survive",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mutants: Genetic Gladiators",
@@ -5371,7 +5371,7 @@ const platform = [
   },
   {
     "Game": "HUNTER 2019",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Real City Builder 3D",
@@ -5387,11 +5387,11 @@ const platform = [
   },
   {
     "Game": "GunboundM",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bear Pop - Bubble Shooter Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "TDMM Heroes 3 TD:Tower Defense",
@@ -5407,15 +5407,15 @@ const platform = [
   },
   {
     "Game": "Vintage Jig-saw Free Puzzle To Kill Time",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "99 Birds, Shooting Match 3",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Couple Beach Kiss Love Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Teachley: Addimals EDU",
@@ -5455,15 +5455,15 @@ const platform = [
   },
   {
     "Game": "KIM CITY",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "METAL SLUG DEFENSE",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "I Am Pentagon - The Shapes Uprise",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sky War iO",
@@ -5539,7 +5539,7 @@ const platform = [
   },
   {
     "Game": "Amazing Candy Drop Mania",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Scotland Yard Master",
@@ -5635,7 +5635,7 @@ const platform = [
   },
   {
     "Game": "Rail Maze : Train Puzzler",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Escape The Classroom",
@@ -5651,7 +5651,7 @@ const platform = [
   },
   {
     "Game": "Last Arrows",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Lux Touch 3 - World Domination",
@@ -5731,7 +5731,7 @@ const platform = [
   },
   {
     "Game": "Warfare Nations: Classical",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "BattleCry: World War Game",
@@ -5751,7 +5751,7 @@ const platform = [
   },
   {
     "Game": "Loot Planet",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "SAC Puzzles",
@@ -5771,11 +5771,11 @@ const platform = [
   },
   {
     "Game": "Voxel Defense",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Zombie Pirates War",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Defend the Brain : Right Left Brain Test",
@@ -5795,7 +5795,7 @@ const platform = [
   },
   {
     "Game": "Super kid",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Clash of Battleships - COB",
@@ -5823,11 +5823,11 @@ const platform = [
   },
   {
     "Game": "8 pool billiards 8 ball 3d",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mildly Interesting RTS",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Cartoon Collection Gemstones - Last Collection",
@@ -5835,7 +5835,7 @@ const platform = [
   },
   {
     "Game": "Shoot Shoot!!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Check Match",
@@ -5847,7 +5847,7 @@ const platform = [
   },
   {
     "Game": "Crazy Caps HD",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Deep Space",
@@ -5859,7 +5859,7 @@ const platform = [
   },
   {
     "Game": "Fewer - Math Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "West Tour Defense",
@@ -5875,7 +5875,7 @@ const platform = [
   },
   {
     "Game": "Man VS. Monster",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "HexSaw - Shadows",
@@ -5899,7 +5899,7 @@ const platform = [
   },
   {
     "Game": "Best of Solitaire",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "2048 Random Bombs - (classic 3x3, 4x4, 5x5 2408)",
@@ -5911,11 +5911,11 @@ const platform = [
   },
   {
     "Game": "Tiny Farm Planet - Idle Clicker Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Idle Fishing Tycoon",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Flight City\\u2122",
@@ -5931,7 +5931,7 @@ const platform = [
   },
   {
     "Game": "Hadrians Wall. The most heavily fortified border in the Roman Empire - Virtual 3D Tour & Travel Guide of Brunton Turret (Lite version)",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pirate Ring",
@@ -5943,7 +5943,7 @@ const platform = [
   },
   {
     "Game": "UniWar: Multiplayer Strategy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Zombie Outbreak Simulator",
@@ -5963,7 +5963,7 @@ const platform = [
   },
   {
     "Game": "Star Conquest - Galaxian Trek and Planet Wars (HD)",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Smart Mouse Puzzle",
@@ -5971,7 +5971,7 @@ const platform = [
   },
   {
     "Game": "Animal Defense - Lets defeat 300 animals!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Cube Breaker HD",
@@ -5983,7 +5983,7 @@ const platform = [
   },
   {
     "Game": "Magic Block : Merge Miss!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Mega Stack",
@@ -6007,7 +6007,7 @@ const platform = [
   },
   {
     "Game": "Hero Masters - Idle RPG Battle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Space Horizon Planet Swoop",
@@ -6087,7 +6087,7 @@ const platform = [
   },
   {
     "Game": "Original Mahjong\\u2122",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Princess And Knight",
@@ -6187,7 +6187,7 @@ const platform = [
   },
   {
     "Game": "PuzPix",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "5 Nights of Nightmares - Horror Game",
@@ -6195,7 +6195,7 @@ const platform = [
   },
   {
     "Game": "Haypi Pirates",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "GD Tracker",
@@ -6211,11 +6211,11 @@ const platform = [
   },
   {
     "Game": "Magic Alchemist Springtime",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Treasure Miner Lite - 2d gem",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Animals Memory Puzzle Game for Kids",
@@ -6227,7 +6227,7 @@ const platform = [
   },
   {
     "Game": "Cobra.io: Endless Hungry Color Worm Battle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Unicorns and Rainbows",
@@ -6239,7 +6239,7 @@ const platform = [
   },
   {
     "Game": "Lone Royal Archer : Free the kidnapped Princess",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Warriors of Nom Nom: Food Court Eating Challenge",
@@ -6303,7 +6303,7 @@ const platform = [
   },
   {
     "Game": "Hex Board Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Conference Room Escape",
@@ -6343,7 +6343,7 @@ const platform = [
   },
   {
     "Game": "Times Tables x kids math games",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "War Memory",
@@ -6351,7 +6351,7 @@ const platform = [
   },
   {
     "Game": "Happy Nonogram",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Kingdoms & Lords - Prepare for Strategy and Battle!",
@@ -6399,7 +6399,7 @@ const platform = [
   },
   {
     "Game": "Lovely christmas jigsaw",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Woods Defense: Fairys Power",
@@ -6411,7 +6411,7 @@ const platform = [
   },
   {
     "Game": "Jelly Dot Saga: Best Addictive Puzzle & Strategy Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "TicTac OnFly",
@@ -6431,7 +6431,7 @@ const platform = [
   },
   {
     "Game": "Gem Slider Puzzle Challenge",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "City Climb",
@@ -6459,15 +6459,15 @@ const platform = [
   },
   {
     "Game": "Chef Craze - Food Cooking Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Poker Tools",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bartender Simulator: Mix Delicious Drinks",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pals Popping",
@@ -6483,7 +6483,7 @@ const platform = [
   },
   {
     "Game": "Cartoon Wars Lite",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Egg Frenzy",
@@ -6527,7 +6527,7 @@ const platform = [
   },
   {
     "Game": "Bug Smash - Dont Tap the white tile & splat the Bugs Piano Style",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Branny",
@@ -6539,7 +6539,7 @@ const platform = [
   },
   {
     "Game": "ADVANCE CHECKERS",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Cap Trick",
@@ -6587,7 +6587,7 @@ const platform = [
   },
   {
     "Game": "City Plane Tracks Builders",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Fire Ball Around",
@@ -6595,11 +6595,11 @@ const platform = [
   },
   {
     "Game": "Encantadia Blast",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Street Elements Stickers",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Hungry Heroes",
@@ -6615,7 +6615,7 @@ const platform = [
   },
   {
     "Game": "Insect Showdown - Dirty Line Feeding",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Vertigo - Binaural Beats",
@@ -6635,11 +6635,11 @@ const platform = [
   },
   {
     "Game": "Cute Puppy Dog Running Adventure",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Avalon Wars",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Caldera Tropics",
@@ -6751,7 +6751,7 @@ const platform = [
   },
   {
     "Game": "2049\\u732b\\u732b\\u6765\\u4e86",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Make That Money",
@@ -6775,7 +6775,7 @@ const platform = [
   },
   {
     "Game": "Jelly Slide FREE - Fun and Brain Teasing Puzzle Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tank Marshal: Battle King",
@@ -6859,7 +6859,7 @@ const platform = [
   },
   {
     "Game": "Candy Love - Candyland Mania",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Jewel Destroyer",
@@ -6915,11 +6915,11 @@ const platform = [
   },
   {
     "Game": "Spell Comparator Clash Royale",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Stock Master: realtime stocks",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Wargame Korea 1950",
@@ -6931,7 +6931,7 @@ const platform = [
   },
   {
     "Game": "Little Arrow Shooting Games 3D",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Zombie Go Ballistic: Rampaging",
@@ -6963,11 +6963,11 @@ const platform = [
   },
   {
     "Game": "Robot Ravage",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "CRAZY CHICKEN strikes back",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Card Wars - Adventure Time Card Game",
@@ -6979,7 +6979,7 @@ const platform = [
   },
   {
     "Game": "Jurassic Animal Transport Sim",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Gran vs. Aliens - Shootem",
@@ -7023,7 +7023,7 @@ const platform = [
   },
   {
     "Game": "Cake Catapult - Delicious Dessert",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Checkers: Online Board Game",
@@ -7043,7 +7043,7 @@ const platform = [
   },
   {
     "Game": "Vengeance Fighters",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Catch The Pou",
@@ -7063,7 +7063,7 @@ const platform = [
   },
   {
     "Game": "Gotcha! Board Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tales of Inca: Lost Land",
@@ -7075,15 +7075,15 @@ const platform = [
   },
   {
     "Game": "Galaxy Wars:Empire",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Interstellar Defense",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Warfare Incorporated",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Destroy9 - Alien Free",
@@ -7099,7 +7099,7 @@ const platform = [
   },
   {
     "Game": "Conceptis Nurikabe",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Dungeon School Lite",
@@ -7159,11 +7159,11 @@ const platform = [
   },
   {
     "Game": "Spell Comparator Clash Royale",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Extreme Truck Parking 2017",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "X and O",
@@ -7187,7 +7187,7 @@ const platform = [
   },
   {
     "Game": "WellFlung",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Robot Warrior Tower Defense",
@@ -7199,7 +7199,7 @@ const platform = [
   },
   {
     "Game": "Weed Cookie Clicker - Run A Ganja Bakery Firm & Hemp Shop With High Profits",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Awari: The African Stone Game",
@@ -7211,7 +7211,7 @@ const platform = [
   },
   {
     "Game": "Dune Warrior",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tik Tak Attack",
@@ -7223,7 +7223,7 @@ const platform = [
   },
   {
     "Game": "Woggle Tricky - Fun Word Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Learn Pinyin English Math Class",
@@ -7271,7 +7271,7 @@ const platform = [
   },
   {
     "Game": "Space Ships WAR: 3D Battles TD",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "2048 ! New Amazing Version",
@@ -7287,11 +7287,11 @@ const platform = [
   },
   {
     "Game": "Hidden Objects Of A Special Christmas",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Crypto Exchange: Bitcoin & Alt",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Army Tank: World Battle",
@@ -7311,7 +7311,7 @@ const platform = [
   },
   {
     "Game": "Dobyvatel",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Matrix Jumping",
@@ -7327,7 +7327,7 @@ const platform = [
   },
   {
     "Game": "Battle Simulator Royale",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tappit - The Finger Twister",
@@ -7427,7 +7427,7 @@ const platform = [
   },
   {
     "Game": "RISK: TV Edition",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Halma online",
@@ -7435,7 +7435,7 @@ const platform = [
   },
   {
     "Game": "Hidden Objects Of The Enchanted Forest",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "CatGo",
@@ -7475,7 +7475,7 @@ const platform = [
   },
   {
     "Game": "Marble Math",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Panzer Campaigns - Smolensk 41",
@@ -7491,7 +7491,7 @@ const platform = [
   },
   {
     "Game": "Coding Galaxy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Ancestors:stories of Atapuerca",
@@ -7511,7 +7511,7 @@ const platform = [
   },
   {
     "Game": "Dead Zombie War Shooting",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Samurai Assassin: Ninja Slayer",
@@ -7531,7 +7531,7 @@ const platform = [
   },
   {
     "Game": "Platoon Troops",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Zombies Clash:Fighting Hero",
@@ -7547,7 +7547,7 @@ const platform = [
   },
   {
     "Game": "Diffuse!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Wordris HD - by Boathouse Games",
@@ -7567,7 +7567,7 @@ const platform = [
   },
   {
     "Game": "Wannabe Bird",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Battle for Candora",
@@ -7595,7 +7595,7 @@ const platform = [
   },
   {
     "Game": "WellFlung",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "WatchInvaders",
@@ -7631,7 +7631,7 @@ const platform = [
   },
   {
     "Game": "Battle of Legendary Kingdoms",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bouncing Frog Strategy Game",
@@ -7675,7 +7675,7 @@ const platform = [
   },
   {
     "Game": "Klondike Solitaire Swift",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Land Air Sea Warfare HD RTS",
@@ -7683,11 +7683,11 @@ const platform = [
   },
   {
     "Game": "C\\u1edd Caro Panda Mi\\u1ec5n Ph\\xed",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "NumBuddies",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pirate Never Die",
@@ -7739,7 +7739,7 @@ const platform = [
   },
   {
     "Game": "Hot Girls & Guys Sliding Puzzle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Flying Pegasus: Magic Horse Simulator 3D",
@@ -7747,11 +7747,11 @@ const platform = [
   },
   {
     "Game": "C\\u1edd t\\u01b0\\u1edbng - video th\\u1ebf c\\u1edd, c\\u1edd \\xfap tr\\xean Youtube",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Ninja Goemon and Immortal Jewel",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Fury of the Gods AR",
@@ -7767,7 +7767,7 @@ const platform = [
   },
   {
     "Game": "Aliens World Conquer",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Gomoku (Renju,Gobang)",
@@ -7795,7 +7795,7 @@ const platform = [
   },
   {
     "Game": "Germs Attacks The Game - Fighting Against Disease",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Cake Delivery Race - Sweet Treat Rush",
@@ -7827,7 +7827,7 @@ const platform = [
   },
   {
     "Game": "Bugs Smasher: Tap to Kill Puzzle Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Sea Shark Survival Simulator 3D Full",
@@ -7923,11 +7923,11 @@ const platform = [
   },
   {
     "Game": "M&A Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Fun With Flags Fun Edition",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Monsters War Saga - Eat Them All",
@@ -7935,7 +7935,7 @@ const platform = [
   },
   {
     "Game": "Frog Shoot Ball Zaczo Pro",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Invisible Shadow Online",
@@ -7943,7 +7943,7 @@ const platform = [
   },
   {
     "Game": "Dinosaurs World",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "NS Sudoku",
@@ -7955,11 +7955,11 @@ const platform = [
   },
   {
     "Game": "IQ Block",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Morocco HD",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Real Drive Army Truck",
@@ -8015,11 +8015,11 @@ const platform = [
   },
   {
     "Game": "Beet and Petes Car Dealer",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "MatchFish Memory Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "FlipPix Jigsaw - Zapatos",
@@ -8031,7 +8031,7 @@ const platform = [
   },
   {
     "Game": "Deadly Hospital and Lab - Stickman Edition",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Defense: Toy Empire",
@@ -8039,7 +8039,7 @@ const platform = [
   },
   {
     "Game": "Smallest Dungeon",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Swipe Down",
@@ -8083,7 +8083,7 @@ const platform = [
   },
   {
     "Game": "Smash Monster Pumpkins: Crazy Halloween Countdown Party",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "CTOR: Brain Strategy",
@@ -8107,7 +8107,7 @@ const platform = [
   },
   {
     "Game": "FACT OR WACK",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "BBTAN : 7YEARS",
@@ -8119,7 +8119,7 @@ const platform = [
   },
   {
     "Game": "Tappy Lines",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pizza Making Madness",
@@ -8135,7 +8135,7 @@ const platform = [
   },
   {
     "Game": "Kingdom Royale - Conquerors",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Hungry Squares",
@@ -8167,7 +8167,7 @@ const platform = [
   },
   {
     "Game": "Toy Defense Fantasy \\u2014 TD Tower",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Farm Tycoon Idle Business Game",
@@ -8191,7 +8191,7 @@ const platform = [
   },
   {
     "Game": "FireJumpers - Sandbox",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Girls Cooking Games - Free barbecue cooking games",
@@ -8215,7 +8215,7 @@ const platform = [
   },
   {
     "Game": "Farm Animal Rescue - Quick Barn Matching Mania Free",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Wallpapers for Halo Wars 2 (4K UHD)",
@@ -8223,7 +8223,7 @@ const platform = [
   },
   {
     "Game": "Car Escape 1-4: Nowhere to go",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Ball Trickster 2019",
@@ -8275,7 +8275,7 @@ const platform = [
   },
   {
     "Game": "Adventure Monsters Lost in Space \\u2013 Demon vs. Alien War of the Galaxy",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Giza Solitaire",
@@ -8371,11 +8371,11 @@ const platform = [
   },
   {
     "Game": "Aircraft Oops - Build Airport",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Space Punks - Invaders Clash",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Hexagon War",
@@ -8383,7 +8383,7 @@ const platform = [
   },
   {
     "Game": "Extreme Car Parking Frenzy 2",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "RC Tank Battle-Ground War-fare",
@@ -8399,7 +8399,7 @@ const platform = [
   },
   {
     "Game": "Fighter Defense - War Tower",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "US Pilot - Flight Simulator",
@@ -8415,7 +8415,7 @@ const platform = [
   },
   {
     "Game": "Battleship Board Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Time-Turner",
@@ -8467,7 +8467,7 @@ const platform = [
   },
   {
     "Game": "Evil Corp. 2",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Conceptis SeaBattle",
@@ -8487,7 +8487,7 @@ const platform = [
   },
   {
     "Game": "Gravity",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Narde Backgammon",
@@ -8495,7 +8495,7 @@ const platform = [
   },
   {
     "Game": "Hungry Squares",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Hidden Object Around the World Objects Travel Time",
@@ -8515,7 +8515,7 @@ const platform = [
   },
   {
     "Game": "WellFlung",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "LFETorRight",
@@ -8587,7 +8587,7 @@ const platform = [
   },
   {
     "Game": "Crystal Masters Arena",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Soccer Clicker - Fast Idle Incremental Free Games",
@@ -8599,11 +8599,11 @@ const platform = [
   },
   {
     "Game": "SAT Resource - Ace the SAT through study reminder, prep tracker and a pre packaged set of math, vocab, English, reading and essay topics!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Drop Spin",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Merge Racing Cars",
@@ -8615,7 +8615,7 @@ const platform = [
   },
   {
     "Game": "FlipPix Jigsaw - Dragons",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Real Iron Robot Rivals: Little Steel Hero Battle",
@@ -8623,7 +8623,7 @@ const platform = [
   },
   {
     "Game": "Impossible Robo - 22 Hardly Possible Challenges",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Bouncyloop",
@@ -8631,7 +8631,7 @@ const platform = [
   },
   {
     "Game": "Pixel Sushi Restaurant Simulator",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tic Tac Toe - Epic",
@@ -8747,7 +8747,7 @@ const platform = [
   },
   {
     "Game": "Bumpy Clash",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Run the Roll",
@@ -8763,7 +8763,7 @@ const platform = [
   },
   {
     "Game": "Pick The Diamond Bunching Up",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Escape Preschool",
@@ -8831,7 +8831,7 @@ const platform = [
   },
   {
     "Game": "Gemollection II",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Conquer the Sea - Ultimate Block War against the Pixel Navy Empire",
@@ -8851,7 +8851,7 @@ const platform = [
   },
   {
     "Game": "Special Counter Terrorist VS Terrorist Group",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Candy Chefs: Match 3",
@@ -8867,7 +8867,7 @@ const platform = [
   },
   {
     "Game": "Worm Battle: Wormageddon",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Power Jumping - Adventure Game",
@@ -9023,7 +9023,7 @@ const platform = [
   },
   {
     "Game": "HexLogic - Lanterns",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Departed",
@@ -9039,11 +9039,11 @@ const platform = [
   },
   {
     "Game": "Stickman Wall Jump - No Ninja Dies",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Epic Defense TD 2 - the Wind Spells",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Collect The Flowers - Girls Game",
@@ -9083,11 +9083,11 @@ const platform = [
   },
   {
     "Game": "Sudoku Deluxe\\xae",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Master Mind Test Strategy Puzzle",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Reversi \\u03b1",
@@ -9147,7 +9147,7 @@ const platform = [
   },
   {
     "Game": "Rentopoly USA",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Easiest Game",
@@ -9155,7 +9155,7 @@ const platform = [
   },
   {
     "Game": "17 Blocks",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Twelve Days",
@@ -9179,11 +9179,11 @@ const platform = [
   },
   {
     "Game": "Town Battle Defense",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Weird Cup - The Worlds Craziest Soccer Mini Games",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Stickman Crime:Deadly Motel  - Click Death Strategy Murder Game",
@@ -9227,11 +9227,11 @@ const platform = [
   },
   {
     "Game": "Block Stack Line Up:  A twist blocks unblock free games",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Airfield Mania",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Codex Commander - Army Builder",
@@ -9243,7 +9243,7 @@ const platform = [
   },
   {
     "Game": "Filetto RT",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Stack The Frozen Ice Cube Blocks",
@@ -9271,7 +9271,7 @@ const platform = [
   },
   {
     "Game": "Biotix: Phage Genesis",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Santa Claus Christmas Dash: With Elf, Snowman & Reindeer",
@@ -9283,7 +9283,7 @@ const platform = [
   },
   {
     "Game": "Swords of Anima",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "AVALANCHA - SUPEREQUIPO NOCILLA",
@@ -9367,7 +9367,7 @@ const platform = [
   },
   {
     "Game": "PANDANET(Go)",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Crime Escape - Use The Rope And Fly Away",
@@ -9415,11 +9415,11 @@ const platform = [
   },
   {
     "Game": "Epic Robot City Fighting",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Cargo Crane & Car Delivery 3D Full",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Chain Reaction Classic",
@@ -9427,7 +9427,7 @@ const platform = [
   },
   {
     "Game": "The Towers of Hanoi",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Helix Bounce Ball",
@@ -9491,7 +9491,7 @@ const platform = [
   },
   {
     "Game": "ZombieRoshambo",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Chess Tiger",
@@ -9519,7 +9519,7 @@ const platform = [
   },
   {
     "Game": "Wargame:West Front",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Kawaii Plants - Merge Tycoon",
@@ -9583,7 +9583,7 @@ const platform = [
   },
   {
     "Game": "Protect The Bag",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Oil Transport Truck Simulator",
@@ -9591,7 +9591,7 @@ const platform = [
   },
   {
     "Game": "Dont Shoot Yourself!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Super High Rise Building Tower Stacker",
@@ -9651,7 +9651,7 @@ const platform = [
   },
   {
     "Game": "Mech Battle Simulator",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Blocks In Line",
@@ -9695,7 +9695,7 @@ const platform = [
   },
   {
     "Game": "Boxy Ball",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Fairy Tale Nail Salon - Put Some Art and Make Your Nails Beautiful!",
@@ -9707,7 +9707,7 @@ const platform = [
   },
   {
     "Game": "Swim accross the racing boats : the marina center kids game - Free Edition",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Melancholy 2",
@@ -9739,11 +9739,11 @@ const platform = [
   },
   {
     "Game": "F1 Manager",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Math Flash Cards \\xf7",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Blak Le Rat - Grafitti Edition",
@@ -9751,7 +9751,7 @@ const platform = [
   },
   {
     "Game": "Fruit Crush LIKE Game",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Tanks and Turrets 2",
@@ -9795,7 +9795,7 @@ const platform = [
   },
   {
     "Game": "Beast Battles",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "APORIA",
@@ -9831,7 +9831,7 @@ const platform = [
   },
   {
     "Game": "Secretion",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "GREG - A Mathematical Puzzle Game To Train Your Brain Skills",
@@ -9839,7 +9839,7 @@ const platform = [
   },
   {
     "Game": "XO by SoIn",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Conquest",
@@ -9851,7 +9851,7 @@ const platform = [
   },
   {
     "Game": "Magnet Hopper",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Math Games Arena",
@@ -9939,11 +9939,11 @@ const platform = [
   },
   {
     "Game": "Oh Balls!!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "TopDecked MTG",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Pool Bida Master World",
@@ -9951,7 +9951,7 @@ const platform = [
   },
   {
     "Game": "Agar: Summer Time!",
-    "Platform": "switch"
+    "Platform": "apple"
   },
   {
     "Game": "Brickz - Slide Puzzle",

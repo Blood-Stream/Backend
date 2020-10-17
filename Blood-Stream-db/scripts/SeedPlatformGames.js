@@ -21,7 +21,6 @@ async function run () {
       platform: el.Platform,
       game: el.Game
     }).catch(utils.handleFatalError)
-
     console.log(platforms)
     console.log('-------------------------------------')
   }

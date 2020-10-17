@@ -24,29 +24,35 @@ module.exports = (injectedStore) => {
     const platform = await Platform.findByPlatform(body.platform).catch(utils.handleFatalError)
     let games = await Games.findByName(body.game).catch(utils.handleFatalError)
     if (!platform || !games) return 'Not exist'
-    let platGame = await PlatformGames.findByPlGm(platform.id, games.id).catch(utils.handleFatalError)
+    console.log(games)
+    console.log(platform)
+    // let platGame = await PlatformGames.findByPlGm(platform.id, games.id).catch(utils.handleFatalError)
+
     let plGm = {
       uuid: null
     }
 
-    if (platGame === null) {
-      plGm.uuid = nanoid()
-    } else {
-      return 'Exist'
-    }
+    plGm.uuid = nanoid()
+    // if (platGame === null) {
+    // } else {
+    //   return 'Exist'
+    // }
 
-    games = {
-      id: games.id,
-      uuid: games.uuid,
-      Url_game: games.Url_Game,
-      Name: games.Name,
-      Developer: games.Developer
-    }
-
+    // games = {
+    //   id: games.id,
+    //   uuid: games.uuid,
+    //   Url_game: games.Url_Game,
+    //   Name: games.Name,
+    //   Developer: games.Developer
+    // }
+    // console.log(plGm)
+    // console.log(platform.uuid)
+    // console.log(games.uuid)
+    console.log('hola')
     plGm = await PlatformGames.createOrUpdate(games.uuid, platform.uuid, plGm)
 
-    plGm.platformGameId = platform
-    plGm.gameId = games
+    // plGm.platformGameId = platform
+    // plGm.gameId = games
 
     return plGm
   }

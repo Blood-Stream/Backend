@@ -6,6 +6,7 @@ const cors = require('cors')
 const config = require('./config')
 const routes = require('./routes/routes')
 const app = express()
+const con = require('../config/config')
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -26,5 +27,6 @@ routes(app).gamesRatingRoute()
 routes(app).errorsRoute()
 
 app.listen(config.api.port, () => {
+  console.log(con(false))
   console.log(`Api escuchando en el puerto ${config.api.port}`)
 })
