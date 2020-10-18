@@ -50,6 +50,10 @@ module.exports = function setupGamesModel (config) {
     Current_Version_Release_Date: {
       type: Sequelize.DATE,
       allowNull: true
+    },
+    indexes: {
+      unique: true,
+      fields: ['Name']
     }
   })
 }
