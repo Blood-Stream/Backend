@@ -36,7 +36,7 @@ const setupGamesRating = require('./lib/gamesRating')
 
 module.exports = async function (config) {
   config = defaults(config, {
-    dialect: 'sqlite',
+    dialect: 'postgres',
     pools: {
       max: 10,
       min: 0,
@@ -46,7 +46,6 @@ module.exports = async function (config) {
       raw: true
     }
   })
-  console.log(config)
 
   const sequelize = setupDatabase(config)
   const MessagesModel = setupMessageModel(config)
@@ -87,7 +86,7 @@ module.exports = async function (config) {
 
   await sequelize.authenticate()
 
-  sequelize.sync()
+  await sequelize.sync()
   if (config.setup) {
     await sequelize.sync({ force: true })
   }

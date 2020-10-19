@@ -15,5 +15,11 @@ module.exports = function setupPlatformModel (config) {
       type: Sequelize.STRING,
       allowNull: false
     }
+  },
+  {
+    indexes: [{
+      unique: false,
+      fields: ['Platform']
+    }]
   })
 }

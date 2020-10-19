@@ -19,5 +19,13 @@ module.exports = function setupMessageModel (config) {
       type: Sequelize.BOOLEAN,
       allowNull: false
     }
+  }, 
+  {
+    indexes: [
+      {
+        unique: false,
+        fields: ['Message']
+      }
+    ]
   })
 }

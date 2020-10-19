@@ -39,6 +39,11 @@ module.exports = function setupUsersModel (config) {
       type: Sequelize.INTEGER,
       allowNull: true
     }
-
+  },
+  {  
+    indexes: [{
+      unique: false,
+      fields: ['Nickname']
+    }]
   })
 }

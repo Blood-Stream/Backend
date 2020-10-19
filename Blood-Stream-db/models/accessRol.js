@@ -15,5 +15,13 @@ module.exports = function setupAccessRolModel (config) {
       type: Sequelize.STRING,
       allowNull: false
     }
+  },
+  {
+    indexes: [
+      {
+        unique: false,
+        fields: ['Rol']
+      }
+    ]
   })
 }
