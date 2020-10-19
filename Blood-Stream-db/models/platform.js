@@ -18,7 +18,7 @@ module.exports = function setupPlatformModel (config) {
   },
   {
     indexes: [{
-      unique: true,
+      unique: false,
       fields: ['Platform']
     }]
   })

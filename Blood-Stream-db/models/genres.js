@@ -19,7 +19,7 @@ module.exports = function setupGenresModel (config) {
   {
     indexes: [
       {
-        unique: true,
+        unique: false,
         fields: ['Genre']
       }
     ]

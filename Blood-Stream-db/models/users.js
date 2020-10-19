@@ -42,7 +42,7 @@ module.exports = function setupUsersModel (config) {
   },
   {  
     indexes: [{
-      unique: true,
+      unique: false,
       fields: ['Nickname']
     }]
   })

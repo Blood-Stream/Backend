@@ -55,7 +55,7 @@ module.exports = function setupGamesModel (config) {
     {
       indexes: [
         {
-          unique: true,
+          unique: false,
           fields: ['Name']
         }
       ]

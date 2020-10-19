@@ -22,7 +22,7 @@ module.exports = function setupLenguagesModel (config) {
   },
   {
     indexes: [{
-      unique: true,
+      unique: false,
       fields: ['Lenguages']
     }]
   })
