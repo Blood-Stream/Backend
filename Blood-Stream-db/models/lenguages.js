@@ -18,10 +18,12 @@ module.exports = function setupLenguagesModel (config) {
     Icon: {
       type: Sequelize.STRING,
       allowNull: false
-    },
-    indexes: {
+    }
+  },
+  {
+    indexes: [{
       unique: true,
       fields: ['Lenguages']
-    }
+    }]
   })
 }

@@ -36,7 +36,7 @@ const setupGamesRating = require('./lib/gamesRating')
 
 module.exports = async function (config) {
   config = defaults(config, {
-    dialect: 'sqlite',
+    dialect: 'postgres',
     pools: {
       max: 10,
       min: 0,
