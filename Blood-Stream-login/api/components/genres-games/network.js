@@ -42,9 +42,9 @@ const deleteMessage = (req, res, next) => {
   }
 
 // Routes
-router.get('/', passport.authenticate('jwt', { session: false }), list)
-router.get('/', passport.authenticate('jwt', { session: false }), get)
-router.post('/', passport.authenticate('jwt', { session: false }), upsert)
-router.delete('/:games&:genre', passport.authenticate('jwt', { session: false }), deleteMessage)
+router.get('/', list)
+router.get('/', get)
+router.post('/', upsert)
+router.delete('/:games&:genre', deleteMessage)
 
 module.exports = router

@@ -23,7 +23,7 @@ module.exports = function setupMessageModel (config) {
   {
     indexes: [
       {
-        unique: true,
+        unique: false,
         fields: ['Message']
       }
     ]

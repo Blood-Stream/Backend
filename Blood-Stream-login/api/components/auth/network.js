@@ -1,14 +1,14 @@
 'use strict'
 
 const express = require('express')
-
+const passport = require('passport')
 const response = require('../../../network/response')
 const controller = require('./index')
 const router = express.Router()
 const config = require('../../../../config/config')
-
-require('../utils/auth/strategies/google')
-require('../utils/auth/strategies/twitter')
+const boom = require('@hapi/boom')
+require('../../../utils/auth/strategies/google')
+require('../../../utils/auth/strategies/twitter')
 
 const login = (req, res, next) => {
   controller.login(req.body.nickname, req.body.password)
@@ -27,6 +27,7 @@ const retrievePass = (req, res, next) => {
 }
 
 const googleAuth = (req, res, next) => {
+  console.log(req)
   if (!req.user) next(boom.unauthorized())
   const { token, ...user } = req.user
   /* res.cookie("token", token, {
@@ -46,10 +47,10 @@ const twitterAuth = (req, res, next) => {
   res.status(200).json(user)
 }
 
-router.post('/auth/google', passport.authenticate("google", { scope: ["email", "profile", "openid"] }))
-router.post('/auth/google/callback', passport.authenticate("google", { session: false }), googleAuth)
-router.get('/auth/twitter', passport.authenticate('twitter'))
-router.get('/auth/twitter/callback', passport.authenticate('twitter', { session: false }), twitterAuth)
+router.post('/auth/google')
+router.post('/auth/google/callback', googleAuth)
+router.get('/auth/twitter')
+router.get('/auth/twitter/callback', twitterAuth)
 router.post('/login', login)
 router.post('/pass-retrieve', retrievePass)
 

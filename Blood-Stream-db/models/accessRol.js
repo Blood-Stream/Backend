@@ -19,7 +19,7 @@ module.exports = function setupAccessRolModel (config) {
   {
     indexes: [
       {
-        unique: true,
+        unique: false,
         fields: ['Rol']
       }
     ]

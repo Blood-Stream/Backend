@@ -6,7 +6,7 @@ const config = require('../config/config')
 const utils = require('./utils/index')
 
 async function setup () {
-  await db(config(false)).catch(utils.handleFatalError)
+  await db(config(true)).catch(utils.handleFatalError)
   console.log(`${chalk.bgGreen.black('[Connected]:')} Success!`)
   // process.exit(0)
 }
