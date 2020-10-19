@@ -18,6 +18,10 @@ module.exports = function setupMessageModel (config) {
     Post_Like: {
       type: Sequelize.BOOLEAN,
       allowNull: false
+    },
+    indexes: {
+      unique: true,
+      fields: ['Message']
     }
   })
 }

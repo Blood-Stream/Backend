@@ -14,6 +14,10 @@ module.exports = function setupGenresModel (config) {
     Genre: {
       type: Sequelize.STRING,
       allowNull: false
+    },
+    indexes: {
+      unique: true,
+      fields: ['Genre']
     }
   })
 }
