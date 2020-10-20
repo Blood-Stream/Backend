@@ -6,7 +6,6 @@ const { OAuth2Strategy } = require('passport-oauth')
 const axios = require('axios')
 const boom = require('@hapi/boom')
 const config = require('../../../../config/config')
-const { method } = require('lodash')
 
 const GOOGLE_AUTHORIZATION_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
 const GOOGLE_TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token';
@@ -22,26 +21,26 @@ const oAuth2Strategy = new OAuth2Strategy(
   },
   async (accessToken, refreshToken, profile, cb) => {
     const { data, status  } = await axios({
-      url: `${config.apiUrl}/user/login`,
+      url: `${config.apiUrl}/user/sign-provider`,
       method: 'post',
       data: {
-        name: profile.name,
+        nickname: profile.name,
         email: profile.email,
         password: profile.id,
-        apiKeyToken: config.apiKeyToken
+        apiKeyToken: config(false).apiKeyToken
       }
     });
     if (!data || status !== 200) return cb(boom.unauthorized(), false)
     return cb(null, data)
   }
 )
-//console.log(oAuth2Strategy)
+// console.log(oAuth2Strategy)
 oAuth2Strategy.userProfile = (accessToken, done) => {
   this._oauth2.get(GOOGLE_USERINFO_URL, accessToken, (err, body) => {
     console.log(body)
     if (err) return done(err)
     try {
-      const { sub, name, email  } = JSON.parse(body);
+      const { sub, name, email  } = JSON.parse(body)
       const profile = {
         id: sub,
         name,

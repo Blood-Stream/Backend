@@ -75,7 +75,14 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
       }
     })
   }
-
+  
+  async function findByContactId(id) {
+    return await usersModel.findone({
+      where: {
+        contactId: id
+      }
+    })
+  }
   async function findAll () {
     return await usersModel.findAll()
   }

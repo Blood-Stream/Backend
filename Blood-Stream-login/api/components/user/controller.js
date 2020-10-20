@@ -134,6 +134,18 @@ module.exports = (injectedStore) => {
     return user
   }
 
+  const createOrUpdateUser = async ({ user }) => {
+    console.log(user)
+    const { Users, Contact } = await store(config(false)).catch(utils.handleFatalError)
+
+    const queriedUser = await Contact.findByEmail({ email: user.email }).catch(utils.handleFatalError)
+    
+    if(queriedUser) return await Users.findByContactId(queriedUser.id).catch(utils.handleFatalError)
+
+    return await upsert({ user }).catch(utils.handleFatalError)
+
+  }
+
   const deleteTable = async (nickname) => {
     const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
     const user = await Users.findByNickname(nickname).catch(utils.handleFatalError)
