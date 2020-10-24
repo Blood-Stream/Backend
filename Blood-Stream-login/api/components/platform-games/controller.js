@@ -19,40 +19,32 @@ module.exports = (injectedStore) => {
   }
 
   const upsert = async (body) => {
-    console.log(body)
     const { PlatformGames, Games, Platform } = await store(config(false)).catch(utils.handleFatalError)
     const platform = await Platform.findByPlatform(body.platform).catch(utils.handleFatalError)
     let games = await Games.findByName(body.game).catch(utils.handleFatalError)
     if (!platform || !games) return 'Not exist'
-    console.log(games)
-    console.log(platform)
-    // let platGame = await PlatformGames.findByPlGm(platform.id, games.id).catch(utils.handleFatalError)
-
+    let platGame = await PlatformGames.findByPlGm(platform.id, games.id).catch(utils.handleFatalError)
     let plGm = {
       uuid: null
     }
 
-    plGm.uuid = nanoid()
-    // if (platGame === null) {
-    // } else {
-    //   return 'Exist'
-    // }
+    if (platGame === null) {
+      plGm.uuid = nanoid()
+    } else {
+      return 'Exist'
+    }
 
-    // games = {
-    //   id: games.id,
-    //   uuid: games.uuid,
-    //   Url_game: games.Url_Game,
-    //   Name: games.Name,
-    //   Developer: games.Developer
-    // }
-    // console.log(plGm)
-    // console.log(platform.uuid)
-    // console.log(games.uuid)
-    console.log('hola')
+    games = {
+      id: games.id,
+      uuid: games.uuid,
+      Url_game: games.Url_Game,
+      Name: games.Name,
+      Developer: games.Developer
+    }
     plGm = await PlatformGames.createOrUpdate(games.uuid, platform.uuid, plGm)
 
-    // plGm.platformGameId = platform
-    // plGm.gameId = games
+    plGm.platformId = platform
+    plGm.gameId = games
 
     return plGm
   }
