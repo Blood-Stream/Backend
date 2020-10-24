@@ -16,10 +16,6 @@ module.exports = (injectedStore) => {
     return gnGames
   }
 
-  const get = async () => {
-
-  }
-
   const upsert = async (body) => {
     const { GenresGames, Genres, Games } = await store(config(false)).catch(utils.handleFatalError)
     const genre = await Genres.findByGenre(body.genre).catch(utils.handleFatalError)
@@ -58,7 +54,6 @@ module.exports = (injectedStore) => {
 
   return {
     list,
-    get,
     upsert,
     deleteMessage
   }

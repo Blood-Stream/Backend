@@ -8,7 +8,7 @@ const router = express.Router()
 
 // Internal Functions
 const list = (req, res, next) => {
-  Controller.list()
+  Controller.list(req.params.page, req.params.pageSize)
   .then((lista) => {
     response.success(req, res, lista, 200)
   })
@@ -40,7 +40,7 @@ const deleteTable = (req, res, next) => {
 }
 
 // Routes
-router.get('/', list)
+router.get('/:page&:pageSize', list)
 router.get('/:nickname', get)
 router.post('/', upsert)
 router.delete('/:nickname', deleteTable)

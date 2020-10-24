@@ -8,7 +8,7 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
       }
     }
     console.log(cond)
-    /* const games = await gamesModel.findOne({
+    const games = await gamesModel.findOne({
       where: {
         uuid: uuidGames
       }
@@ -18,23 +18,19 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
         uuid: uuidPlatforms
       }
     })
-    console.log(games.id)
-    console.log(platform.id)
     if (games) {
       Object.assign(platformsGames, { gameId: games.id })
     }
     if (platform) {
-      Object.assign(platformsGames, { platformGameId: platform.id })
-    } */
-    console.log('hola')
-    console.log(platformsGames)
-    // const existingusers = await platformGamesModel.findOne(cond)
-    // console.log(existingusers)
-    // // console.log(platformsGames)
-    // if (existingusers) {
-    //   const updated = await platformGamesModel.update(platformsGames, cond)
-    //   return updated ? platformGamesModel.findOne(cond) : existingusers
-    // }
+      Object.assign(platformsGames, { platformId: platform.id })
+    }
+    const existingusers = await platformGamesModel.findOne(cond)
+    console.log(existingusers)
+    // console.log(platformsGames)
+    if (existingusers) {
+      const updated = await platformGamesModel.update(platformsGames, cond)
+      return updated ? platformGamesModel.findOne(cond) : existingusers
+    }
 
     const result = await platformGamesModel.create(platformsGames)
     return result.toJSON()
@@ -59,7 +55,7 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
   function findByPlatform (platform) {
     return platformGamesModel.findOne({
       where: {
-        platformGameId: platform
+        platformId: platform
       }
     })
   }
@@ -67,7 +63,7 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
   async function findByPlGm (platformId, gameId) {
     return await platformGamesModel.findOne({
       where: {
-        platformGameId: platformId,
+        platformId: platformId,
         gameId: gameId
       }
     })

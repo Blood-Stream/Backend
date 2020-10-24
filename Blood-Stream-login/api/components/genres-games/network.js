@@ -17,14 +17,6 @@ const list = (req, res, next) => {
   .catch(next)
 }
 
-const get = (req, res, next) => {
-  Controller.get(req.body)
-  .then((user) => {
-    response.success(req, res, user, 200)
-  })
-  .catch(next)
-}
-
 const upsert = (req, res, next) => {
   Controller.upsert(req.body)
   .then((user) => {
@@ -43,7 +35,6 @@ const deleteMessage = (req, res, next) => {
 
 // Routes
 router.get('/', list)
-router.get('/', get)
 router.post('/', upsert)
 router.delete('/:games&:genre', deleteMessage)
 

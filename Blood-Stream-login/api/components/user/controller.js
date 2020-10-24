@@ -12,9 +12,9 @@ let users
 module.exports = (injectedStore) => {
   const store = injectedStore
 
-  const list = async () => {
+  const list = async (page, pageSize) => {
     const { Users } = await store(config(false)).catch(utils.handleFatalError)
-    users = await Users.findAll().catch(utils.handleFatalError)
+    users = await Users.findAll(page, pageSize).catch(utils.handleFatalError)
     return users
   }
 
@@ -132,6 +132,18 @@ module.exports = (injectedStore) => {
     user.passwordId = authData
 
     return user
+  }
+
+  const createOrUpdateUser = async ({ user }) => {
+    console.log(user)
+    const { Users, Contact } = await store(config(false)).catch(utils.handleFatalError)
+
+    const queriedUser = await Contact.findByEmail({ email: user.email }).catch(utils.handleFatalError)
+    
+    if(queriedUser) return await Users.findByContactId(queriedUser.id).catch(utils.handleFatalError)
+
+    return await upsert({ user }).catch(utils.handleFatalError)
+
   }
 
   const deleteTable = async (nickname) => {
