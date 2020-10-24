@@ -11,6 +11,7 @@ const boom = require('@hapi/boom')
 
 require('../../../utils/auth/strategies/google')
 require('../../../utils/auth/strategies/twitter')
+require('../../../utils/auth/strategies/googleOAuth')
 
 // Internal Functions
 const list = (req, res, next) => {
@@ -82,7 +83,12 @@ const twitterAuth = (req, res, next) => {
 }
 
 // Routes
-// Routes
+
+router.get('/auth/google2')
+router.get('/auth/google', passport.authenticate(('google', {
+  scope: ['email', 'profile', 'openid']
+})))
+
 router.get('/auth/googleOAuth')
 //router.get('/auth/googleOAuth', passport.authenticate('googleOAuth', {
 //  scope: [ 'email', 'profile', 'openid' ]
