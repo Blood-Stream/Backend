@@ -55,7 +55,7 @@ module.exports = (injectedStore) => {
 
     for (const element in platform) {
       const el = platform[element]
-      value = await Platform.findById(el.platformGameId).catch(utils.handleFatalError)
+      value = await Platform.findById(el.platformId).catch(utils.handleFatalError)
       value = {
         uuid: value.uuid,
         Platform: value.Platform

@@ -1,6 +1,6 @@
 'use strict'
 
-'use strict'
+const paginate = require('./pagination')
 
 module.exports = function setupGames (gamesModel) {
   async function createOrUpdate (games) {
@@ -60,17 +60,6 @@ module.exports = function setupGames (gamesModel) {
         {page, pageSize}
       )
     )
-  }
-
-  const paginate = (query, { page, pageSize }) => {
-    const offset = page * pageSize
-    const limit = pageSize
-
-    return {
-      ...query,
-      offset,
-      limit
-    } 
   }
 
   async function deleteById (id) {
