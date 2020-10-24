@@ -51,8 +51,26 @@ module.exports = function setupGames (gamesModel) {
     })
   }
 
-  async function findAll () {
-    return await gamesModel.findAll()
+  async function findAll (page, pageSize) {
+    return await gamesModel.findAll(
+      paginate(
+        {
+          where: {}
+        },
+        {page, pageSize}
+      )
+    )
+  }
+
+  const paginate = (query, { page, pageSize }) => {
+    const offset = page * pageSize
+    const limit = pageSize
+
+    return {
+      ...query,
+      offset,
+      limit
+    } 
   }
 
   async function deleteById (id) {

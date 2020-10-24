@@ -14,10 +14,6 @@ module.exports = (injectedStore) => {
     return platform
   }
 
-  const get = async (platform) => {
-
-  }
-
   const upsert = async (body) => {
     const { PlatformGames, Games, Platform } = await store(config(false)).catch(utils.handleFatalError)
     const platform = await Platform.findByPlatform(body.platform).catch(utils.handleFatalError)
@@ -55,7 +51,6 @@ module.exports = (injectedStore) => {
 
   return {
     list,
-    get,
     upsert,
     deletePlatform
   }

@@ -9,9 +9,10 @@ const config = require('../../../../config/config')
 module.exports = (injectedStore) => {
   const store = injectedStore
 
-  const list = async () => {
+  const list = async (page, pageSize) => {
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
-    const game = await Games.findAll().catch(utils.handleFatalError)
+    const game = await Games.findAll(page, pageSize).catch(utils.handleFatalError)
+
     return game
   }
 

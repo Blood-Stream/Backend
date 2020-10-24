@@ -83,10 +83,28 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
       }
     })
   }
-  async function findAll () {
-    return await usersModel.findAll()
+  async function findAll (page, pageSize) {
+    return await usersModel.findAll(
+      paginate(
+        {
+          where: {}
+        },
+        {page, pageSize}
+      )
+    )
   }
+  
+  const paginate = (query, { page, pageSize }) => {
+    const offset = page * pageSize
+    const limit = pageSize
 
+    return {
+      ...query,
+      offset,
+      limit
+    } 
+  }
+ 
   async function deleteById (id) {
     return await usersModel.destroy({
       where: {
@@ -114,6 +132,7 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
     findByNickname,
     findAll,
     deleteById,
-    userExists
+    userExists,
+    findByContactId
   }
 }

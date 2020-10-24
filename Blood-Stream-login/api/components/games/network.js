@@ -10,7 +10,7 @@ require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {
-  Controller.list()
+  Controller.list(req.params.page, req.params.pageSize)
   .then((lista) => {
     response.success(req, res, lista, 200)
   })
@@ -42,7 +42,7 @@ const deleteGame = (req, res, next) => {
   }
 
 // Routes
-router.get('/', list)
+router.get('/:page&:pageSize', list)
 router.get('/:game', get)
 router.post('/', upsert)
 router.delete('/:game', deleteGame)

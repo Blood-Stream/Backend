@@ -12,9 +12,9 @@ let users
 module.exports = (injectedStore) => {
   const store = injectedStore
 
-  const list = async () => {
+  const list = async (page, pageSize) => {
     const { Users } = await store(config(false)).catch(utils.handleFatalError)
-    users = await Users.findAll().catch(utils.handleFatalError)
+    users = await Users.findAll(page, pageSize).catch(utils.handleFatalError)
     return users
   }
 

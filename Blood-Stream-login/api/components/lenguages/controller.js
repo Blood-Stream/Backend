@@ -14,10 +14,6 @@ module.exports = (injectedStore) => {
     return lenguages
   }
 
-  const get = async () => {
-
-  }
-
   const upsert = async (body) => {
     console.log(body)
     const { LenguagesGames, Games, Lenguages } = await store(config(false)).catch(utils.handleFatalError)
@@ -58,7 +54,6 @@ module.exports = (injectedStore) => {
 
   return {
     list,
-    get,
     upsert,
     deleteLenguage
   }
