@@ -25,10 +25,10 @@ const login = async (req, res, next) => {
           if (error) next(error)
   
           const apiKey = await ApiKey.findByToken(apiKeyToken).catch(utils.handleFatalError) 
-          const contact = await Contact.findById(user.contactId).catch(utils.handleFatalError)
           if (!apiKey) next(boom.unauthorized())
           const { Nickname } = user
-          const { email } = contact
+          const email = user.contactId.email
+
           const payload = {
             Nickname,
             email,
@@ -38,18 +38,10 @@ const login = async (req, res, next) => {
             expiresIn: '15m'
           })
 
-          delete user.id
-          delete user.updatedAt
-          delete contact.id
-          delete contact.createdAt
-          delete contact.updatedAt
-          user.contactId = contact
-       
           const data = {
             user: user,
             token: token
           }
-          console.log(`Esto es el data ==> ${data}`)
           return response.success(req, res, data, 200) 
         })
       } catch (err) {
