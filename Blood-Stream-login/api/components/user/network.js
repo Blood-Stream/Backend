@@ -48,7 +48,7 @@ const deleteTable = (req, res, next) => {
 // Routes
 router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: user']), list)
 router.get('/:nickname', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: user']), get)
-router.post('/', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['update: user']), upsert)
+router.post('/', upsert)
 router.delete('/:nickname', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['delete: user']), deleteTable)
 
 module.exports = router

@@ -126,6 +126,22 @@ module.exports = (injectedStore) => {
 
     user = await Users.createOrUpdate(user, uuidPlatform, uuidRol, uuidContact, uuidPassword)
 
+    delete user.passwordId
+    delete user.id
+    delete user.updatedAt
+
+    delete contacts.id
+    delete contacts.createdAt
+    delete contacts.updatedAt
+
+    delete platform.id
+    delete platform.createdAt
+    delete platform.updatedAt
+
+    delete accessRols.id
+    delete accessRols.createdAt
+    delete accessRols.updatedAt
+    
     user.platformId = platform
     user.contactId = contacts
     user.accessRolId = accessRols
