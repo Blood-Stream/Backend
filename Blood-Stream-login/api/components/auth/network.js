@@ -22,7 +22,7 @@ const login = async (req, res, next) => {
       try {
         if (error || !user) next(boom.unauthorized())
         const data = req.login(user, { session: false }, async (error) => {
-          const { ApiKey, Contact } = await store(config(false)).catch(utils.handleFatalError)
+          const { ApiKey } = await store(config(false)).catch(utils.handleFatalError)
           if (error) next(error)
   
           const apiKey = await ApiKey.findByToken(apiKeyToken).catch(utils.handleFatalError) 

@@ -33,6 +33,14 @@ module.exports = function setupContact (contactModel) {
     })
   }
 
+  async function findByEmail2 (email) {
+    return await contactModel.findOne({
+      where: {
+        email
+      }
+    })
+  }
+
   async function findByEmail (email) {
     const userExist = await contactModel.findOne({
       where: {
@@ -63,6 +71,7 @@ module.exports = function setupContact (contactModel) {
     findByUuid,
     findAll,
     deleteById,
-    findByEmail
+    findByEmail,
+    findByEmail2
   }
 }
