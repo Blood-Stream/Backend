@@ -1,0 +1,24 @@
+{
+  "name": "config",
+  "version": "1.0.0",
+  "description": "Configuration for database access",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "configuration",
+    "database"
+  ],
+  "author": "Carlos Gutierrez <ingecarlos.gutierrez@gmail.com> (https://cargdev.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CarGDev/Backend/issues"
+  },
+  "homepage": "https://github.com/CarGDev/Backend#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0"
+  }
+}

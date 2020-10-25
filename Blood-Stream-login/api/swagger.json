@@ -1,0 +1,287 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "BloodStrem",
+    "version": "1.0.0",
+    "title": "BloodStrem"
+  },
+  "host": "dry-mesa-48732.herokuapp.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "User",
+      "description": "Operaciones sobre el login del usuario"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "summary": "Lista los usuarios",
+        "tags": [
+          "User"
+        ],
+        "description": "Obtiene la lista de los usuarios",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Error"
+          }
+        }
+      }
+    },
+    "/user-log/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Usuario loggeado",
+        "description": "Regresa el usuario que se loggea",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Retorna el usuario si existe",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Auth"
+              }
+            }
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal Error"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+      "flow": "implicit",
+      "scopes": {
+        "write:pets": "modify pets in your account",
+        "read:pets": "read your pets"
+      }
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Login": {
+      "type": "object",
+      "properties": {
+        "Nickname": {
+          "type": "string",
+          "example": "CarGDev"
+        },
+        "JWT_Password": {
+          "type": "string",
+          "example": "encrypted"
+        }
+      }
+    },
+    "Auth": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "example": "V1StGXR8_Z5jdHi6B-myT"
+        },
+        "tokenid": {
+          "type": "string",
+          "example": "asldkjfq31283"
+        },
+        "item": {
+          "type": "string",
+          "example": "user"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "required": [
+        "User",
+        "contact",
+        "Password",
+        "AccessRol"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "example": 2
+        },
+        "uuid": {
+          "type": "string",
+          "example": "V1StGXR8_Z5jdHi6B-myT"
+        },
+        "Nickname": {
+          "type": "string",
+          "example": "CarGDev"
+        },
+        "Country": {
+          "type": "string",
+          "example": "Mexico"
+        },
+        "Postal_Code": {
+          "type": "string",
+          "example": "20208"
+        },
+        "Birthday": {
+          "type": "string",
+          "example": "1989-09-15 07:55:10.587458"
+        },
+        "Status": {
+          "type": "boolean",
+          "example": true
+        },
+        "platformId": {
+          "$ref": "#/definitions/Platform"
+        },
+        "contactId": {
+          "$ref": "#/definitions/Contact"
+        },
+        "accessRolId": {
+          "$ref": "#/definitions/AccessRol"
+        },
+        "passwordId": {
+          "$ref": "#/definitions/Password"
+        }
+      }
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "example": 1
+        },
+        "uuid": {
+          "type": "string",
+          "example": "V1StGXR8_Z5jdHi6B-myT"
+        },
+        "email": {
+          "type": "string",
+          "example": "tunombre@dominio.com"
+        },
+        "phone": {
+          "type": "string",
+          "example": "8392389237"
+        }
+      }
+    },
+    "AccessRol": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "example": 1
+        },
+        "uuid": {
+          "type": "string",
+          "example": "V1StGXR8_Z5jdHi6B-myT"
+        },
+        "Rol": {
+          "type": "string",
+          "example": "medium"
+        },
+        "Level": {
+          "type": "integer",
+          "example": 50
+        }
+      }
+    },
+    "Password": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "example": 1
+        },
+        "uuid": {
+          "type": "string",
+          "example": "V1StGXR8_Z5jdHi6B-myT"
+        },
+        "JWT_Password": {
+          "type": "string",
+          "example": "encrypted"
+        }
+      }
+    },
+    "Platform": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "example": 1
+        },
+        "uuid": {
+          "type": "string",
+          "example": "V1StGXR8_Z5jdHi6B-myT"
+        },
+        "Platform": {
+          "type": "string",
+          "example": "Xbox"
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
