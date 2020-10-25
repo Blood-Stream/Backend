@@ -7,8 +7,6 @@ const boom = require('@hapi/boom')
 const store = require('../../../../Blood-Stream-db/index')
 
 passport.use(new BasicStrategy(async (username, password, cb) => {
-  console.log(`[Username]: ${username}`)
-  console.log(`[Password]: ${password}`)
   const { Password, Users, Platform, Contact, AccessRol } = await store(config(false)).catch(utils.handleFatalError)
   const users = await Users.findByNickname(username).catch(utils.handleFatalError)
   try {
