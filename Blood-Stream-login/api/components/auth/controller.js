@@ -9,14 +9,12 @@ const passport = require('passport')
 const { BasicStrategy } = require('passport-http')
 const jwt = require('jsonwebtoken')
 const boom = require('@hapi/boom')
+const response = require('../../../network/response')
 
 require('../../../utils/auth/strategies/basic')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
-
-  const login = async (req, res, next) => {
-      }
 
   const retrievePass = async (username, password) => {
     const { Password, Users } = await store(config(false)).catch(utils.handleFatalError)
@@ -56,7 +54,6 @@ module.exports = (injectedStore) => {
 
   return {
     upsert,
-    login,
     retrievePass
   }
 }

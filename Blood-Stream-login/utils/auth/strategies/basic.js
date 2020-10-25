@@ -4,11 +4,11 @@ const config = require('../../../../config/config')
 const passport = require('passport')
 const { BasicStrategy } = require('passport-http')
 const boom = require('@hapi/boom')
+const store = require('../../../../Blood-Stream-db/index')
 
-passport.use(new BasicStrategy(async (user, password, cb) => {
+passport.use(new BasicStrategy(async (username, password, cb) => {
   const { Password, Users } = await store(config(false)).catch(utils.handleFatalError)
   const users = await Users.findByNickname(username).catch(utils.handleFatalError)
-    
   try {
     if (!users) {
       return cb(boom.unauthorized(), false) 
@@ -17,8 +17,8 @@ passport.use(new BasicStrategy(async (user, password, cb) => {
     if (!bcrypt.compare(password, pass.JWT_Password)) {
       return cb(boom.unauthorized(), false)
     }
-    delete user.passwordId
-    return cb(null, user)
+    delete users.passwordId
+    return cb(null, users)
   } catch (err) {
     return cb(err)
   }

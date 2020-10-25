@@ -14,42 +14,48 @@ const utils = require('../../../../Blood-Stream-db/utils')
 require('../../../utils/auth/strategies/basic')
 
 const login = async (req, res, next) => {
-  const { ApiKey } = await store(config(false)).catch(utils.handleFatalError)
+
   const { apiKeyToken } = req.body
   if (!apiKeyToken) next(boom.unauthorized('apiKeyToken is required'))
   passport.authenticate('basic', (error, user) => {
-    if (error || !user) next(boom.unauthorized())
-
-    console.log(req.login)
-    req.login(user, { session: false }, async (error) => {
-      if (error) next(error)
-
-      const apiKey = await ApiKey.findByToken({ token: apiKeyToken }).catch(utils.handleFatalError) 
-      if (!apiKey) next(boom.unauthorized())
-      console.log('--------------------------------')
-      const { nickname } = user
-      console.log(nickname)
-      const payload = {
-        name: nickname,
-        scopes: apiKey.scopes
-      }
+      try {
+        if (error || !user) next(boom.unauthorized())
+        const data = req.login(user, { session: false }, async (error) => {
+          const { ApiKey, Contact } = await store(config(false)).catch(utils.handleFatalError)
+          if (error) next(error)
   
-      const token = jwt.sign(payload, config(false).authJwtSecret, {
-        expiresIn: '15m'
-      })
-      console.log(`Esto es el user = ${user}`)
-      const data = {
-        user: payload.name,
-        token: token
+          const apiKey = await ApiKey.findByToken(apiKeyToken).catch(utils.handleFatalError) 
+          const contact = await Contact.findById(user.contactId).catch(utils.handleFatalError)
+          if (!apiKey) next(boom.unauthorized())
+          const { Nickname } = user
+          const { email } = contact
+          const payload = {
+            Nickname,
+            email,
+            scopes: apiKey.scopes
+          }
+          const token = jwt.sign(payload, config(false).authJwtSecret, {
+            expiresIn: '15m'
+          })
+
+          delete user.id
+          delete user.updatedAt
+          delete contact.id
+          delete contact.createdAt
+          delete contact.updatedAt
+          user.contactId = contact
+       
+          const data = {
+            user: user,
+            token: token
+          }
+          console.log(`Esto es el data ==> ${data}`)
+          return response.success(req, res, data, 200) 
+        })
+      } catch (err) {
+        next(err)
       }
-      return response.success(req, res, data, 200)
-    })
-  }) 
-// controller.login(req, res, next)
-//  .then((token) => {
-//    response.success(req, res, token, 200)
-//  })
-//  .catch(next)
+  })(req, res, next)
 }
 
 const retrievePass = (req, res, next) => {
