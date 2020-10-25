@@ -7,6 +7,7 @@ const Controller = require('./index')
 const router = express.Router()
 const session = require('express-session')
 const passport = require('passport')
+const scopesValidationHandler = require('../../../utils/middleware/scopeValidation')
 
 // JWT Strategy
 require('../../../utils/auth/strategies/jwt')
@@ -45,9 +46,9 @@ const deleteTable = (req, res, next) => {
 }
 
 // Routes
-router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), list)
-router.get('/:nickname', passport.authenticate('jwt', { session: false }), get)
-router.post('/', passport.authenticate('jwt', { session: false }), upsert)
-router.delete('/:nickname', passport.authenticate('jwt', { session: false }), deleteTable)
+router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: user']), list)
+router.get('/:nickname', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: user']), get)
+router.post('/', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['update: user']), upsert)
+router.delete('/:nickname', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['delete: user']), deleteTable)
 
 module.exports = router

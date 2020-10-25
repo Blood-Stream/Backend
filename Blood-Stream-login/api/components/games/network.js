@@ -5,6 +5,7 @@ const passport = require('passport')
 const response = require('../../../network/response')
 const Controller = require('./index')
 const router = express.Router()
+const scopesValidationHandler = require('../../../utils/middleware/scopeValidation')
 
 require('../../../utils/auth/strategies/jwt')
 
@@ -42,9 +43,9 @@ const deleteGame = (req, res, next) => {
   }
 
 // Routes
-router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), list)
-router.get('/:game', passport.authenticate('jwt', { session: false }), get)
-router.post('/', passport.authenticate('jwt', { session: false }), upsert)
-router.delete('/:game', passport.authenticate('jwt', { session: false }), deleteGame)
+router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), list)
+router.get('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), get)
+router.post('/', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['update: game']), upsert)
+router.delete('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['delete: game']), deleteGame)
 
 module.exports = router
