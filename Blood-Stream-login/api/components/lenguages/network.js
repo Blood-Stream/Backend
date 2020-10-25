@@ -34,8 +34,8 @@ const deleteLenguage = (req, res, next) => {
   }
 
 // Routes
-router.get('/', list)
-router.post('/', upsert)
-router.delete('/:games&:lenguage', deleteLenguage)
+router.get('/', passport.authenticate('jwt', { session: false }), list)
+router.post('/', passport.authenticate('jwt', { session: false }), upsert)
+router.delete('/:games&:lenguage', passport.authenticate('jwt', { session: false }), deleteLenguage)
 
 module.exports = router

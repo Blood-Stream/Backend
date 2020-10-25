@@ -6,6 +6,10 @@ const response = require('../../../network/response')
 const Controller = require('./index')
 const router = express.Router()
 const session = require('express-session')
+const passport = require('passport')
+
+// JWT Strategy
+require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {
@@ -41,9 +45,9 @@ const deleteTable = (req, res, next) => {
 }
 
 // Routes
-router.get('/:page&:pageSize', list)
-router.get('/:nickname', get)
-router.post('/', upsert)
-router.delete('/:nickname', deleteTable)
+router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), list)
+router.get('/:nickname', passport.authenticate('jwt', { session: false }), get)
+router.post('/', passport.authenticate('jwt', { session: false }), upsert)
+router.delete('/:nickname', passport.authenticate('jwt', { session: false }), deleteTable)
 
 module.exports = router

@@ -12,6 +12,7 @@ const store = require('../../../../Blood-Stream-db/index')
 const utils = require('../../../../Blood-Stream-db/utils')
 
 require('../../../utils/auth/strategies/basic')
+require('../../../utils/auth/strategies/jwt')
 
 const login = async (req, res, next) => {
 
@@ -59,6 +60,6 @@ const retrievePass = (req, res, next) => {
 }
 
 router.post('/login', login) 
-router.post('/pass-retrieve', retrievePass)
+router.post('/pass-retrieve', passport.authenticate('jwt', { session: false }), retrievePass)
 
 module.exports = router
