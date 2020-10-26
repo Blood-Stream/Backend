@@ -16,6 +16,7 @@ const setupGenresModel = require('./models/genres')
 const setupGenresGamesModel = require('./models/genresGames')
 const setupGamesModel = require('./models/games')
 const setupGamesRatingModel = require('./models/gamesRating')
+const setupApiKeyModel = require('./models/apiKey')
 
 const defaults = require('defaults')
 
@@ -33,6 +34,7 @@ const setupGenres = require('./lib/genres')
 const setupGenresGames = require('./lib/genresGames')
 const setupGames = require('./lib/games')
 const setupGamesRating = require('./lib/gamesRating')
+const setupApiKey = require('./lib/apiKey')
 
 module.exports = async function (config) {
   config = defaults(config, {
@@ -62,6 +64,7 @@ module.exports = async function (config) {
   const GenresModel = setupGenresModel(config)
   const GamesCollectionModel = setupGamesCollectionModel(config)
   const GamesRatingModel = setupGamesRatingModel(config)
+  const apiKeyModel = setupApiKeyModel(config)
 
   UsersModel.hasMany(MessagesModel)
   UsersModel.belongsTo(PlatformsModel)
@@ -105,6 +108,7 @@ module.exports = async function (config) {
   const Genres = setupGenres(GenresModel)
   const GamesCollection = setupGamesCollection(GamesCollectionModel, UsersModel, GamesModel)
   const GamesRating = setupGamesRating(GamesRatingModel, UsersModel, GamesModel)
+  const ApiKey = setupApiKey(apiKeyModel)
 
   return {
     Message,
@@ -121,5 +125,6 @@ module.exports = async function (config) {
     GenresGames,
     Games,
     GamesRating,
+    ApiKey
   }
 }

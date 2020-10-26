@@ -73,7 +73,7 @@ module.exports = (injectedStore) => {
   }
 
   const deleteGame = async (game) => {
-
+    console.log('Works')
   }
 
   return {

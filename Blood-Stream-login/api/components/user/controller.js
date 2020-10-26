@@ -1,12 +1,10 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
-const { use } = require('passport')
-const contact = require('../../../../Blood-Stream-db/models/contact')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
-const auth = require('../../../auth')
 const controller = require('../auth/index')
+const jwt = require('jsonwebtoken')
 let users
 
 module.exports = (injectedStore) => {
@@ -40,7 +38,7 @@ module.exports = (injectedStore) => {
   }
 
   const upsert = async (body) => {
-    const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
+    const { Users, Contact, AccessRol, Platform, Password, ApiKey } = await store(config(false)).catch(utils.handleFatalError)
 
     let uuidPlatform = null
     let uuidContact = null
@@ -67,15 +65,22 @@ module.exports = (injectedStore) => {
     }
 
     if (!body.uuid) {
-      const userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
-      const contactExist = await Contact.findByEmail(body.email).catch(utils.handleFatalError)
-      if (userExist || contactExist) {
-        return 'User or Email Exist'
-      }
-
+      
       uuidContact = nanoid()
       uuidUser = nanoid()
       uuidPassword = nanoid()
+
+      let userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
+      let contactExist = await Contact.findByEmail(body.email).catch(utils.handleFatalError)
+      
+      if (userExist) {
+        userExist = await Users.findByNickname(body.nickname).catch(utils.handleFatalError)
+        uuidUser = userExist.uuid
+      }
+      if (contactExist) {
+        contactExist = await Contact.findByEmail2(body.email).catch(utils.handleFatalError)
+        uuidContact = contactExist.uuid
+      }
 
       user.uuid = uuidUser
 
@@ -126,24 +131,45 @@ module.exports = (injectedStore) => {
 
     user = await Users.createOrUpdate(user, uuidPlatform, uuidRol, uuidContact, uuidPassword)
 
+    delete user.passwordId
+    delete user.id
+    delete user.updatedAt
+
+    delete contacts.id
+    delete contacts.createdAt
+    delete contacts.updatedAt
+
+    delete platform.id
+    delete platform.createdAt
+    delete platform.updatedAt
+
+    delete accessRols.id
+    delete accessRols.createdAt
+    delete accessRols.updatedAt
+    
     user.platformId = platform
     user.contactId = contacts
     user.accessRolId = accessRols
     user.passwordId = authData
 
+    if (body.apiKeyToken) {
+      console.log('prueba')
+      const apiKey = await ApiKey.findByToken(body.apiKeyToken).catch(utils.handleFatalError) 
+      const Nickname = user.Nickname
+      const email = contacts.email
+  
+      const payload = {
+        Nickname,
+        email,
+        scopes: apiKey.scopes
+      }
+      const token = jwt.sign(payload, config(false).authJwtSecret, {
+        expiresIn: '15m'
+      })
+      user.token = token
+    }
+    delete user.passwordId
     return user
-  }
-
-  const createOrUpdateUser = async ({ user }) => {
-    console.log(user)
-    const { Users, Contact } = await store(config(false)).catch(utils.handleFatalError)
-
-    const queriedUser = await Contact.findByEmail({ email: user.email }).catch(utils.handleFatalError)
-    
-    if(queriedUser) return await Users.findByContactId(queriedUser.id).catch(utils.handleFatalError)
-
-    return await upsert({ user }).catch(utils.handleFatalError)
-
   }
 
   const deleteTable = async (nickname) => {

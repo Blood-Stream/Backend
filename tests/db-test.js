@@ -4,7 +4,7 @@ const test = require('ava')
 
 let db = null
 const config = {
-  loggin: function () {}
+  logging: function () {}
 }
 
 test.beforeEach(async () => {

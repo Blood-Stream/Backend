@@ -7,10 +7,21 @@ const config = require('./config')
 const routes = require('./routes/routes')
 const app = express()
 const helmet = require('helmet')
+const configuration = require('../config/config')
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(helmet())
+app.use(cookieParser())
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: true,
+    secret: configuration(false).secret 
+  })
+)
 
 // ROUTER
 routes(app).userRoute()

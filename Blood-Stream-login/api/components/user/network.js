@@ -5,6 +5,12 @@ const express = require('express')
 const response = require('../../../network/response')
 const Controller = require('./index')
 const router = express.Router()
+const session = require('express-session')
+const passport = require('passport')
+const scopesValidationHandler = require('../../../utils/middleware/scopeValidation')
+
+// JWT Strategy
+require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {
@@ -40,9 +46,9 @@ const deleteTable = (req, res, next) => {
 }
 
 // Routes
-router.get('/:page&:pageSize', list)
-router.get('/:nickname', get)
+router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: user']), list)
+router.get('/:nickname', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: user']), get)
 router.post('/', upsert)
-router.delete('/:nickname', deleteTable)
+router.delete('/:nickname', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['delete: user']), deleteTable)
 
 module.exports = router
