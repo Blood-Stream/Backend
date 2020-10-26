@@ -6,9 +6,9 @@ exports.success = (req, res, message, status) => {
   req.session.count = req.session.count ? req.session.count + 1 : 1
   res.status(status).send({
     error: false,
+    counter: req.session.count,
     status: statusCode,
-    body: statusMessage,
-    counter: req.session.count
+    body: statusMessage
   })
 }
 

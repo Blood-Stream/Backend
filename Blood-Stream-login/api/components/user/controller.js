@@ -130,7 +130,7 @@ module.exports = (injectedStore) => {
     user.contactId = contacts
     user.accessRolId = accessRols
     user.passwordId = authData
-
+    delete user.passwordId
     return user
   }
 

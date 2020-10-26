@@ -19,7 +19,8 @@ module.exports = function config (configExtra) {
     authJwtSecret: process.env.AUTH_JWT_SECRET,
     secret: process.env.SECRET,
     apiUrl: process.env.API_URL,
-    apiKeyToken: process.env.API_KEY_TOKEN,
+    adminApiKeyToken: process.env.ADMIN_API_KEY_TOKEN, 
+    publicApiKeyToken: process.env.PUBLIC_API_KEY_TOKEN,
     dialect: 'postgres',
     logging: s => debug(s)
   }
