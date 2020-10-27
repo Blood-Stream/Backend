@@ -10,40 +10,48 @@ const helmet = require('helmet')
 const configuration = require('../config/config')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
-const redis = require('redis')
+/* const redis = require('redis')
 const sessionExpress = require('express-session')
-const { cookie } = require('request')
 const redisStore = require('connect-redis')(sessionExpress)
 const client = redis.createClient()
+const redisServer = require('redis-server') */
 
-app.use(session({
-  secret: configuration(false).secret,
-  // Creating new redis store
-  store: new redisStore({ client: client, ttl: 260 }),
-  saveUninitialized: false,
-  resave: false,
-  cookie: { secure: true }
-}))
-
-client.on('error', function(err) {
-  console.log(`Redis error: ${err}`);
+/* const server = new redisServer({
+  port: 6379,
+  bin: '/opt/local/bin/redis-server'
 })
 
-client.on('ready',function () {
-  console.log('Redis is ready');
-})
+server.open().then(() => {
+  // You may now connect a client to the Redis server bound to `server.port`.
+  app.use(session({
+    secret: configuration(false).secret,
+    // Creating new redis store
+    store: new redisStore({ client: client, ttl: 260 }),
+    saveUninitialized: false,
+    resave: false,
+    cookie: { secure: true }
+  }))
+  
+  client.on('error', function(err) {
+    console.log(`Redis error: ${err}`);
+  })
+  
+  client.on('ready',function () {
+    console.log('Redis is ready');
+  })
+}) */
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(helmet())
-/* app.use(cookieParser())
+app.use(cookieParser())
 app.use(
   session({
     resave: false,
     saveUninitialized: true,
     secret: configuration(false).secret 
   })
-) */
+)
 
 // ROUTER
 routes(app).userRoute()
