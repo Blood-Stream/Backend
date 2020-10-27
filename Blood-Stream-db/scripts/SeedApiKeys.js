@@ -39,21 +39,22 @@ const publicScopes = [
   'read: game',
 ]
 
+// token: generateRandomToken(),
 const apiKeys = [
   {
-    token: generateRandomToken(),
+    token: '70ea77940dced9942c68d4b62a0f21f4e09b8c14cd3dc8136d4300cf14bdd2fb',
     scopes: adminScopes
   },
   {
-    token: generateRandomToken(),
+    token: '902962959754d8d60f57265eaede64d3e4a4797d9144f1ce157c3117df0163b0',
     scopes: publicScopes
   }
 ]
 
-function generateRandomToken () {
-  const buffer = crypto.randomBytes(32)
-  return buffer.toString('hex')
-}
+// function generateRandomToken () {
+//   const buffer = crypto.randomBytes(32)
+//   return buffer.toString('hex')
+// }
 
 const seedApiKey = async () => {
   try {
