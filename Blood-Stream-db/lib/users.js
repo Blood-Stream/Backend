@@ -79,7 +79,7 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
   }
   
   async function findByContactId(id) {
-    return await usersModel.findone({
+    return await usersModel.findOne({
       where: {
         contactId: id
       }
@@ -96,8 +96,6 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
       )
     )
   }
-  
-  
  
   async function deleteById (id) {
     return await usersModel.destroy({
