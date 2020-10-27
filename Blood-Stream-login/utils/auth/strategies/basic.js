@@ -8,7 +8,12 @@ const store = require('../../../../Blood-Stream-db/index')
 
 passport.use(new BasicStrategy(async (username, password, cb) => {
   const { Password, Users, Platform, Contact, AccessRol } = await store(config(false)).catch(utils.handleFatalError)
-  const users = await Users.findByNickname(username).catch(utils.handleFatalError)
+  let contactTemp = await Contact.findByEmail(username).catch(utils.handleFatalError)
+  let users = await Users.findByNickname(username).catch(utils.handleFatalError)
+  if (contactTemp) {
+    contactTemp = await Contact.findByEmail2(username).catch(utils.handleFatalError)
+    users = await Users.findByContactId(contactTemp.id).catch(utils.handleFatalError)
+  }
   try {
     const platform = await Platform.findById(users.platformId)
     const contact = await Contact.findById(users.contactId)

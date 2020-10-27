@@ -45,17 +45,7 @@ module.exports = (injectedStore) => {
     let uuidUser = null
     let uuidRol = null
     let uuidPassword = null
-
-    let user = {
-      Nickname: body.nickname,
-      Country: body.country,
-      Postal_Code: body.postal_Code,
-      Birthday: body.birthday,
-      Status: body.status,
-      Avatar: body.avatar,
-      Level: body.level
-    }
-
+    let user = null
     let platform = null
     let contacts = null
     let accessRols = null
@@ -64,14 +54,45 @@ module.exports = (injectedStore) => {
       passwordId: null
     }
 
+    let contactExist = await Contact.findByEmail(body.email).catch(utils.handleFatalError)
+    let userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
+    if (body.page) {
+      if (contactExist && userExist) {
+        throw Error ('Unauthorized')
+      }
+    }
+    
+    if (userExist) {
+      userExist = await Users.findByNickname(body.nickname).catch(utils.handleFatalError)
+      user = {
+        Nickname: userExist.Nickname,
+        Country: userExist.Country,
+        Postal_Code: userExist.Postal_Code,
+        Birthday: userExist.Birthday,
+        Status: userExist.Status,
+        Avatar: userExist.Avatar,
+        Level: userExist.Level
+      }
+    } else {
+        user = {
+          Nickname: body.nickname,
+          Country: body.country,
+          Postal_Code: body.postal_Code,
+          Birthday: body.birthday,
+          Status: body.status,
+          Avatar: body.avatar,
+          Level: body.level
+        }
+    }
+
     if (!body.uuid) {
       
       uuidContact = nanoid()
       uuidUser = nanoid()
       uuidPassword = nanoid()
 
-      let userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
-      let contactExist = await Contact.findByEmail(body.email).catch(utils.handleFatalError)
+      userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
+      contactExist = await Contact.findByEmail(body.email).catch(utils.handleFatalError)
       
       if (userExist) {
         userExist = await Users.findByNickname(body.nickname).catch(utils.handleFatalError)
@@ -153,7 +174,6 @@ module.exports = (injectedStore) => {
     user.passwordId = authData
 
     if (body.apiKeyToken) {
-      console.log('prueba')
       const apiKey = await ApiKey.findByToken(body.apiKeyToken).catch(utils.handleFatalError) 
       const Nickname = user.Nickname
       const email = contacts.email
