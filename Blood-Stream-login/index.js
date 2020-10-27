@@ -12,32 +12,38 @@ const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const redis = require('redis')
 const sessionExpress = require('express-session')
+const { cookie } = require('request')
 const redisStore = require('connect-redis')(sessionExpress)
 const client = redis.createClient()
 
 app.use(session({
-  secret: 'Trucazo',
+  secret: configuration(false).secret,
   // Creating new redis store
-  store: new redisStore({
-    host: configuration(false).host,
-    port: 5432,
-    client: client
-  }),
+  store: new redisStore({ client: client, ttl: 260 }),
   saveUninitialized: false,
-  resave: false
+  resave: false,
+  cookie: { secure: true }
 }))
+
+client.on('error', function(err) {
+  console.log(`Redis error: ${err}`);
+})
+
+client.on('ready',function () {
+  console.log('Redis is ready');
+})
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(helmet())
-app.use(cookieParser())
+/* app.use(cookieParser())
 app.use(
   session({
     resave: false,
     saveUninitialized: true,
     secret: configuration(false).secret 
   })
-)
+) */
 
 // ROUTER
 routes(app).userRoute()
