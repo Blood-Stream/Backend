@@ -10,6 +10,22 @@ const helmet = require('helmet')
 const configuration = require('../config/config')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
+const redis = require('redis')
+const sessionExpress = require('express-session')
+const redisStore = require('connect-redis')(sessionExpress)
+const client = redis.createClient()
+
+app.use(session({
+  secret: 'Trucazo',
+  // Creating new redis store
+  store: new redisStore({
+    host: configuration(false).host,
+    port: 5432,
+    client: client
+  }),
+  saveUninitialized: false,
+  resave: false
+}))
 
 app.use(cors())
 app.use(bodyParser.json())
