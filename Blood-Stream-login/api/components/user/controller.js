@@ -62,7 +62,7 @@ module.exports = (injectedStore) => {
       }
     }
     
-    if (userExist) {
+    if (userExist || contactExist) {
       userExist = await Users.findByNickname(body.nickname).catch(utils.handleFatalError)
       user = {
         Nickname: userExist.Nickname,
@@ -149,7 +149,6 @@ module.exports = (injectedStore) => {
     }
 
     contacts = await Contact.createOrUpdate(contacts).catch(utils.handleFatalError)
-
     user = await Users.createOrUpdate(user, uuidPlatform, uuidRol, uuidContact, uuidPassword)
 
     delete user.passwordId

@@ -15,7 +15,6 @@ require('../../../utils/auth/strategies/basic')
 require('../../../utils/auth/strategies/jwt')
 
 const login = async (req, res, next) => {
-
   const { apiKeyToken } = req.body
   if (!apiKeyToken) next(boom.unauthorized('apiKeyToken is required'))
   passport.authenticate('basic', (error, user) => {

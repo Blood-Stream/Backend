@@ -22,7 +22,7 @@ passport.use(new BasicStrategy(async (username, password, cb) => {
       return cb(boom.unauthorized(), false) 
     }
     const pass = await Password.findById(users.passwordId).catch(utils.handleFatalError)
-    if (!bcrypt.compare(password, pass.JWT_Password)) {
+    if (!await bcrypt.compare(password, pass.JWT_Password)) {
       return cb(boom.unauthorized(), false)
     }
     delete users.passwordId
