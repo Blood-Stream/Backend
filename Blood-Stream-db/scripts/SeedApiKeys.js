@@ -29,6 +29,19 @@ const adminScopes = [
   'delete: game'
 ]
 
+const masterScopes = [
+  'signin: auth',
+  'signup: auth',
+  'read: user',
+  'create: user',
+  'update: user',
+  'delete: user',
+  'read: game',
+  'create: game',
+  'update: game',
+  'delete: game'
+]
+
 const publicScopes = [
   'signin: auth',
   'signup: auth',
@@ -48,13 +61,17 @@ const apiKeys = [
   {
     token: '902962959754d8d60f57265eaede64d3e4a4797d9144f1ce157c3117df0163b0',
     scopes: publicScopes
+  },
+  {
+    token: generateRandomToken(),
+    scopes: masterScopes
   }
 ]
 
-// function generateRandomToken () {
-//   const buffer = crypto.randomBytes(32)
-//   return buffer.toString('hex')
-// }
+function generateRandomToken () {
+  const buffer = crypto.randomBytes(32)
+  return buffer.toString('hex')
+}
 
 const seedApiKey = async () => {
   try {
