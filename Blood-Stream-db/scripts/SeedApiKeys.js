@@ -63,15 +63,15 @@ const apiKeys = [
     scopes: publicScopes
   },
   {
-    token: generateRandomToken(),
+    token: '6f49d543b041d825fec35b66257d58c8944cc241b9f54d9b33bbe9d5c7e756c8',
     scopes: masterScopes
   }
 ]
 
-function generateRandomToken () {
-  const buffer = crypto.randomBytes(32)
-  return buffer.toString('hex')
-}
+// function generateRandomToken () {
+//   const buffer = crypto.randomBytes(32)
+//   return buffer.toString('hex')
+// }
 
 const seedApiKey = async () => {
   try {
