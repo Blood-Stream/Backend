@@ -33,6 +33,14 @@ module.exports = function setupGenres (genresModel) {
     })
   }
 
+  async function findByGenre (Genre) {
+    return await genresModel.findOne({
+      where: {
+        Genre
+      }
+    })
+  }
+
   async function findAll () {
     return await genresModel.findAll()
   }
@@ -50,6 +58,7 @@ module.exports = function setupGenres (genresModel) {
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByGenre
   }
 }

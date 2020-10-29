@@ -18,27 +18,30 @@ license used:
 
 ``` js
 module.exports = function config (configExtra) {
-  let config = null
-
+  const config = {
+    database: process.env.DB_NAME || 'bloodstreamdb',
+    username: process.env.DB_USER || 'postgres',
+    password: process.env.DB_PASS || 'password',
+    host: process.env.DB_HOST || 'localhost',
+    dialect: 'postgres',
+    loggin: s => debug(s)
+  }
+  
   if (configExtra) {
-    config = {
-      database: process.env.DB_NAME || 'bloodstreamdb',
-      username: process.env.DB_USER || 'bloodstream',
-      password: process.env.DB_PASS || 'password',
-      hostname: process.env.DB_HOST || 'localhost',
-      dialect: 'postgres',
-      loggin: s => debug(s),
+    Object.assign(config, {
       setup: true
-    }
-  } else {
-    config = {
-      database: process.env.DB_NAME || 'bloodstreamdb',
-      username: process.env.DB_USER || 'bloodstream',
-      password: process.env.DB_PASS || 'password',
-      hostname: process.env.DB_HOST || 'localhost',
-      dialect: 'postgres',
-      loggin: s => debug(s)
-    }
+    })
+  }
+  
+  if (process.env.NODE_ENV === 'production') {
+    Object.assign(config, {
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false
+        }
+      }
+    })
   }
 
   return config

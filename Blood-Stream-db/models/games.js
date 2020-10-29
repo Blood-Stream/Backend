@@ -51,5 +51,13 @@ module.exports = function setupGamesModel (config) {
       type: Sequelize.DATE,
       allowNull: true
     }
-  })
+  },
+    {
+      indexes: [
+        {
+          unique: false,
+          fields: ['Name']
+        }
+      ]
+    })
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-function err (message, code) {
+module.exports = (message, code) => {
   const e = new Error(message)
 
   if (code) {
@@ -9,4 +9,3 @@ function err (message, code) {
   return e
 }
 
-module.exports = err

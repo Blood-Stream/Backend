@@ -5,30 +5,18 @@ const bcrypt = require('bcrypt')
 const utils = require('../../../../Blood-Stream-db/utils')
 const auth = require('../../../auth/index')
 const config = require('../../../../config/config')
+const passport = require('passport')
+const { BasicStrategy } = require('passport-http')
+const jwt = require('jsonwebtoken')
+const boom = require('@hapi/boom')
+const response = require('../../../network/response')
 
-module.exports = function (injectedStore) {
+require('../../../utils/auth/strategies/basic')
+
+module.exports = (injectedStore) => {
   const store = injectedStore
 
-  async function login (username, password) {
-    const { Password, Users } = await store(config(false)).catch(utils.handleFatalError)
-    const users = await Users.findByNickname(username).catch(utils.handleFatalError)
-    if (users) {
-      console.log(users.passwordId)
-      const pass = await Password.findById(users.passwordId).catch(utils.handleFatalError)
-      return bcrypt.compare(password, pass.JWT_Password)
-        .then(areEquals => {
-          if (areEquals === true) {
-            // token
-            return auth.sign(JSON.parse(JSON.stringify(pass)))
-          } else {
-            throw new Error('Invalid information')
-          }
-        })
-    }
-    return 'The user does not exits'
-  }
-
-  async function retrievePass (username, password) {
+  const retrievePass = async (username, password) => {
     const { Password, Users } = await store(config(false)).catch(utils.handleFatalError)
     const users = await Users.findByNickname(username).catch(utils.handleFatalError)
 
@@ -50,8 +38,8 @@ module.exports = function (injectedStore) {
     return `The password for the user ${username} was changed successfull`
   }
 
-  async function upsert (data) {
-    const authData = {
+  const upsert = async (data) => {
+    let authData = {
       uuid: data.uuid
     }
 
@@ -60,12 +48,12 @@ module.exports = function (injectedStore) {
     }
     const { Password } = await store(config(false)).catch(utils.handleFatalError)
 
-    await Password.createOrUpdate(authData)
+    authData = await Password.createOrUpdate(authData)
+    return authData
   }
 
   return {
     upsert,
-    login,
     retrievePass
   }
 }

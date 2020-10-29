@@ -105,4 +105,5 @@ dist
 
 ./Readme%images/*.mp4
 
-host.*
+host.key
+host.cert

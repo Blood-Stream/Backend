@@ -35,6 +35,14 @@ module.exports = function setupLenguages (lenguagesModel) {
     })
   }
 
+  function findByLenguage (Lenguage) {
+    return lenguagesModel.findOne({
+      where: {
+        Lenguages: Lenguage
+      }
+    })
+  }
+
   function findAll () {
     return lenguagesModel.findAll()
   }
@@ -52,6 +60,7 @@ module.exports = function setupLenguages (lenguagesModel) {
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByLenguage
   }
 }

@@ -1,5 +1,7 @@
 'use strict'
 
+const paginate = require('./pagination')
+
 module.exports = function setupUsers (usersModel, platformModel, accessRolModel, passwordModel, contactModel) {
   async function createOrUpdate (users, uuidPlat, uuidAccRol, uuidCont, uuidPass) {
     const cond = {
@@ -75,11 +77,26 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
       }
     })
   }
-
-  async function findAll () {
-    return await usersModel.findAll()
+  
+  async function findByContactId(id) {
+    return await usersModel.findOne({
+      where: {
+        contactId: id
+      }
+    })
   }
 
+  async function findAll (page, pageSize) {
+    return await usersModel.findAll(
+      paginate(
+        {
+          where: {}
+        },
+        {page, pageSize}
+      )
+    )
+  }
+ 
   async function deleteById (id) {
     return await usersModel.destroy({
       where: {
@@ -107,6 +124,7 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
     findByNickname,
     findAll,
     deleteById,
-    userExists
+    userExists,
+    findByContactId
   }
 }

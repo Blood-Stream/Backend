@@ -33,6 +33,14 @@ module.exports = function setupPlatform (platformModel) {
     })
   }
 
+  function findByPlatform (Platform) {
+    return platformModel.findOne({
+      where: {
+        Platform
+      }
+    })
+  }
+
   function findAll () {
     return platformModel.findAll()
   }
@@ -50,6 +58,7 @@ module.exports = function setupPlatform (platformModel) {
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByPlatform
   }
 }

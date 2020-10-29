@@ -1,6 +1,6 @@
 'use strict'
 
-'use strict'
+const paginate = require('./pagination')
 
 module.exports = function setupGames (gamesModel) {
   async function createOrUpdate (games) {
@@ -35,8 +35,31 @@ module.exports = function setupGames (gamesModel) {
     })
   }
 
-  async function findAll () {
-    return await gamesModel.findAll()
+  async function findByUrl (Url_Game) {
+    return await gamesModel.findOne({
+      where: {
+        Url_Game
+      }
+    })
+  }
+
+  async function findByName (Name) {
+    return await gamesModel.findOne({
+      where: {
+        Name
+      }
+    })
+  }
+
+  async function findAll (page, pageSize) {
+    return await gamesModel.findAll(
+      paginate(
+        {
+          where: {}
+        },
+        {page, pageSize}
+      )
+    )
   }
 
   async function deleteById (id) {
@@ -52,6 +75,8 @@ module.exports = function setupGames (gamesModel) {
     findById,
     findByUuid,
     findAll,
-    deleteById
+    deleteById,
+    findByName,
+    findByUrl
   }
 }
