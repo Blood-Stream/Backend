@@ -187,7 +187,9 @@ module.exports = (injectedStore) => {
       })
       user.token = token
     }
+
     delete user.passwordId
+    if (body.page === undefined || body.page === false || body.page === null) user.id = body.password
     return user
   }
 
