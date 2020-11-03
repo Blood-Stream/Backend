@@ -1,5 +1,7 @@
 'use strict'
 
+const paginate = require('./pagination')
+
 module.exports = function setupGamesCollection (gamesCollectionModel, usersModel, gamesModel) {
   async function createOrUpdate (uuidGames, uuidUsers, gamesCollection) {
     const cond = {
@@ -52,6 +54,14 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
     })
   }
 
+  async function findByUser (userId) {
+    return await gamesCollectionModel.findOne({
+      where: {
+        userId
+      }
+    })
+  }
+ 
   async function findByGame (gameId) {
     return await gamesCollectionModel.findAll({
       where: {
@@ -59,7 +69,20 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
       }
     })
   }
-
+  
+  async function findByGameAll (platformId, page, pageSize) {
+    return await gamesCollectionModel.findAll(
+      paginate(
+        {
+          where: {
+            userId: platformId 
+          }
+        },
+        {page, pageSize}
+      )
+    )
+  }
+ 
   async function findByUsGm (userId, gameId) {
     return await gamesCollectionModel.findOne({
       where: {
@@ -88,6 +111,8 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
     findAll,
     deleteById,
     findByUsGm,
-    findByGame
+    findByGame,
+    findByGameAll,
+    findByUser
   }
 }

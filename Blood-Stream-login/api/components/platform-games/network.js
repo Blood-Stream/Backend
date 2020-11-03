@@ -33,9 +33,26 @@ const deletePlatform = (req, res, next) => {
     .catch(next)
   }
 
+const gamesByPlatforms2 = (req, res, next) => {
+  Controller.gamesByPlatforms2(req.params.platform, req.params.page, req.params.pageSize)
+    .then((game) => {
+      response.success(req, res, game, 200)
+    })
+    .catch(next)
+}
+
+const gamesByPlatforms = (req, res, next) => {
+  Controller.gamesByPlatforms(req.params.game, req.params.page, req.params.pageSize)
+    .then((game) => {
+      response.success(req, res, game, 200)
+    })
+    .catch(next)
+}
 // Routes
-router.get('/', list)
-router.post('/', upsert)
-router.delete('/:games&:lenguage', deletePlatform)
+router.get('/', passport.authenticate('jwt', { session: false }), list)
+router.post('/', passport.authenticate('jwt', { session: false }), upsert)
+router.delete('/:games&:lenguage', passport.authenticate('jwt', { session: false }), deletePlatform)
+router.get('/:game&:page&:pageSize', passport.authenticate('jwt', { session: false }), gamesByPlatforms)
+router.get('/platform/:platform&:page&:pageSize', passport.authenticate('jwt', { session: false }), gamesByPlatforms2)
 
 module.exports = router

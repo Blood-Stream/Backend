@@ -27,7 +27,7 @@ module.exports = (injectedStore) => {
     if (platGame === null) {
       plGm.uuid = nanoid()
     } else {
-      return 'Exist'
+      plGm.uuid = platGame.uuid
     }
 
     games = {
@@ -44,14 +44,54 @@ module.exports = (injectedStore) => {
 
     return plGm
   }
-
-  const deletePlatform = async (platform) => {
-
+  
+  const gamesByPlatforms2 = async(platform, page, pageSize) => {
+    const { Games, PlatformGames, Platform } = await store(config(false)).catch(utils.handleFatalError)
+    let platforms = await Platform.findByPlatform(platform).catch(utils.handleFatalError)
+    platforms = await PlatformGames.findByGameAll(platforms.id, page, pageSize).catch(utils.handleFatalError) 
+    let collection = []
+    let games
+    for (const element in platforms){
+      const el = platforms[element]
+      games = await Games.findById(el.gameId).catch(utils.handleFatalError)
+      delete games.group
+      delete games.createdAt
+      delete games.updatedAt
+      delete games.id
+      collection = collection.concat(games)
+    }
+    return collection
   }
+
+
+  const gamesByPlatforms = async(game, page, pageSize) => {
+    const { Games, PlatformGames } = await store(config(false)).catch(utils.handleFatalError)
+    let games = await Games.findByName(game).catch(utils.handleFatalError)
+    let platforms = await PlatformGames.findByGame(games.id).catch(utils.handleFatalError)
+    platforms = await PlatformGames.findByGameAll(platforms.platformId, page, pageSize).catch(utils.handleFatalError) 
+    let collection = []
+    for (const element in platforms){
+      const el = platforms[element]
+      games = await Games.findById(el.gameId).catch(utils.handleFatalError)
+      delete games.group
+      delete games.createdAt
+      delete games.updatedAt
+      delete games.id
+      collection = collection.concat(games)
+    }
+    return collection
+  }
+
+  //TO DO
+  //const deletePlatform = async (platform) => {
+
+  //}
 
   return {
     list,
     upsert,
-    deletePlatform
+    // deletePlatform,
+    gamesByPlatforms,
+    gamesByPlatforms2
   }
 }

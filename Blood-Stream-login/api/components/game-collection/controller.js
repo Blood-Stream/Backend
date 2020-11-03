@@ -40,7 +40,7 @@ module.exports = (injectedStore) => {
     if (userGame === null) {
       usGm.uuid = nanoid()
     } else {
-      return 'Exist'
+      usGm.uuid = userGame.uuid
     }
 
     games = {
@@ -65,15 +65,37 @@ module.exports = (injectedStore) => {
 
     return usGm
   }
-
-  const deleteGameCollection = async (nickname) => {
-
+  
+  const gamesByCollection = async(user, page, pageSize) => {
+    const { Users, Games, GamesCollection } = await store(config(false)).catch(utils.handleFatalError)
+    let users = await Users.findByNickname(user).catch(utils.handleFatalError)
+    let collections = await GamesCollection.findByUser(users.id).catch(utils.handleFatalError)
+    collections = await GamesCollection.findByGameAll(collections.userId, page, pageSize).catch(utils.handleFatalError) 
+    let collection = []
+    let games
+    for (const element in collections){
+      const el = collections[element]
+      games = await Games.findById(el.gameId).catch(utils.handleFatalError)
+      games.Notes = el.Notes
+      delete games.group
+      delete games.createdAt
+      delete games.updatedAt
+      delete games.id
+      collection = collection.concat(games)
+    }
+    return collection
   }
+
+  // TO DO
+  // const deleteGameCollection = async (nickname) => {
+
+  // }
 
   return {
     list,
     get,
     upsert,
-    deleteGameCollection
+    // deleteGameCollection,
+    gamesByCollection
   }
 }

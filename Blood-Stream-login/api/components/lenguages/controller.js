@@ -29,7 +29,7 @@ module.exports = (injectedStore) => {
     if (lenGame === null) {
       lnGm.uuid = nanoid()
     } else {
-      return 'Exist'
+      lnGm.uuid = lenGame.uuid
     }
 
     games = {
