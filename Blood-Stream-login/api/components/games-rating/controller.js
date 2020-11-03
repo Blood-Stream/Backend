@@ -16,7 +16,11 @@ module.exports = (injectedStore) => {
     return gamesRating
   }
 
-  const get = async () => {
+  const get = async (page, pagination) => {
+    const { Games } = await store(config(false)).catch(utils.handleFatalError)
+    
+    let game = await Games.findAllRating(page, pagination).catch(utils.handleFatalError)
+    return game 
 
   }
 
@@ -29,7 +33,6 @@ module.exports = (injectedStore) => {
      * Review
      */
 
-    console.log(body)
     const { GamesRating, Users, Games } = await store(config(false)).catch(utils.handleFatalError)
     let user = await Users.findByNickname(body.Nickname).catch(utils.handleFatalError)
     let games = await Games.findByName(body.Game).catch(utils.handleFatalError)
@@ -44,7 +47,7 @@ module.exports = (injectedStore) => {
     if (userGame === null) {
       usGm.uuid = nanoid()
     } else {
-      return 'Exist'
+      usGm.uuid = userGame.uuid
     }
 
     games = {
@@ -61,7 +64,6 @@ module.exports = (injectedStore) => {
       Nickname: user.Nickname,
       Avatar: user.Avatar,
     }
-    console.log(usGm)
     usGm = await GamesRating.createOrUpdate(usGm, user.id, games.id)
 
     usGm.userId = user
@@ -70,8 +72,17 @@ module.exports = (injectedStore) => {
     return usGm
   }
 
-  const deleteGamesRating = async (nickname) => {
-
+  const deleteGamesRating = async (game, user) => {
+    const { GamesRating, Users, Games } = await store(config(false)).catch(utils.handleFatalError)
+    const games = await Games.findByName(game).catch(utils.handleFatalError)
+    const users = await Users.findByNickname(user).catch(utils.handleFatalError)
+    let gameRate = await GamesRating.findByUsGm(users.id, games.id).catch(utils.handleFatalError)
+    try {
+      gameRate = await GamesRating.deleteById(gameRate.id).catch(utils.handleFatalError)
+      return 'Erased'
+    } catch(err) {
+      return 'Not found'
+    }
   }
 
   return {
