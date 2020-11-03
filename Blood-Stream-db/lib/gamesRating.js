@@ -49,7 +49,15 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
       }
     })
   }
-
+  
+  async function findByIdGame (gameId) {
+    return await gamesRatingModel.findAll({
+      where: {
+        gameId: gameId
+      }
+    })
+  }
+  
   async function findByUsGm (userId, gameId) {
     return await gamesRatingModel.findOne({
       where: {
@@ -78,6 +86,7 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
     findAll,
     deleteById,
     findByGame,
-    findByUsGm
+    findByUsGm,
+    findByIdGame
   }
 }

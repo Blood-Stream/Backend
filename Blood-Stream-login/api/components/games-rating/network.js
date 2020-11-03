@@ -18,7 +18,7 @@ const list = (req, res, next) => {
 }
 
 const get = (req, res, next) => {
-  Controller.get(req.body)
+  Controller.get(req.params.page, req.params.pageSize)
   .then((user) => {
     response.success(req, res, user, 200)
   })
@@ -34,7 +34,7 @@ const upsert = (req, res, next) => {
 }
 
 const deleteGamesRating = (req, res, next) => {
-  Controller.deleteGamesRating(req.params.nickname)
+  Controller.deleteGamesRating(req.params.games, req.params.user)
     .then((user) => {
       response.success(req, res, user, 200)
     })
@@ -43,7 +43,7 @@ const deleteGamesRating = (req, res, next) => {
 
 // Routes
 router.get('/', passport.authenticate('jwt', { session: false }), list)
-router.get('/:game&:user', passport.authenticate('jwt', { session: false }), get)
+router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), get)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:user', passport.authenticate('jwt', { session: false }), deleteGamesRating)
 
