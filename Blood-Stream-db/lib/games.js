@@ -75,6 +75,28 @@ module.exports = function setupGames (gamesModel) {
     )
   }
   
+  async function findAllPopular (page, pageSize) {
+    return await gamesModel.findAll(
+      paginate(
+        {
+          where: {
+            count: {
+              [Op.ne]: null
+            } 
+          },
+          order: [
+            [
+              'count',
+              'DESC'
+            ]
+          ]
+
+        },
+        {page, pageSize}
+      )
+    )
+  }
+ 
   async function findAllGroup (group, page, pageSize) {
     return await gamesModel.findAll(
       paginate(
@@ -117,6 +139,7 @@ module.exports = function setupGames (gamesModel) {
     findByName,
     findByUrl,
     findAllRating,
-    findAllGroup
+    findAllGroup,
+    findAllPopular
   }
 }

@@ -1,8 +1,6 @@
 
 'use strict'
 
-const { nanoid } = require('nanoid')
-const { use } = require('passport')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 
@@ -75,6 +73,12 @@ module.exports = (injectedStore) => {
     games = await Games.findAllGroup(games.group, page, pageSize).catch(utils.handleFatalError)
     return games
   }
+
+  const getByPopular = async (page, pageSize) => {
+    const { Games } = await store(config(false)).catch(utils.handleFatalError)
+    const games = await Games.findAllPopular(page, pageSize).catch(utils.handleFatalError)
+    return games
+  }
   // TO DO
   /*const upsert = async (body) => {
   
@@ -87,6 +91,7 @@ module.exports = (injectedStore) => {
   return {
     list,
     get,
+    getByPopular,
     // upsert,
     // deleteGame,
     getByGroup
