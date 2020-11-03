@@ -1,6 +1,7 @@
 'use strict'
 
-const paginate = require('./pagination') const Sequelize = require('sequelize')
+const paginate = require('./pagination') 
+const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
 module.exports = function setupGames (gamesModel) {
