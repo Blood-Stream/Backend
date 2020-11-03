@@ -43,7 +43,7 @@ const deleteGamesRating = (req, res, next) => {
 
 // Routes
 router.get('/', passport.authenticate('jwt', { session: false }), list)
-router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), get)
+router.get('/get/:page&:pageSize', passport.authenticate('jwt', { session: false }), get)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:user', passport.authenticate('jwt', { session: false }), deleteGamesRating)
 

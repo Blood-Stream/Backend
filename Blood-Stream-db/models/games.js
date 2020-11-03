@@ -58,6 +58,10 @@ module.exports = function setupGamesModel (config) {
     Rating: {
       type: Sequelize.INTEGER(), 
       allowNull: true,
+    },
+    count: {
+      type: Sequelize.INTEGER(), 
+      allowNull: true,
     }
 
   },
