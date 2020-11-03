@@ -74,10 +74,26 @@ module.exports = (injectedStore) => {
 
   }
 
+  const listMostPopulars = async () => {
+    const { GamesRating, GamesModel } = await store(config(false)).catch(utils.handleFatalError)
+    const gamesRating = await GamesRating.listMostPopulars().catch(utils.handleFatalError)
+
+    return gamesRating
+  }
+
+  const bestGamesByCommunity = async () => {
+    const { GamesRating } = await store(config(false)).catch(utils.handleFatalError)
+    const gamesRating = await GamesRating.bestGamesByCommunity().catch(utils.handleFatalError)
+
+    return gamesRating
+  }
+
   return {
     list,
     get,
     upsert,
-    deleteGamesRating
+    deleteGamesRating,
+    listMostPopulars,
+    bestGamesByCommunity
   }
 }

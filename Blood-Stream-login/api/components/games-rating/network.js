@@ -41,10 +41,31 @@ const deleteGamesRating = (req, res, next) => {
     .catch(next)
   }
 
+const listMostPopulars = (req, res, next) => {
+  Controller.listMostPopulars()
+  .then((most) => {
+    response.success(req, res, most, 200)
+  })
+  .catch(next)
+}
+
+const bestGamesByCommunity = (req, res, next) => {
+  Controller.bestGamesByCommunity()
+  .then((best) => {
+    response.success(req, res, best, 200)
+  })
+  .catch(next)
+}
+
+
+
 // Routes
 router.get('/', passport.authenticate('jwt', { session: false }), list)
 router.get('/:game&:user', passport.authenticate('jwt', { session: false }), get)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:user', passport.authenticate('jwt', { session: false }), deleteGamesRating)
+
+router.get('/mostPopularGames', listMostPopulars)
+router.get('/bestGamesByCommunity', bestGamesByCommunity)
 
 module.exports = router

@@ -23,7 +23,7 @@ const login = async (req, res, next) => {
         const data = req.login(user, { session: false }, async (error) => {
           const { ApiKey } = await store(config(false)).catch(utils.handleFatalError)
           if (error) next(error)
-          const apiKey = await ApiKey.findByToken(apiKeyToken).catch(utils.handleFatalError) 
+          const apiKey = await ApiKey.findByToken(apiKeyToken).catch(utils.handleFatalError)
           if (!apiKey) next(boom.unauthorized())
           const { Nickname } = user
           const email = user.contactId.email

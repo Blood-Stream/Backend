@@ -1,5 +1,7 @@
 'use strict'
 
+const { countBy } = require("lodash")
+
 module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesModel) {
   async function createOrUpdate (gamesRating, uuidUser, uuidGames) {
     const cond = {
@@ -71,6 +73,26 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
     })
   }
 
+  async function listMostPopulars() {
+    const games = await GamesModel.findAll()
+    
+    return await gamesRatingModel.findAndCountAll({
+      order: [
+        ['userId', 'DESC']
+      ]
+    })
+  }
+
+  async function bestGamesByCommunity() {
+    const ratings = await gamesRatingModel.findAll()
+    const games = await GamesModel.findAll()
+    const rating = games.forEach(uuid => {
+      ratings.map(games.uuid)
+    })
+
+    console.log(`No se que estoy haciendo ${rating}`)
+  }
+
   return {
     createOrUpdate,
     findById,
@@ -78,6 +100,8 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
     findAll,
     deleteById,
     findByGame,
-    findByUsGm
+    findByUsGm,
+    listMostPopulars,
+    bestGamesByCommunity
   }
 }
