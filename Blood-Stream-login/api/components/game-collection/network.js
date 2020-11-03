@@ -34,12 +34,13 @@ const upsert = (req, res, next) => {
 }
 
 const deleteGameCollection = (req, res, next) => {
-  Controller.deleteGameCollection(req.params.nickname)
+  Controller.deleteGameCollection(req.params.games, req.params.user)
     .then((user) => {
       response.success(req, res, user, 200)
     })
     .catch(next)
   }
+
 const gamesByCollections = (req, res, next) => {
   Controller.gamesByCollection(req.params.user, req.params.page, req.params.pageSize)
     .then((game) => {
@@ -47,6 +48,7 @@ const gamesByCollections = (req, res, next) => {
     })
     .catch(next)
 }
+
 // Routes
 router.get('/', passport.authenticate('jwt', { session: false }), list)
 router.get('/:game&:user', passport.authenticate('jwt', { session: false }), get)

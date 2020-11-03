@@ -16,11 +16,7 @@ module.exports = (injectedStore) => {
     return gameCollection
   }
 
-  const get = async () => {
-
-  }
-
-  const upsert = async (body) => {
+   const upsert = async (body) => {
     /**
      * Game
      * Nickname
@@ -86,16 +82,24 @@ module.exports = (injectedStore) => {
     return collection
   }
 
-  // TO DO
-  // const deleteGameCollection = async (nickname) => {
-
-  // }
+  
+  const deleteGameCollection = async (game, user) => {
+    const { GamesCollection, Users, Games } = await store(config(false)).catch(utils.handleFatalError)
+    const games = await Games.findByName(game).catch(utils.handleFatalError)
+    const users = await Users.findByNickname(user).catch(utils.handleFatalError)
+    let gameCollection = await GamesCollection.findByUsGm(users.id, games.id).catch(utils.handleFatalError)
+    try {
+      gameCollection = await GamesCollection.deleteById(gameCollection.id).catch(utils.handleFatalError)
+      return 'Erased'
+    } catch(err) {
+      return 'Not found'
+    }
+  }
 
   return {
     list,
-    get,
     upsert,
-    // deleteGameCollection,
+    deleteGameCollection,
     gamesByCollection
   }
 }

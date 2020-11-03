@@ -1,6 +1,7 @@
 
 'use strict'
 const { Op } = require("sequelize");
+const paginate = require('./pagination')
 
 module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesModel) {
   async function createOrUpdate (uuidGames, uuidGenres, genreGames) {
@@ -77,7 +78,20 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
       }
     })
   }
-
+  
+  async function findByGameAll (platformId, page, pageSize) {
+    return await genreGamesModel.findAll(
+      paginate(
+        {
+          where: {
+            genreId: platformId 
+          }
+        },
+        {page, pageSize}
+      )
+    )
+  }
+ 
   return {
     createOrUpdate,
     findById,
@@ -85,6 +99,7 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
     findAll,
     deleteById,
     findByGnGm,
-    findByGame
+    findByGame,
+    findByGameAll
   }
 }

@@ -1,5 +1,7 @@
 'use strict'
 
+const paginate = require('./pagination')
+
 module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lenguagesGamesModel) {
   async function createOrUpdate (uuidGames, uuidLenguages, lenguagesGames) {
     const cond = {
@@ -80,6 +82,19 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
       }
     })
   }
+  
+  async function findByGameAll (platformId, page, pageSize) {
+    return await lenguagesGamesModel.findAll(
+      paginate(
+        {
+          where: {
+            lenguageId: platformId 
+          }
+        },
+        {page, pageSize}
+      )
+    )
+  }
 
   return {
     createOrUpdate,
@@ -88,6 +103,7 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
     findAll,
     deleteById,
     findByLnGm,
-    findByGame
+    findByGame,
+    findByGameAll
   }
 }

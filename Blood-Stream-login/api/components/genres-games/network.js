@@ -33,9 +33,18 @@ const deleteMessage = (req, res, next) => {
     .catch(next)
   }
 
+const genreGames = (req, res, next) => {
+  Controller.getGameByGenre(req.params.genre, req.params.page, req.params.pageSize)
+    .then((game) => {
+      response.success(req, res, game, 200)
+    })
+    .catch(next)
+}
+
 // Routes
 router.get('/', passport.authenticate('jwt', { session: false }), list)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:genre', passport.authenticate('jwt', { session: false }), deleteMessage)
+router.get('/genre-games/:genre&:page&:pageSize', passport.authenticate('jwt', { session: false }), genreGames)
 
 module.exports = router

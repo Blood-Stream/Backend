@@ -47,14 +47,33 @@ module.exports = (injectedStore) => {
 
     return lnGm
   }
-
-  const deleteLenguage = async (nickname) => {
+  const lnList = async (ln, page, pageSize) => {
+    const { Games, LenguagesGames, Lenguages } = await store(config(false)).catch(utils.handleFatalError)
+    let platforms = await Lenguages.findByLenguage(ln).catch(utils.handleFatalError)
+    platforms = await LenguagesGames.findByGameAll(platforms.id, page, pageSize).catch(utils.handleFatalError) 
+    let collection = []
+    let games
+    for (const element in platforms){
+      const el = platforms[element]
+      games = await Games.findById(el.gameId).catch(utils.handleFatalError)
+      delete games.group
+      delete games.createdAt
+      delete games.updatedAt
+      delete games.id
+      collection = collection.concat(games)
+    }
+    return collection
 
   }
+  // TO DO
+  // const deleteLenguage = async (nickname) => {
+
+  // }
 
   return {
     list,
     upsert,
-    deleteLenguage
+    lnList
+    //deleteLenguage
   }
 }
