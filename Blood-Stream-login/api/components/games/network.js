@@ -49,6 +49,7 @@ const getGamesByGroup = (req, res, next) => {
     })
     .catch(next)
 }
+
 // Routes
 router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), list)
 router.get('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), get)
