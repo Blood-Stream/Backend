@@ -1,7 +1,6 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
-const { use } = require('passport')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 

@@ -53,7 +53,7 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
       }
     })
   }
-
+  
   async function findByUser (userId) {
     return await gamesCollectionModel.findOne({
       where: {

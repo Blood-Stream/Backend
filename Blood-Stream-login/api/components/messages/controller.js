@@ -15,9 +15,10 @@ module.exports = (injectedStore) => {
     return Message.findAll().catch(utils.handleFatalError)
   }
 
-  const get = async (nickname) => {
+  // TO DO
+  // const get = async (nickname) => {
 
-  }
+  // }
 
   const upsert = async (body) => {
     const { Message, Users } = await store(config(false)).catch(utils.handleFatalError)
@@ -48,14 +49,13 @@ module.exports = (injectedStore) => {
 
     return result
   }
+  // TO DO
+  // const deleteMessage = async (nickname) => {
 
-  const deleteMessage = async (nickname) => {
-
-  }
-
-  return {
+  // } 
+  return { 
     list,
-    upsert,
-    deleteMessage
+    upsert
+    // deleteMessage
   }
 }
