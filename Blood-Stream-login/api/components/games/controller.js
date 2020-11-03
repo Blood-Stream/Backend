@@ -67,19 +67,28 @@ module.exports = (injectedStore) => {
 
     return game
   }
-
-  const upsert = async (body) => {
-
+  
+  const getByGroup = async (game, page, pageSize) => {
+    const { Games } = await store(config(false)).catch(utils.handleFatalError)
+    let games = await Games.findByName(game).catch(utils.handleFatalError)
+    console.log(games)
+    games = await Games.findAllGroup(games.group, page, pageSize).catch(utils.handleFatalError)
+    return games
+  }
+  // TO DO
+  /*const upsert = async (body) => {
+  
   }
 
   const deleteGame = async (game) => {
     console.log('Works')
-  }
+  }*/
 
   return {
     list,
     get,
-    upsert,
-    deleteGame
+    // upsert,
+    // deleteGame,
+    getByGroup
   }
 }

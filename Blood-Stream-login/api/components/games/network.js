@@ -42,10 +42,18 @@ const deleteGame = (req, res, next) => {
     .catch(next)
   }
 
+const getGamesByGroup = (req, res, next) => {
+  Controller.getByGroup(req.params.game, req.params.page, req.params.pageSize)
+    .then((game) => {
+      response.success(req, res, game, 200)
+    })
+    .catch(next)
+}
 // Routes
 router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), list)
 router.get('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), get)
 router.post('/', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['update: game']), upsert)
+router.get('/group/:game&:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), getGamesByGroup)
 router.delete('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['delete: game']), deleteGame)
 
 module.exports = router

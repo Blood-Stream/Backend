@@ -1,5 +1,7 @@
 'use strict'
 
+const paginate = require('./pagination')
+
 module.exports = function setupPlatformGames (gamesModel, platformModel, platformGamesModel) {
   async function createOrUpdate (uuidGames, uuidPlatforms, platformsGames) {
     const cond = {
@@ -68,9 +70,22 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
       }
     })
   }
-
+  
+  async function findByGameAll (platformId, page, pageSize) {
+    return await platformGamesModel.findAll(
+      paginate(
+        {
+          where: {
+            platformId: platformId 
+          }
+        },
+        {page, pageSize}
+      )
+    )
+  }
+  
   async function findByGame (gameId) {
-    return await platformGamesModel.findAll({
+    return await platformGamesModel.findOne({
       where: {
         gameId: gameId
       }
@@ -97,6 +112,7 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     deleteById,
     findByGame,
     findByPlGm,
-    findByPlatform
+    findByPlatform,
+    findByGameAll
   }
 }
