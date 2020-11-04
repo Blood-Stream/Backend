@@ -1,10 +1,9 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
-const { use } = require('passport')
+const gamesCollection = require('../../../../Blood-Stream-db/lib/gamesCollection')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
-const controller = require('../auth/index')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
@@ -62,7 +61,20 @@ module.exports = (injectedStore) => {
     return usGm
   }
   
-  const gamesByCollection = async(user, page, pageSize) => {
+  const get = async (user) => {
+    const { GamesCollection, Users, Games } = await store(config(false)).catch(utils.handleFatalError)
+    const users = await Users.findByNickname(user).catch(utils.handleFatalError)
+    let gameCollection = await GamesCollection.findByUserAll(users.id).catch(utils.handleFatalError)
+    let collector = []
+    for (const element in gameCollection) {
+      const el = gameCollection[element]
+      collector = collector.concat(await Games.findById(el.gameId))
+    }
+    return collector 
+  }
+
+  const gamesByCollection = async(user, page) => {
+    const pageSize = 10
     const { Users, Games, GamesCollection } = await store(config(false)).catch(utils.handleFatalError)
     let users = await Users.findByNickname(user).catch(utils.handleFatalError)
     let collections = await GamesCollection.findByUser(users.id).catch(utils.handleFatalError)
@@ -99,6 +111,7 @@ module.exports = (injectedStore) => {
   return {
     list,
     upsert,
+    get,
     deleteGameCollection,
     gamesByCollection
   }

@@ -34,7 +34,7 @@ const deletePlatform = (req, res, next) => {
   }
 
 const gamesByPlatforms2 = (req, res, next) => {
-  Controller.gamesByPlatforms2(req.params.platform, req.params.page, req.params.pageSize)
+  Controller.gamesByPlatforms2(req.params.platform, req.params.page)
     .then((game) => {
       response.success(req, res, game, 200)
     })
@@ -42,7 +42,7 @@ const gamesByPlatforms2 = (req, res, next) => {
 }
 
 const gamesByPlatforms = (req, res, next) => {
-  Controller.gamesByPlatforms(req.params.game, req.params.page, req.params.pageSize)
+  Controller.gamesByPlatforms(req.params.game, req.params.page)
     .then((game) => {
       response.success(req, res, game, 200)
     })
@@ -52,7 +52,7 @@ const gamesByPlatforms = (req, res, next) => {
 router.get('/', passport.authenticate('jwt', { session: false }), list)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:lenguage', passport.authenticate('jwt', { session: false }), deletePlatform)
-router.get('/:game&:page&:pageSize', passport.authenticate('jwt', { session: false }), gamesByPlatforms)
-router.get('/platform/:platform&:page&:pageSize', passport.authenticate('jwt', { session: false }), gamesByPlatforms2)
+router.get('/:game&:page', passport.authenticate('jwt', { session: false }), gamesByPlatforms)
+router.get('/platform/:platform&:page', passport.authenticate('jwt', { session: false }), gamesByPlatforms2)
 
 module.exports = router

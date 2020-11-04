@@ -34,7 +34,7 @@ const deleteLenguage = (req, res, next) => {
   }
 
 const lnList = (req, res, next) => {
-  Controller.lnList(req.params.ln, req.params.page, req.params.pageSize)
+  Controller.lnList(req.params.ln, req.params.page)
     .then((game) => {
       response.success(req, res, game, 200)
     })
@@ -44,6 +44,6 @@ const lnList = (req, res, next) => {
 router.get('/', passport.authenticate('jwt', { session: false }), list)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:lenguage', passport.authenticate('jwt', { session: false }), deleteLenguage)
-router.get('/ln/:ln&:page&:pageSize', passport.authenticate('jwt', { session: false }), lnList)
+router.get('/ln/:ln&:page', passport.authenticate('jwt', { session: false }), lnList)
 
 module.exports = router

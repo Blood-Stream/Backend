@@ -54,6 +54,14 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
     })
   }
   
+  async function findByUserAll (userId) {
+    return await gamesCollectionModel.findAll({
+      where: {
+        userId
+      }
+    })
+  }
+  
   async function findByUser (userId) {
     return await gamesCollectionModel.findOne({
       where: {
@@ -113,6 +121,7 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
     findByUsGm,
     findByGame,
     findByGameAll,
+    findByUserAll,
     findByUser
   }
 }
