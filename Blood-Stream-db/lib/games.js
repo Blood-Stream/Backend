@@ -44,7 +44,16 @@ module.exports = function setupGames (gamesModel) {
       }
     })
   }
-
+  
+  async function findByGroup (id, group) {
+    return await gamesModel.findOne({
+      where: {
+        group,
+        id
+      }
+    })
+  }
+  
   async function findByName (Name) {
     return await gamesModel.findOne({
       where: {
@@ -75,6 +84,29 @@ module.exports = function setupGames (gamesModel) {
     )
   }
   
+
+  async function findAllPopular (page, pageSize) {
+    return await gamesModel.findAll(
+      paginate(
+        {
+          where: {
+            count: {
+              [Op.ne]: null
+            } 
+          },
+          order: [
+            [
+              'count',
+              'DESC'
+            ]
+          ]
+
+        },
+        {page, pageSize}
+      )
+    )
+  }
+ 
   async function findAllGroup (group, page, pageSize) {
     return await gamesModel.findAll(
       paginate(
@@ -117,6 +149,8 @@ module.exports = function setupGames (gamesModel) {
     findByName,
     findByUrl,
     findAllRating,
-    findAllGroup
+    findAllGroup,
+    findAllPopular,
+    findByGroup
   }
 }

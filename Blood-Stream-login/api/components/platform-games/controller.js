@@ -62,7 +62,6 @@ module.exports = (injectedStore) => {
     return collection
   }
 
-
   const gamesByPlatforms = async(game, page, pageSize) => {
     const { Games, PlatformGames } = await store(config(false)).catch(utils.handleFatalError)
     let games = await Games.findByName(game).catch(utils.handleFatalError)
@@ -91,6 +90,6 @@ module.exports = (injectedStore) => {
     upsert,
     // deletePlatform,
     gamesByPlatforms,
-    gamesByPlatforms2
+    gamesByPlatforms2,
   }
 }
