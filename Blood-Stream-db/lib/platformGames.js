@@ -54,6 +54,14 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     })
   }
 
+  function findByAllPlatform (platform) {
+    return platformGamesModel.findAll({
+      where: {
+        platformId: platform
+      } 
+    })
+  }
+  
   function findByPlatform (platform) {
     return platformGamesModel.findOne({
       where: {
@@ -113,6 +121,7 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     findByGame,
     findByPlGm,
     findByPlatform,
-    findByGameAll
+    findByGameAll,
+    findByAllPlatform
   }
 }

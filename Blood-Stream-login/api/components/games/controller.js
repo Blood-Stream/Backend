@@ -69,7 +69,6 @@ module.exports = (injectedStore) => {
   const getByGroup = async (game, page, pageSize) => {
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
     let games = await Games.findByName(game).catch(utils.handleFatalError)
-    console.log(games)
     games = await Games.findAllGroup(games.group, page, pageSize).catch(utils.handleFatalError)
     return games
   }

@@ -44,7 +44,16 @@ module.exports = function setupGames (gamesModel) {
       }
     })
   }
-
+  
+  async function findByGroup (id, group) {
+    return await gamesModel.findOne({
+      where: {
+        group,
+        id
+      }
+    })
+  }
+  
   async function findByName (Name) {
     return await gamesModel.findOne({
       where: {
@@ -75,6 +84,7 @@ module.exports = function setupGames (gamesModel) {
     )
   }
   
+
   async function findAllPopular (page, pageSize) {
     return await gamesModel.findAll(
       paginate(
@@ -140,6 +150,7 @@ module.exports = function setupGames (gamesModel) {
     findByUrl,
     findAllRating,
     findAllGroup,
-    findAllPopular
+    findAllPopular,
+    findByGroup
   }
 }
