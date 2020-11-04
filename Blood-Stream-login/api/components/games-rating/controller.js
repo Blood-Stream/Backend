@@ -14,7 +14,8 @@ module.exports = (injectedStore) => {
     return gamesRating
   }
 
-  const get = async (page, pagination) => {
+  const get = async (page) => {
+    const pagination = 10
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
     
     let game = await Games.findAllRating(page, pagination).catch(utils.handleFatalError)

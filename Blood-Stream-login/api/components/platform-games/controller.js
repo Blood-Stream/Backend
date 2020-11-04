@@ -44,7 +44,8 @@ module.exports = (injectedStore) => {
     return plGm
   }
   
-  const gamesByPlatforms2 = async(platform, page, pageSize) => {
+  const gamesByPlatforms2 = async(platform, page) => {
+    const pageSize = 10
     const { Games, PlatformGames, Platform } = await store(config(false)).catch(utils.handleFatalError)
     let platforms = await Platform.findByPlatform(platform).catch(utils.handleFatalError)
     platforms = await PlatformGames.findByGameAll(platforms.id, page, pageSize).catch(utils.handleFatalError) 
@@ -62,7 +63,8 @@ module.exports = (injectedStore) => {
     return collection
   }
 
-  const gamesByPlatforms = async(game, page, pageSize) => {
+  const gamesByPlatforms = async(game, page) => {
+    const pageSize = 10
     const { Games, PlatformGames } = await store(config(false)).catch(utils.handleFatalError)
     let games = await Games.findByName(game).catch(utils.handleFatalError)
     let platforms = await PlatformGames.findByGame(games.id).catch(utils.handleFatalError)

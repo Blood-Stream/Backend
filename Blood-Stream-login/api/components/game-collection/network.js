@@ -18,7 +18,7 @@ const list = (req, res, next) => {
 }
 
 const get = (req, res, next) => {
-  Controller.get(req.body)
+  Controller.get(req.params.user)
   .then((user) => {
     response.success(req, res, user, 200)
   })
@@ -42,7 +42,7 @@ const deleteGameCollection = (req, res, next) => {
   }
 
 const gamesByCollections = (req, res, next) => {
-  Controller.gamesByCollection(req.params.user, req.params.page, req.params.pageSize)
+  Controller.gamesByCollection(req.params.user, req.params.page)
     .then((game) => {
       response.success(req, res, game, 200)
     })
@@ -51,9 +51,9 @@ const gamesByCollections = (req, res, next) => {
 
 // Routes
 router.get('/', passport.authenticate('jwt', { session: false }), list)
-router.get('/:game&:user', passport.authenticate('jwt', { session: false }), get)
+router.get('/:user', passport.authenticate('jwt', { session: false }), get)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:user', passport.authenticate('jwt', { session: false }), deleteGameCollection)
-router.get('/collections/:user&:page&:pageSize', passport.authenticate('jwt', { session: false }), gamesByCollections)
+router.get('/collections/:user&:page', passport.authenticate('jwt', { session: false }), gamesByCollections)
 
 module.exports = router

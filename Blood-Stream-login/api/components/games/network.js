@@ -11,7 +11,7 @@ require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {
-  Controller.list(req.params.page, req.params.pageSize)
+  Controller.list(req.params.page)
   .then((lista) => {
     response.success(req, res, lista, 200)
   })
@@ -43,7 +43,7 @@ const deleteGame = (req, res, next) => {
   }
 
 const getGamesByGroup = (req, res, next) => {
-  Controller.getByGroup(req.params.game, req.params.page, req.params.pageSize)
+  Controller.getByGroup(req.params.game, req.params.page)
     .then((game) => {
       response.success(req, res, game, 200)
     })
@@ -51,7 +51,7 @@ const getGamesByGroup = (req, res, next) => {
 }
 
 const getGamesByPopular = (req, res, next) => {
-  Controller.getByPopular(req.params.page, req.params.pageSize)
+  Controller.getByPopular(req.params.page)
     .then((game) => {
       response.success(req, res, game, 200)
     })
@@ -59,11 +59,11 @@ const getGamesByPopular = (req, res, next) => {
 }
 
 // Routes
-router.get('/:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), list)
+router.get('/:page', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), list)
 router.get('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), get)
 router.post('/', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['update: game']), upsert)
-router.get('/group/:game&:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), getGamesByGroup)
+router.get('/group/:game&:page', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), getGamesByGroup)
 router.delete('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['delete: game']), deleteGame)
-router.get('/popular/:page&:pageSize', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), getGamesByPopular)
+router.get('/popular/:page', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), getGamesByPopular)
 
 module.exports = router

@@ -1,7 +1,6 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
-const { use } = require('passport')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 
@@ -47,7 +46,8 @@ module.exports = (injectedStore) => {
 
     return lnGm
   }
-  const lnList = async (ln, page, pageSize) => {
+  const lnList = async (ln, page) => {
+    const pageSize = 10
     const { Games, LenguagesGames, Lenguages } = await store(config(false)).catch(utils.handleFatalError)
     let platforms = await Lenguages.findByLenguage(ln).catch(utils.handleFatalError)
     platforms = await LenguagesGames.findByGameAll(platforms.id, page, pageSize).catch(utils.handleFatalError) 

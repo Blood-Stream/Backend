@@ -7,7 +7,8 @@ const config = require('../../../../config/config')
 module.exports = (injectedStore) => {
   const store = injectedStore
 
-  const list = async (page, pageSize) => {
+  const list = async (page) => {
+    const pageSize = 10
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
     const game = await Games.findAll(page, pageSize).catch(utils.handleFatalError)
 
@@ -66,14 +67,16 @@ module.exports = (injectedStore) => {
     return game
   }
   
-  const getByGroup = async (game, page, pageSize) => {
+  const getByGroup = async (game, page) => {
+    const pageSize = 10
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
     let games = await Games.findByName(game).catch(utils.handleFatalError)
     games = await Games.findAllGroup(games.group, page, pageSize).catch(utils.handleFatalError)
     return games
   }
 
-  const getByPopular = async (page, pageSize) => {
+  const getByPopular = async (page) => {
+    const pageSize = 10
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
     const games = await Games.findAllPopular(page, pageSize).catch(utils.handleFatalError)
     return games

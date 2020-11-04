@@ -10,7 +10,8 @@ let users
 module.exports = (injectedStore) => {
   const store = injectedStore
 
-  const list = async (page, pageSize) => {
+  const list = async (page) => {
+    const pageSize = 10
     const { Users } = await store(config(false)).catch(utils.handleFatalError)
     users = await Users.findAll(page, pageSize).catch(utils.handleFatalError)
     return users
