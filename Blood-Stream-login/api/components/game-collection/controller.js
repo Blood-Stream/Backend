@@ -74,7 +74,7 @@ module.exports = (injectedStore) => {
   }
 
   const gamesByCollection = async(user, page) => {
-    const pageSize = 10
+    const pageSize = 15
     const { Users, Games, GamesCollection } = await store(config(false)).catch(utils.handleFatalError)
     let users = await Users.findByNickname(user).catch(utils.handleFatalError)
     let collections = await GamesCollection.findByUser(users.id).catch(utils.handleFatalError)
