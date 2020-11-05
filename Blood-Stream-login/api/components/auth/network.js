@@ -34,7 +34,7 @@ const login = async (req, res, next) => {
             scopes: apiKey.scopes
           }
           const token = jwt.sign(payload, config(false).authJwtSecret, {
-            expiresIn: '15m'
+            expiresIn: '12h'
           })
 
           const data = {
