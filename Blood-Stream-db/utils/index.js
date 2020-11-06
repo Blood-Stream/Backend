@@ -28,8 +28,13 @@ function handleFatalError (err) {
   process.exit(1)
 }
 
+function totalPage () {
+  return 15
+}
+
 module.exports = {
   extend,
   sortBy,
-  handleFatalError
+  handleFatalError,
+  totalPage
 }
