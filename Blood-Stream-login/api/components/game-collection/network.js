@@ -17,14 +17,6 @@ const list = (req, res, next) => {
   .catch(next)
 }
 
-const get = (req, res, next) => {
-  Controller.get(req.params.user)
-  .then((user) => {
-    response.success(req, res, user, 200)
-  })
-  .catch(next)
-}
-
 const upsert = (req, res, next) => {
   Controller.upsert(req.body)
   .then((user) => {
@@ -51,7 +43,6 @@ const gamesByCollections = (req, res, next) => {
 
 // Routes
 router.get('/', passport.authenticate('jwt', { session: false }), list)
-router.get('/:user', passport.authenticate('jwt', { session: false }), get)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:user', passport.authenticate('jwt', { session: false }), deleteGameCollection)
 router.get('/collections/:user&:page', passport.authenticate('jwt', { session: false }), gamesByCollections)

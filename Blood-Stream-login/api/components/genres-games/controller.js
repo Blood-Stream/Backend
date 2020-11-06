@@ -7,9 +7,10 @@ const config = require('../../../../config/config')
 module.exports = (injectedStore) => {
   const store = injectedStore
 
-  const list = async () => {
+  const list = async (page) => {
+    const pageSize = utils.totalPage() 
     const { GenresGames } = await store(config(false)).catch(utils.handleFatalError)
-    const gnGames = await GenresGames.findAll().catch(utils.handleFatalError)
+    const gnGames = await GenresGames.findAll(page, pageSize).catch(utils.handleFatalError)
 
     return gnGames
   }

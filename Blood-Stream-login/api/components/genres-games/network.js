@@ -10,7 +10,7 @@ require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {
-  Controller.list()
+  Controller.list(req.params.page)
   .then((lista) => {
     response.success(req, res, lista, 200)
   })
@@ -42,7 +42,7 @@ const genreGames = (req, res, next) => {
 }
 
 // Routes
-router.get('/', passport.authenticate('jwt', { session: false }), list)
+router.get('/:page', passport.authenticate('jwt', { session: false }), list)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:genre', passport.authenticate('jwt', { session: false }), deleteMessage)
 router.get('/genre-games/:genre&:page', passport.authenticate('jwt', { session: false }), genreGames)

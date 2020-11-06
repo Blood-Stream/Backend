@@ -100,8 +100,14 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     })
   }
 
-  function findAll () {
-    return platformGamesModel.findAll()
+  function findAll (page, pageSize) {
+    return platformGamesModel.findAll(
+      paginate(
+        {
+          where: {}
+        },
+        {page, pageSize}
+      ))
   }
 
   async function deleteById (id) {

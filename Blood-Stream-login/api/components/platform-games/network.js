@@ -10,7 +10,7 @@ require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {
-  Controller.list()
+  Controller.list(req.params.page)
   .then((lista) => {
     response.success(req, res, lista, 200)
   })
@@ -49,10 +49,10 @@ const gamesByPlatforms = (req, res, next) => {
     .catch(next)
 }
 // Routes
-router.get('/', passport.authenticate('jwt', { session: false }), list)
+router.get('/list/:page', passport.authenticate('jwt', { session: false }), list)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
-router.delete('/:games&:lenguage', passport.authenticate('jwt', { session: false }), deletePlatform)
-router.get('/:game&:page', passport.authenticate('jwt', { session: false }), gamesByPlatforms)
+router.delete('/:games&:platform', passport.authenticate('jwt', { session: false }), deletePlatform)
+router.get('/get/:game&:page', passport.authenticate('jwt', { session: false }), gamesByPlatforms)
 router.get('/platform/:platform&:page', passport.authenticate('jwt', { session: false }), gamesByPlatforms2)
 
 module.exports = router

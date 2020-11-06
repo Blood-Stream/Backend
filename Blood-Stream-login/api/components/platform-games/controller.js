@@ -7,9 +7,10 @@ const config = require('../../../../config/config')
 module.exports = (injectedStore) => {
   const store = injectedStore
 
-  const list = async () => {
+  const list = async (page) => {
+    const pageSize = utils.totalPage()
     const { PlatformGames } = await store(config(false)).catch(utils.handleFatalError)
-    const platform = await PlatformGames.findAll().catch(utils.handleFatalError)
+    const platform = await PlatformGames.findAll(page, pageSize).catch(utils.handleFatalError)
     return platform
   }
 
@@ -67,7 +68,9 @@ module.exports = (injectedStore) => {
     const pageSize = utils.totalPage()
     const { Games, PlatformGames } = await store(config(false)).catch(utils.handleFatalError)
     let games = await Games.findByName(game).catch(utils.handleFatalError)
+    if (games === null) return 'Not found'
     let platforms = await PlatformGames.findByGame(games.id).catch(utils.handleFatalError)
+    if (platforms === null) return 'Not found'
     platforms = await PlatformGames.findByGameAll(platforms.platformId, page, pageSize).catch(utils.handleFatalError) 
     let collection = []
     for (const element in platforms){

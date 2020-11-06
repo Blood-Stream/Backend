@@ -61,18 +61,6 @@ module.exports = (injectedStore) => {
     return usGm
   }
   
-  const get = async (user) => {
-    const { GamesCollection, Users, Games } = await store(config(false)).catch(utils.handleFatalError)
-    const users = await Users.findByNickname(user).catch(utils.handleFatalError)
-    let gameCollection = await GamesCollection.findByUserAll(users.id).catch(utils.handleFatalError)
-    let collector = []
-    for (const element in gameCollection) {
-      const el = gameCollection[element]
-      collector = collector.concat(await Games.findById(el.gameId))
-    }
-    return collector 
-  }
-
   const gamesByCollection = async(user, page) => {
     const pageSize = utils.totalPage()
     const { Users, Games, GamesCollection } = await store(config(false)).catch(utils.handleFatalError)
@@ -111,7 +99,6 @@ module.exports = (injectedStore) => {
   return {
     list,
     upsert,
-    get,
     deleteGameCollection,
     gamesByCollection
   }

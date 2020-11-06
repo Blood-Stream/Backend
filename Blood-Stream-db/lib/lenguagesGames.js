@@ -71,8 +71,15 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
     })
   }
 
-  function findAll () {
-    return lenguagesGamesModel.findAll()
+  function findAll (page, pageSize) {
+    return lenguagesGamesModel.findAll(
+      paginate(
+        {
+          where: {}
+        },
+        {page, pageSize}
+      )
+    )
   }
 
   async function deleteById (id) {
