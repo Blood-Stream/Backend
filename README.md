@@ -2,17 +2,32 @@
 
 This is the backend for the project BloodStream to create the communication between Backend and Frontend & Datascience.
 
-contributors for backend:
+## Page 💻
 
-* Carlos Gutierrez [ingecarlos.gutierrez@gmail.com](mailto:ingecarlos.gutierrez@gmail.com)
-* Stiven Mosquera [moquera012@gmail.com](mailto:moquera012@gmail.com)
+- [Blood-stream.xyz](http://blood-stream.xyz/#/)
 
-license used: 
-* MIT
+## Built with 🛠️
+
+- [JavaScript](https://www.javascript.com/) - Programming Language
+- [NodeJs](https://nodejs.org/en/) - Web Framework
+- [NPM](https://www.npmjs.com/) - Dependency manager
+- [Heroku](https://www.heroku.com/#) - Platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud
+- [AWS](https://aws.amazon.com/) - Amazon Web Services (AWS) is a platform in a cloud more complete around the world, offer more than 175 services.
+
+## Authors ✒️
+
+- **Carlos Gutierrez** - _Backend Developer_ - [CarGDev](https://github.com/CarGDev)
+- **Stiven Mosquera** - _Backend Developer_ - [MosqueraSt3](https://github.com/MosqueraSt3)
+
+## License 📄
+
+This project is under the License (MIT)
+
+
 
 
 ---
-## Instalation
+## Instalation 📲
 
 1. Fork this repository
 2. Create a directory in your computer
@@ -36,7 +51,7 @@ run ``` npm run dev ``` to run as **developer**
 
 ![NpmRunTest.mp4](./Readme%20images/NpmRunDev.gif)
 
-## Configuration
+## Configuration 🖱
 
 ### Usage
 
@@ -51,38 +66,9 @@ if the parameter is **false** the database just create the communication between
 
 ![configFalse.png](./Readme%20images/configFalse.png)
 
-``` js
-module.exports = function config (configExtra) {
-  let config = null
-
-  if (configExtra) {
-    config = {
-      database: process.env.DB_NAME || 'bloodstreamdb',
-      username: process.env.DB_USER || 'bloodstream',
-      password: process.env.DB_PASS || 'password',
-      hostname: process.env.DB_HOST || 'localhost',
-      dialect: 'postgres',
-      loggin: s => debug(s),
-      setup: true
-    }
-  } else {
-    config = {
-      database: process.env.DB_NAME || 'bloodstreamdb',
-      username: process.env.DB_USER || 'bloodstream',
-      password: process.env.DB_PASS || 'password',
-      hostname: process.env.DB_HOST || 'localhost',
-      dialect: 'postgres',
-      loggin: s => debug(s)
-    }
-  }
-
-  return config
-}
-```
-
 
 ---
-## DataBase
+## DataBase 💾
 
 ### Usage
 
@@ -118,238 +104,15 @@ setupDataBase(config).then(db => {
 
 ---
 
-## Apis
+## Apis 📋
 
 The services for the api is supported by [Heroku](https://dashboard.heroku.com/apps)
 
-### Get 
-
-> ### to list all users the URl is ==> 
-
-``` js
-METHOD: GET
-
-http://dry-mesa-48732.herokuapp.com/user/
-
-```
-
-`Response:`
-
-```JSON
-{
-  "error": false,
-  "status": 200,
-  "body": [
-    {
-      "id": 3,
-      "uuid": "zldd0Rfxp8k__ExtAFf1T",
-      "Nickname": "Test2123",
-      "Country": "Mexico",
-      "Postal_Code": "20208",
-      "Birthday": "1989-09-15T00:00:00.000Z",
-      "Status": true,
-      "createdAt": "2020-09-24T03:50:20.933Z",
-      "updatedAt": "2020-09-24T03:50:20.933Z",
-      "platformId": 3,
-      "contactId": 3,
-      "accessRolId": 3,
-      "passwordId": 3
-    },
-    {
-      "id": 7,
-      "uuid": "MuESAzUEckOMX952pa-zg",
-      "Nickname": "",
-      "Country": "Mexico",
-      "Postal_Code": "20208",
-      "Birthday": "1989-09-15T00:00:00.000Z",
-      "Status": true,
-      "createdAt": "2020-09-24T15:55:08.607Z",
-      "updatedAt": "2020-09-24T15:55:08.607Z",
-      "platformId": 7,
-      "contactId": 7,
-      "accessRolId": 7,
-      "passwordId": 9
-    },
-    {
-      "id": 6,
-      "uuid": "E2N3xuu6U1Za-DGDQKfc4",
-      "Nickname": "Test4",
-      "Country": "Mexico",
-      "Postal_Code": "20208",
-      "Birthday": "1989-09-15T00:00:00.000Z",
-      "Status": true,
-      "createdAt": "2020-09-24T04:41:07.846Z",
-      "updatedAt": "2020-09-24T17:03:31.076Z",
-      "platformId": 6,
-      "contactId": 6,
-      "accessRolId": 6,
-      "passwordId": 10
-    }
-  ]
-}
-
-```
-
-> ### To list 1 user the URL is ==>
-
-```js
-METHOD: GET
-
-http://dry-mesa-48732.herokuapp.com/user/{USER}
-
-```
-
-`Response:`
-
-``` JSON
-
-{
-  "error": false,
-  "status": 200,
-  "body": {
-    "id": 3,
-    "uuid": "zldd0Rfxp8k__ExtAFf1T",
-    "Nickname": "Test2123",
-    "Country": "Mexico",
-    "Postal_Code": "20208",
-    "Birthday": "1989-09-15T00:00:00.000Z",
-    "Status": true,
-    "createdAt": "2020-09-24T03:50:20.933Z",
-    "updatedAt": "2020-09-24T03:50:20.933Z",
-    "platformId": 3,
-    "contactId": 3,
-    "accessRolId": 3,
-    "passwordId": 3
-  }
-}
-
-```
-
-> ### To create 1 user the URL is ==>
-
-``` js
-METHOD: POST
-
-http://dry-mesa-48732.herokuapp.com/user/
-```
-`Parameters:`
-
-```JSON
-{
-	"nickname": "USER",
-	"country": "COUNTRY",
-	"postal_Code": "CP",
-	"birthday": "YYYY-MM-DD",
-	"status": BOOLEAN,
-	"platform": "PLATFORM",
-	"email": "EMAIL@SERVICES.COM",
-	"phone": "PHONE",
-	"rol": "ROL-USER",
-  "level": LEVEL AS 1,
-	"password": "PASSWORD"
-}
-
-```
-
-`Response:`
-
-```JSON
-{
-  "error": false,
-  "status": 201,
-  "body": {
-    "id": 9,
-    "Nickname": "Test5",
-    "Country": "Mexico",
-    "Postal_Code": "20208",
-    "Birthday": "1989-09-15T00:00:00.000Z",
-    "Status": true,
-    "uuid": "frWim59R15IVDr-9ewcKx",
-    "platformId": 9,
-    "contactId": 9,
-    "accessRolId": 9,
-    "passwordId": 13,
-    "updatedAt": "2020-09-25T03:25:35.104Z",
-    "createdAt": "2020-09-25T03:25:35.104Z"
-  }
-}
-
-```
-
-> ### To login the URL is ==>
-
-```js
-METHOD: POST
-
-http://dry-mesa-48732.herokuapp.com/user/login
-
-```
-`Parameters:`
-
-```JSON
-{
-	"nickname": "USER",
-	"password": "NEW-PASSWORD"
-}
-
-```
-
-`Response:`
-
-```JSON
-{
-  "error": false,
-  "status": 200,
-  "body": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInV1aWQiOiJoaVJGZTM5bmtINENxczRGWGdacFIiLCJKV1RfUGFzc3dvcmQiOiIkMmIkMDUkVnV6SE01Yko4M1BabnZtMlpPNXNRZWRZNmhtd2pFNkk5d0FuakJmaUZKMzJ1NlduaFlsL1ciLCJjcmVhdGVkQXQiOiIyMDIwLTA5LTI0VDE3OjAzOjMxLjAyMFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA5LTI0VDE3OjAzOjMxLjAyMFoiLCJpYXQiOjE2MDA5NjcwMTV9.iMP2cRbPO5o6QwV1ku2RuBY8clXDy73EhLBOf1thGYc"
-}
-
-```
-
-> ### To change your password the URL is ==>
-
-```js
-METHOD: POST
-
-http://dry-mesa-48732.herokuapp.com/user/pass-retrieve
-
-```
-`Parameters:`
-
-```JSON
-{
-	"nickname": "USER",
-	"password": "NEW-PASSWORD"
-}
-
-```
-
-`Response:`
-
-```JSON
-
-{
-  "error": false,
-  "status": 201,
-  "body": "The password for the user Test4 was changed successfull"
-}
-
-```
-
-> ### To delete a user the URL is ==> 
-
-```js
-METHOD: DELETE
-
-http://dry-mesa-48732.herokuapp.com/user/{USER}
-
-```
-
-```JSON
-{
-  "error": false,
-  "status": 200,
-  "body": "The user Test2 was erased"
-}
-```
+Check the endpoints in [Our application](https://dry-mesa-48732.herokuapp.com/api-doc)
 
 ---
+
+
+## Acknowledgements 🎁
+
+- We greatly appreciate [Lina Castro](https://github.com/lirrumscode), Coach of our team at Platzi Master who was aware of us, promoting and motivating us with the project. providing us with tools and their knowledge for our professional growth📢
