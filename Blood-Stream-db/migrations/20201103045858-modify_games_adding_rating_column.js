@@ -7,7 +7,7 @@ module.exports = {
         'games', // table name
         'Rating', // new field name
         {
-          type: Sequelize.INTEGER(), 
+          type: Sequelize.INTEGER, 
           allowNull: true,
         }
       )
