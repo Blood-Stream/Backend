@@ -12,7 +12,7 @@ module.exports = function setupGames (gamesModel) {
       }
     }
     const existinggames = await gamesModel.findOne(cond)
-    existinggames.group = games.group
+    //existinggames.group = games.group
     if (existinggames) {
       const updated = await gamesModel.update(games, cond)
       return updated ? gamesModel.findOne(cond) : existinggames

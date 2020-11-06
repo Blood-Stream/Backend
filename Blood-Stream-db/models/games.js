@@ -52,15 +52,15 @@ module.exports = function setupGamesModel (config) {
       allowNull: true
     },
     group: {
-      type: Sequelize.INTEGER(), 
+      type: Sequelize.INTEGER, 
       allowNull: true,
     },
     Rating: {
-      type: Sequelize.INTEGER(), 
+      type: Sequelize.INTEGER, 
       allowNull: true,
     },
     count: {
-      type: Sequelize.INTEGER(), 
+      type: Sequelize.INTEGER, 
       allowNull: true,
     }
 
