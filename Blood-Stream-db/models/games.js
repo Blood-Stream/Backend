@@ -50,7 +50,7 @@ module.exports = function setupGamesModel (config) {
     Current_Version_Release_Date: {
       type: Sequelize.DATE,
       allowNull: true
-    }/*,
+    },
     group: {
       type: Sequelize.INTEGER, 
       allowNull: true,
@@ -62,7 +62,7 @@ module.exports = function setupGamesModel (config) {
     count: {
       type: Sequelize.INTEGER, 
       allowNull: true,
-    }*/
+    }
 
   },
     {
