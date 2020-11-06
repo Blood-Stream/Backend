@@ -67,8 +67,15 @@ module.exports = function setupGenresGames (genreGamesModel, genreModel, gamesMo
     })
   }
 
-  async function findAll () {
-    return await genreGamesModel.findAll()
+  async function findAll (page, pageSize) {
+    return await genreGamesModel.findAll(
+      paginate(
+        {
+          where: {}
+        },
+        {page, pageSize}
+      )
+    )
   }
 
   async function deleteById (id) {

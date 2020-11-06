@@ -9,14 +9,6 @@ const router = express.Router()
 require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
-const list = (req, res, next) => {
-  Controller.list()
-  .then((lista) => {
-    response.success(req, res, lista, 200)
-  })
-  .catch(next)
-}
-
 const get = (req, res, next) => {
   Controller.get(req.params.page)
   .then((user) => {
@@ -42,7 +34,6 @@ const deleteGamesRating = (req, res, next) => {
   }
 
 // Routes
-router.get('/', passport.authenticate('jwt', { session: false }), list)
 router.get('/get/:page', passport.authenticate('jwt', { session: false }), get)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:games&:user', passport.authenticate('jwt', { session: false }), deleteGamesRating)

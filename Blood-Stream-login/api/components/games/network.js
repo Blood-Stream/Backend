@@ -60,7 +60,7 @@ const getGamesByPopular = (req, res, next) => {
 
 // Routes
 router.get('/:page', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), list)
-router.get('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), get)
+router.get('/get/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), get)
 router.post('/', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['update: game']), upsert)
 router.get('/group/:game&:page', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['read: game']), getGamesByGroup)
 router.delete('/:game', passport.authenticate('jwt', { session: false }), scopesValidationHandler(['delete: game']), deleteGame)

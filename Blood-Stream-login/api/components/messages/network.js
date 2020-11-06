@@ -10,7 +10,7 @@ require('../../../utils/auth/strategies/jwt')
 
 // Internal Functions
 const list = (req, res, next) => {
-  Controller.list()
+  Controller.list(req.params.page)
   .then((lista) => {
     response.success(req, res, lista, 200)
   })
@@ -42,9 +42,8 @@ const deleteMessage = (req, res, next) => {
   }
 
 // Routes
-// router.get('/', passport.authenticate('jwt', { session: false }), list)
-router.get('/', passport.authenticate('jwt', { session: false }), list)
-router.get('/:nickname', passport.authenticate('jwt', { session: false }), get)
+router.get('/:page', passport.authenticate('jwt', { session: false }), list)
+router.get('/get/:nickname', passport.authenticate('jwt', { session: false }), get)
 router.post('/', passport.authenticate('jwt', { session: false }), upsert)
 router.delete('/:nickname', passport.authenticate('jwt', { session: false }), deleteMessage)
 

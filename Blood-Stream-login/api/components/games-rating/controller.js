@@ -7,13 +7,6 @@ const config = require('../../../../config/config')
 module.exports = (injectedStore) => {
   const store = injectedStore
 
-  const list = async () => {
-    const { GamesRating } = await store(config(false)).catch(utils.handleFatalError)
-    const gamesRating = await GamesRating.findAll().catch(utils.handleFatalError)
-
-    return gamesRating
-  }
-
   const get = async (page) => {
     const pagination = utils.totalPage()
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
@@ -85,7 +78,6 @@ module.exports = (injectedStore) => {
   }
 
   return {
-    list,
     get,
     upsert,
     deleteGamesRating

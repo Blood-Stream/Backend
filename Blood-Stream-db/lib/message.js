@@ -1,5 +1,7 @@
 'use strict'
 
+const paginate = require('./pagination')
+
 module.exports = function setupMessages (messagesModel, usersModel) {
   async function createOrUpdate (messages, id) {
     const cond = {
@@ -35,8 +37,15 @@ module.exports = function setupMessages (messagesModel, usersModel) {
     })
   }
 
-  function findAll () {
-    return messagesModel.findAll()
+  function findAll (page, pageSize) {
+    return messagesModel.findAll(
+      paginate(
+        {
+          where: {}
+        },
+        {page, pageSize}
+      )
+    )
   }
 
   async function deleteById (id) {
