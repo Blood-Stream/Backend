@@ -1,6 +1,7 @@
 
 'use strict'
 
+const {handleFatalError} = require('../../../../Blood-Stream-db/utils/index')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 
@@ -18,13 +19,28 @@ module.exports = (injectedStore) => {
   const get = async (name) => {
     let array = []
     let value = null
+    let arrayReview = []
 
-    const { Games, PlatformGames, Platform, LenguagesGames, GenresGames, Genres, Lenguages } = await store(config(false)).catch(utils.handleFatalError)
+    const { Games, PlatformGames, Platform, LenguagesGames, GenresGames, Genres, Lenguages, GamesRating } = await store(config(false)).catch(utils.handleFatalError)
 
     const game = await Games.findByName(name).catch(utils.handleFatalError)
     const genre = await GenresGames.findByGame(game.id).catch(utils.handleFatalError)
     const lenguage = await LenguagesGames.findByGame(game.id).catch(utils.handleFatalError)
     const platform = await PlatformGames.findByGame(game.id).catch(utils.handleFatalError)
+    const rating = await GamesRating.findByGame(game.id).catch(utils.handleFatalError)
+    for (const i in rating) {
+      const el = rating[i]
+      value = await Games.findById(el.gameId).catch(handleFatalError)
+      el.gameId = value
+      delete el.id
+      delete el.Rating
+      delete el.userId
+      delete el.createdAt
+      delete el.updatedAt
+      delete el.gameId
+      arrayReview = arrayReview.concat(el)
+    }
+    
     for (const element in genre) {
       const el = genre[element]
       value = await Genres.findById(el.genreId).catch(utils.handleFatalError)
@@ -63,7 +79,7 @@ module.exports = (injectedStore) => {
     }
 
     game.platform = array
-
+    game.reviews = arrayReview
     return game
   }
   
