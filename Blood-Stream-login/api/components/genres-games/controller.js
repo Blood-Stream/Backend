@@ -47,7 +47,7 @@ module.exports = (injectedStore) => {
   }
 
   const getGameByGenre = async (genre, page) => {
-    const pageSize = 15
+    const pageSize = utils.totalPage()
     const { Games, GenresGames, Genres } = await store(config(false)).catch(utils.handleFatalError)
     let platforms = await Genres.findByGenre(genre).catch(utils.handleFatalError)
     platforms = await GenresGames.findByGameAll(platforms.id, page, pageSize).catch(utils.handleFatalError) 

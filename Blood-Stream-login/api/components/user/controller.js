@@ -10,25 +10,19 @@ let users
 module.exports = (injectedStore) => {
   const store = injectedStore
   const list = async (page) => {
-    const pageSize = 15
+    const pageSize = utils.totalPage()
     const { Users } = await store(config(false)).catch(utils.handleFatalError)
     users = await Users.findAll(page, pageSize).catch(utils.handleFatalError)
     return users
   }
 
   const get = async (nickname) => {
-    console.log(nickname)
     const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
     let users = await Users.findByNickname(nickname).catch(utils.handleFatalError)
-    console.log(users)
     const contacts = await Contact.findById(users.contactId).catch(utils.handleFatalError)    
-    console.log(contacts)
     const platform = await Platform.findById(users.platformId).catch(utils.handleFatalError)
-    console.log(platform)
     const accessRols = await AccessRol.findById(users.accessRolId).catch(utils.handleFatalError)
-    console.log(authData)
     let authData = await Password.findById(users.passwordId).catch(utils.handleFatalError)
-    console.log(authData)
     authData = {
       id: authData.id,
       uuid: authData.uuid
