@@ -5,7 +5,6 @@ const express = require('express')
 const response = require('../../../network/response')
 const Controller = require('./index')
 const router = express.Router()
-const session = require('express-session')
 const passport = require('passport')
 const scopesValidationHandler = require('../../../utils/middleware/scopeValidation')
 
