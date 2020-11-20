@@ -1,7 +1,7 @@
 
 'use strict'
 
-const {handleFatalError} = require('../../../../Blood-Stream-db/utils/index')
+const { handleFatalError } = require('../../../../Blood-Stream-db/utils/index')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 const randomNumber = require('../../../utils/random')
@@ -26,20 +26,19 @@ module.exports = (injectedStore) => {
       let platform = await PlatformGames.findByGame(el.id).catch(utils.handleFatalError)
       if (platform === null) {
         platform = await Platform.findById(1).catch(utils.handleFatalError)
-        const checkPlatform= {
+        const checkPlatform = {
           id: 1,
           uuid: 'Temp',
           platformId: platform.id,
           gameId: el.id
         }
         platform = []
-        platform = platform.concat(checkPlatform) 
+        platform = platform.concat(checkPlatform)
       } else {
         let tempArray = []
         tempArray = tempArray.concat(platform)
         platform = tempArray
         tempArray = []
-
       }
       const rating = await GamesRating.findByGame(el.id).catch(utils.handleFatalError)
 
@@ -55,7 +54,7 @@ module.exports = (injectedStore) => {
         delete el.gameId
         arrayReview = arrayReview.concat(el)
       }
-      
+
       for (const element in genre) {
         const el = genre[element]
         value = await Genres.findById(el.genreId).catch(utils.handleFatalError)
@@ -94,7 +93,7 @@ module.exports = (injectedStore) => {
 
       el.platform = array
       el.reviews = arrayReview
-      gameArray = gameArray.concat(el)  
+      gameArray = gameArray.concat(el)
     }
     return gameArray
   }
@@ -111,15 +110,15 @@ module.exports = (injectedStore) => {
     let platform = await PlatformGames.findByGame(game.id).catch(utils.handleFatalError)
     if (platform === null) {
       platform = await Platform.findById(1).catch(utils.handleFatalError)
-      const checkPlatform= {
+      const checkPlatform = {
         id: 1,
         uuid: 'Temp',
         platformId: platform.id,
         gameId: game.id
       }
       platform = []
-      platform = platform.concat(checkPlatform) 
-    }    
+      platform = platform.concat(checkPlatform)
+    }
     const rating = await GamesRating.findByGame(game.id).catch(utils.handleFatalError)
     for (const i in rating) {
       const el = rating[i]
@@ -133,7 +132,7 @@ module.exports = (injectedStore) => {
       delete el.gameId
       arrayReview = arrayReview.concat(el)
     }
-    
+
     for (const element in genre) {
       const el = genre[element]
       value = await Genres.findById(el.genreId).catch(utils.handleFatalError)
@@ -175,7 +174,7 @@ module.exports = (injectedStore) => {
     game.reviews = arrayReview
     return game
   }
-  
+
   const getByGroup = async (game, page) => {
     const page2 = randomNumber
     const pageSize = utils.totalPage()
@@ -193,13 +192,13 @@ module.exports = (injectedStore) => {
     return games
   }
   // TO DO
-  /*const upsert = async (body) => {
-  
+  /* const upsert = async (body) => {
+
   }
 
   const deleteGame = async (game) => {
     console.log('Works')
-  }*/
+  } */
 
   return {
     list,

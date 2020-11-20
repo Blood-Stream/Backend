@@ -14,10 +14,10 @@ passport.use(
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
   },
   async (tokenPayload, cb) => {
-    const { Users, Platform, Contact, AccessRol } = await store(config(false)).catch(utils.handleFatalError)
+    const { Users, Platform, Contact } = await store(config(false)).catch(utils.handleFatalError)
     try {
       const user = await Users.findByNickname(tokenPayload.Nickname)
-      const platform  = await Platform.findById(user.platformId)
+      const platform = await Platform.findById(user.platformId)
       const contact = await Contact.findById(user.contactId)
       const accessRol = await Contact.findById(user.accessRolId)
 
@@ -44,7 +44,6 @@ passport.use(
       user.accessRolId = accessRol
 
       cb(null, { ...user, scopes: tokenPayload.scopes })
-
     } catch (error) {
       return cb(error)
     }

@@ -1,7 +1,6 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
-const gamesCollection = require('../../../../Blood-Stream-db/lib/gamesCollection')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 const randomNumber = require('../../../utils/random')
@@ -16,7 +15,7 @@ module.exports = (injectedStore) => {
     return gameCollection
   }
 
-   const upsert = async (body) => {
+  const upsert = async (body) => {
     /**
      * Game
      * Nickname
@@ -28,7 +27,7 @@ module.exports = (injectedStore) => {
     let user = await Users.findByNickname(body.Nickname).catch(utils.handleFatalError)
     let games = await Games.findByName(body.Game).catch(utils.handleFatalError)
     if (!user || !games) return 'Not exist'
-    let userGame = await GamesCollection.findByUsGm(user.id, games.id)
+    const userGame = await GamesCollection.findByUsGm(user.id, games.id)
     let usGm = {
       uuid: null,
       Notes: body.Text
@@ -51,7 +50,7 @@ module.exports = (injectedStore) => {
       id: user.id,
       uuid: user.uuid,
       Nickname: user.Nickname,
-      Avatar: user.Avatar,
+      Avatar: user.Avatar
     }
 
     usGm = await GamesCollection.createOrUpdate(games.uuid, user.uuid, usGm)
@@ -62,13 +61,13 @@ module.exports = (injectedStore) => {
     return usGm
   }
 
-  const gamesByCollection = async(user, page) => {
+  const gamesByCollection = async (user, page) => {
     const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Users, Games, GamesCollection } = await store(config(false)).catch(utils.handleFatalError)
     const users = await Users.findByNickname(user).catch(utils.handleFatalError)
     let collections = await GamesCollection.findByUser(users.id).catch(utils.handleFatalError)
-    collections = await GamesCollection.findByGameAll(collections.userId, page2, pageSize).catch(utils.handleFatalError) 
+    collections = await GamesCollection.findByGameAll(collections.userId, page2, pageSize).catch(utils.handleFatalError)
     let collection = []
     let games
     for (const element in collections) {
@@ -84,7 +83,6 @@ module.exports = (injectedStore) => {
     return collection
   }
 
-  
   const deleteGameCollection = async (game, user) => {
     const { GamesCollection, Users, Games } = await store(config(false)).catch(utils.handleFatalError)
     const games = await Games.findByName(game).catch(utils.handleFatalError)
@@ -92,8 +90,9 @@ module.exports = (injectedStore) => {
     let gameCollection = await GamesCollection.findByUsGm(users.id, games.id).catch(utils.handleFatalError)
     try {
       gameCollection = await GamesCollection.deleteById(gameCollection.id).catch(utils.handleFatalError)
+      console.log(gameCollection)
       return 'Erased'
-    } catch(err) {
+    } catch (err) {
       return 'Not found'
     }
   }

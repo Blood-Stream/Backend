@@ -77,8 +77,8 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
       }
     })
   }
-  
-  async function findByContactId(id) {
+
+  async function findByContactId (id) {
     return await usersModel.findOne({
       where: {
         contactId: id
@@ -92,11 +92,11 @@ module.exports = function setupUsers (usersModel, platformModel, accessRolModel,
         {
           where: {}
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }
- 
+
   async function deleteById (id) {
     return await usersModel.destroy({
       where: {

@@ -52,7 +52,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -72,7 +72,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -91,7 +91,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -112,7 +112,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -132,7 +132,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -152,7 +152,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -172,7 +172,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -192,7 +192,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -212,7 +212,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -232,7 +232,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -252,7 +252,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -272,7 +272,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -292,7 +292,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -312,7 +312,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -332,7 +332,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -351,7 +351,7 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
@@ -371,12 +371,11 @@ async function run () {
       Age_Rating: el.Age_Rating,
       Size: el.Size,
       Original_Release_Date: el.Original_Release_Date,
-      Current_Version_Release_Date: el.Current_Version_Release_Date,
+      Current_Version_Release_Date: el.Current_Version_Release_Date
     })
     console.log(game)
     console.log('-------------------------------------')
   }
-
 }
 
 run()

@@ -13,7 +13,6 @@ const Controller = require('../../Blood-Stream-login/api/components/lenguages/in
 const lenguage = require('./Mocks/Languages-Games/LGames')
 
 async function run () {
-
   console.log('Comienza lenguage')
   for (const element in lenguage) {
     const el = lenguage[element]

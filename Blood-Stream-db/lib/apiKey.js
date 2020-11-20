@@ -10,7 +10,7 @@ module.exports = function setupApiKey (apiKeyModel) {
 
     const existingApiKey = await apiKeyModel.findOne(cond)
     if (existingApiKey) {
-      const updated = await apiKeyModel.update(apyKey, cond)
+      const updated = await apiKeyModel.update(apiKey, cond)
       return updated ? apiKeyModel.findOne(cond) : existingApiKey
     }
 
@@ -34,11 +34,11 @@ module.exports = function setupApiKey (apiKeyModel) {
     })
   }
   async function findAll () {
-    return await AccessRolModel.findAll()
+    return await apiKeyModel.findAll()
   }
 
   async function deleteById (id) {
-    return await AccessRolModel.destroy({
+    return await apiKeyModel.destroy({
       where: {
         id
       }

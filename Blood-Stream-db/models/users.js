@@ -40,7 +40,7 @@ module.exports = function setupUsersModel (config) {
       allowNull: true
     }
   },
-  {  
+  {
     indexes: [{
       unique: false,
       fields: ['Nickname']

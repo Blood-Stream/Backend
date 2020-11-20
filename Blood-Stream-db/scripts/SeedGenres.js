@@ -25,7 +25,7 @@ const run = async () => {
     const el = genres[element]
     const genre = await Genres.createOrUpdate({
       uuid: nanoid(),
-      Genre: el.Genre,
+      Genre: el.Genre
     })
     console.log(genre)
     console.log('-------------------------------------')

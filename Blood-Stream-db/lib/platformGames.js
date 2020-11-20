@@ -58,10 +58,10 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
     return platformGamesModel.findAll({
       where: {
         platformId: platform
-      } 
+      }
     })
   }
-  
+
   function findByPlatform (platform) {
     return platformGamesModel.findOne({
       where: {
@@ -78,20 +78,20 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
       }
     })
   }
-  
+
   async function findByGameAll (platformId, page, pageSize) {
     return await platformGamesModel.findAll(
       paginate(
         {
           where: {
-            platformId: platformId 
+            platformId: platformId
           }
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }
-  
+
   async function findByGame (gameId) {
     return await platformGamesModel.findOne({
       where: {
@@ -106,7 +106,7 @@ module.exports = function setupPlatformGames (gamesModel, platformModel, platfor
         {
           where: {}
         },
-        {page, pageSize}
+        { page, pageSize }
       ))
   }
 

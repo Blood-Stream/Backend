@@ -19,7 +19,7 @@ passport.use(new BasicStrategy(async (username, password, cb) => {
     const contact = await Contact.findById(users.contactId)
     const accessRol = await AccessRol.findById(users.accessRolId)
     if (!users) {
-      return cb(boom.unauthorized(), false) 
+      return cb(boom.unauthorized(), false)
     }
     const pass = await Password.findById(users.passwordId).catch(utils.handleFatalError)
     if (!await bcrypt.compare(password, pass.JWT_Password)) {
@@ -28,11 +28,11 @@ passport.use(new BasicStrategy(async (username, password, cb) => {
     delete users.passwordId
     delete users.id
     delete users.updatedAt
-    
+
     delete contact.id
     delete contact.createdAt
     delete contact.updatedAt
-     
+
     delete platform.id
     delete platform.createdAt
     delete platform.updatedAt
@@ -49,4 +49,3 @@ passport.use(new BasicStrategy(async (username, password, cb) => {
     return cb(err)
   }
 }))
-

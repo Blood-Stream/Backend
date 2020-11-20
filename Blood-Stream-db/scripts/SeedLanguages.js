@@ -26,7 +26,7 @@ const run = async () => {
     const ln = await Lenguages.createOrUpdate({
       uuid: nanoid(),
       Lenguages: el.Languages,
-      Icon: "http://dummyimage.com/165x183.png/cc0000/ffffff"
+      Icon: 'http://dummyimage.com/165x183.png/cc0000/ffffff'
     }).catch(utils.handleFatalError)
     console.log(ln)
     console.log('-------------------------------------')

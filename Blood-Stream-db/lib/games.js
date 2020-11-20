@@ -1,6 +1,6 @@
 'use strict'
 
-const paginate = require('./pagination') 
+const paginate = require('./pagination')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
@@ -11,11 +11,11 @@ module.exports = function setupGames (gamesModel) {
         uuid: games.uuid
       }
     }
-    const existinggames = await gamesModel.findOne(cond)
-    //existinggames.group = games.group
-    if (existinggames) {
+    const existingGames = await gamesModel.findOne(cond)
+    // existingGames.group = games.group
+    if (existingGames) {
       const updated = await gamesModel.update(games, cond)
-      return updated ? gamesModel.findOne(cond) : existinggames
+      return updated ? gamesModel.findOne(cond) : existingGames
     }
     const result = await gamesModel.create(games)
     return result.toJSON()
@@ -37,14 +37,14 @@ module.exports = function setupGames (gamesModel) {
     })
   }
 
-  async function findByUrl (Url_Game) {
+  async function findByUrl (urlGame) {
     return await gamesModel.findOne({
       where: {
-        Url_Game
+        Url_Game: urlGame
       }
     })
   }
-  
+
   async function findByGroup (id, group) {
     return await gamesModel.findOne({
       where: {
@@ -53,7 +53,7 @@ module.exports = function setupGames (gamesModel) {
       }
     })
   }
-  
+
   async function findByName (Name) {
     return await gamesModel.findOne({
       where: {
@@ -61,7 +61,7 @@ module.exports = function setupGames (gamesModel) {
       }
     })
   }
-  
+
   async function findAllRating (page, pageSize) {
     return await gamesModel.findAll(
       paginate(
@@ -69,7 +69,7 @@ module.exports = function setupGames (gamesModel) {
           where: {
             Rating: {
               [Op.ne]: null
-            } 
+            }
           },
           order: [
             [
@@ -79,11 +79,10 @@ module.exports = function setupGames (gamesModel) {
           ]
 
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }
-  
 
   async function findAllPopular (page, pageSize) {
     return await gamesModel.findAll(
@@ -92,7 +91,7 @@ module.exports = function setupGames (gamesModel) {
           where: {
             count: {
               [Op.ne]: null
-            } 
+            }
           },
           order: [
             [
@@ -102,11 +101,11 @@ module.exports = function setupGames (gamesModel) {
           ]
 
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }
- 
+
   async function findAllGroup (group, page, pageSize) {
     return await gamesModel.findAll(
       paginate(
@@ -115,11 +114,10 @@ module.exports = function setupGames (gamesModel) {
             group
           }
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }
-
 
   async function findAll (page, pageSize) {
     return await gamesModel.findAll(
@@ -127,7 +125,7 @@ module.exports = function setupGames (gamesModel) {
         {
           where: {}
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }

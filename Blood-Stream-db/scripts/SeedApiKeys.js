@@ -9,7 +9,6 @@
 'use strict'
 
 const chalk = require('chalk')
-const crypto = require('crypto')
 const debug = require('debug')('app:scripts:api-keys')
 const utils = require('../utils/index')
 
@@ -49,7 +48,7 @@ const publicScopes = [
   'create: user',
   'update: user',
   'delete: user',
-  'read: game',
+  'read: game'
 ]
 
 // token: generateRandomToken(),

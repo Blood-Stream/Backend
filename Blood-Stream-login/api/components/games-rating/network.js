@@ -11,18 +11,18 @@ require('../../../utils/auth/strategies/jwt')
 // Internal Functions
 const get = (req, res, next) => {
   Controller.get(req.params.page)
-  .then((user) => {
-    response.success(req, res, user, 200)
-  })
-  .catch(next)
+    .then((user) => {
+      response.success(req, res, user, 200)
+    })
+    .catch(next)
 }
 
 const upsert = (req, res, next) => {
   Controller.upsert(req.body)
-  .then((user) => {
-    response.success(req, res, user, 201)
-  })
-  .catch(next)
+    .then((user) => {
+      response.success(req, res, user, 201)
+    })
+    .catch(next)
 }
 
 const deleteGamesRating = (req, res, next) => {
@@ -31,7 +31,7 @@ const deleteGamesRating = (req, res, next) => {
       response.success(req, res, user, 200)
     })
     .catch(next)
-  }
+}
 
 // Routes
 router.get('/get/:page', passport.authenticate('jwt', { session: false }), get)

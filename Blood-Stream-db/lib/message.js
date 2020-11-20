@@ -43,7 +43,7 @@ module.exports = function setupMessages (messagesModel, usersModel) {
         {
           where: {}
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }

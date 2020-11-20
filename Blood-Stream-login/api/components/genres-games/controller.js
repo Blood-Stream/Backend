@@ -10,7 +10,7 @@ module.exports = (injectedStore) => {
 
   const list = async (page) => {
     const page2 = randomNumber
-    const pageSize = utils.totalPage() 
+    const pageSize = utils.totalPage()
     const { GenresGames } = await store(config(false)).catch(utils.handleFatalError)
     const gnGames = await GenresGames.findAll(page2, pageSize).catch(utils.handleFatalError)
 
@@ -22,7 +22,7 @@ module.exports = (injectedStore) => {
     const genre = await Genres.findByGenre(body.genre).catch(utils.handleFatalError)
     let games = await Games.findByUrl(body.game).catch(utils.handleFatalError)
     if (!genre || !games) return 'Not exist'
-    let genGame = await GenresGames.findByGnGm(genre.id, games.id)
+    const genGame = await GenresGames.findByGnGm(genre.id, games.id)
     let gnGm = {
       uuid: null
     }
@@ -54,7 +54,7 @@ module.exports = (injectedStore) => {
     const pageSize = utils.totalPage()
     const { Games, GenresGames, Genres } = await store(config(false)).catch(utils.handleFatalError)
     let platforms = await Genres.findByGenre(genre).catch(utils.handleFatalError)
-    platforms = await GenresGames.findByGameAll(platforms.id, page2, pageSize).catch(utils.handleFatalError) 
+    platforms = await GenresGames.findByGameAll(platforms.id, page2, pageSize).catch(utils.handleFatalError)
     let collection = []
     let games
     for (const element in platforms) {
@@ -68,14 +68,14 @@ module.exports = (injectedStore) => {
     }
     return collection
   }
-  //const deleteMessage = async (nickname) => {
-    
-  //}
+  // const deleteMessage = async (nickname) => {
+
+  // }
 
   return {
     list,
     upsert,
     getGameByGenre
-    //deleteMessage
+    // deleteMessage
   }
 }

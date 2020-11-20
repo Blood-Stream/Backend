@@ -12,10 +12,9 @@ module.exports = (injectedStore) => {
     const page2 = randomNumber
     const pagination = utils.totalPage()
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
-    
-    let game = await Games.findAllRating(page2, pagination).catch(utils.handleFatalError)
-    return game 
 
+    const game = await Games.findAllRating(page2, pagination).catch(utils.handleFatalError)
+    return game
   }
 
   const upsert = async (body) => {
@@ -31,7 +30,7 @@ module.exports = (injectedStore) => {
     let user = await Users.findByNickname(body.Nickname).catch(utils.handleFatalError)
     let games = await Games.findByName(body.Game).catch(utils.handleFatalError)
     if (!user || !games) return 'Not exist'
-    let userGame = await GamesRating.findByUsGm(user.id, games.id)
+    const userGame = await GamesRating.findByUsGm(user.id, games.id)
     let usGm = {
       uuid: null,
       Review: body.Review,
@@ -56,7 +55,7 @@ module.exports = (injectedStore) => {
       id: user.id,
       uuid: user.uuid,
       Nickname: user.Nickname,
-      Avatar: user.Avatar,
+      Avatar: user.Avatar
     }
     usGm = await GamesRating.createOrUpdate(usGm, user.id, games.id)
 
@@ -73,8 +72,9 @@ module.exports = (injectedStore) => {
     let gameRate = await GamesRating.findByUsGm(users.id, games.id).catch(utils.handleFatalError)
     try {
       gameRate = await GamesRating.deleteById(gameRate.id).catch(utils.handleFatalError)
+      console.log(gameRate)
       return 'Erased'
-    } catch(err) {
+    } catch (err) {
       return 'Not found'
     }
   }
