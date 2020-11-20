@@ -5,7 +5,7 @@ const paginate = (query, { page, pageSize }) => {
     ...query,
     offset,
     limit
-  } 
+  }
 }
 
 module.exports = paginate

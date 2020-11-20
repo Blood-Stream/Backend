@@ -53,7 +53,7 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
       }
     })
   }
-  
+
   async function findByUserAll (userId) {
     return await gamesCollectionModel.findAll({
       where: {
@@ -61,7 +61,7 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
       }
     })
   }
-  
+
   async function findByUser (userId) {
     return await gamesCollectionModel.findOne({
       where: {
@@ -69,7 +69,7 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
       }
     })
   }
- 
+
   async function findByGame (gameId) {
     return await gamesCollectionModel.findAll({
       where: {
@@ -77,20 +77,20 @@ module.exports = function setupGamesCollection (gamesCollectionModel, usersModel
       }
     })
   }
-  
+
   async function findByGameAll (platformId, page, pageSize) {
     return await gamesCollectionModel.findAll(
       paginate(
         {
           where: {
-            userId: platformId 
+            userId: platformId
           }
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }
- 
+
   async function findByUsGm (userId, gameId) {
     return await gamesCollectionModel.findOne({
       where: {

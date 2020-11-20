@@ -18,7 +18,7 @@ const routes = (app) => {
   const messageRoute = () => app.use('/message', message)
   const userRoute = () => app.use('/user', user)
   const authRoute = () => app.use('/user', auth)
-//  const swaggerRoute = () => app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
+  //  const swaggerRoute = () => app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
   const swaggerRoute = () => app.use('/api-doc', postman)
   const errorsRoute = () => app.use(errors)
   const genreGamesRoute = () => app.use('/genre-games', genreGame)

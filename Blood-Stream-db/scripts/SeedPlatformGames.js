@@ -13,7 +13,6 @@ const Controller = require('../../Blood-Stream-login/api/components/platform-gam
 const platform = require('./Mocks/Platform-games/platformGames')
 
 async function run () {
-
   console.log('Comienza platform')
   for (const element in platform) {
     const el = platform[element]

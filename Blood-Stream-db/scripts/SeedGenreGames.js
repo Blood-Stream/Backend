@@ -13,7 +13,6 @@ const Controller = require('../../Blood-Stream-login/api/components/genres-games
 const genreGame = require('./Mocks/Genre-Games/Games-Genre')
 
 async function run () {
-
   console.log('Comienza genreGame')
   for (const element in genreGame) {
     const el = genreGame[element]

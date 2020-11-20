@@ -16,7 +16,6 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
       Object.assign(gamesRating, { gameId: uuidGames })
     }
 
-
     const existinggamesRating = await gamesRatingModel.findOne(cond)
     if (existinggamesRating) {
       const updated = await gamesRatingModel.update(gamesRating, cond)
@@ -49,7 +48,7 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
       }
     })
   }
-  
+
   async function findByIdGame (gameId) {
     return await gamesRatingModel.findAll({
       where: {
@@ -57,7 +56,7 @@ module.exports = function setupGamesRating (gamesRatingModel, UsersModel, GamesM
       }
     })
   }
-  
+
   async function findByUsGm (userId, gameId) {
     return await gamesRatingModel.findOne({
       where: {

@@ -13,7 +13,6 @@ const Controller = require('../../Blood-Stream-login/api/components/game-collect
 const gameCollection = require('./Mocks/gamesCollection/gamesCollection')
 
 async function run () {
-
   console.log('Comienza gameCollection')
   for (const element in gameCollection) {
     const el = gameCollection[element]

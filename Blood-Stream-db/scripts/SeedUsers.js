@@ -19,7 +19,6 @@ const user6 = require('./Mocks/Users/Users (6)')
 const user7 = require('./Mocks/Users/Users (7)')
 
 async function run () {
-
   let game
   let el
 

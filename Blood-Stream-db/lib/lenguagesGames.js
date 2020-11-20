@@ -77,7 +77,7 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
         {
           where: {}
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }
@@ -89,16 +89,16 @@ module.exports = function setupLanguagesGames (gamesModel, lenguagesModel, lengu
       }
     })
   }
-  
+
   async function findByGameAll (platformId, page, pageSize) {
     return await lenguagesGamesModel.findAll(
       paginate(
         {
           where: {
-            lenguageId: platformId 
+            lenguageId: platformId
           }
         },
-        {page, pageSize}
+        { page, pageSize }
       )
     )
   }

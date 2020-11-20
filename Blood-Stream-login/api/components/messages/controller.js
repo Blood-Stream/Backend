@@ -55,8 +55,8 @@ module.exports = (injectedStore) => {
   // TO DO
   // const deleteMessage = async (nickname) => {
 
-  // } 
-  return { 
+  // }
+  return {
     list,
     upsert
     // deleteMessage

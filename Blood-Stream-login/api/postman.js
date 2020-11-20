@@ -7,7 +7,6 @@ const get = (req, res, next) => {
   res.redirect('https://documenter.getpostman.com/view/10727485/TVYQ3aR2')
 }
 
-
 // Routes
 router.get('/', get)
 

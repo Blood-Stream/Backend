@@ -23,7 +23,7 @@ module.exports = (injectedStore) => {
     let games = await Games.findByUrl(body.game).catch(utils.handleFatalError)
     if (!lenguage || !games) return 'Not exist'
 
-    let lenGame = await LenguagesGames.findByLnGm(lenguage.id, games.id).catch(utils.handleFatalError)
+    const lenGame = await LenguagesGames.findByLnGm(lenguage.id, games.id).catch(utils.handleFatalError)
     let lnGm = {
       uuid: null
     }
@@ -54,7 +54,7 @@ module.exports = (injectedStore) => {
     const pageSize = utils.totalPage()
     const { Games, LenguagesGames, Lenguages } = await store(config(false)).catch(utils.handleFatalError)
     let platforms = await Lenguages.findByLenguage(ln).catch(utils.handleFatalError)
-    platforms = await LenguagesGames.findByGameAll(platforms.id, page2, pageSize).catch(utils.handleFatalError) 
+    platforms = await LenguagesGames.findByGameAll(platforms.id, page2, pageSize).catch(utils.handleFatalError)
     let collection = []
     let games
     for (const element in platforms) {
@@ -67,7 +67,6 @@ module.exports = (injectedStore) => {
       collection = collection.concat(games)
     }
     return collection
-
   }
   // TO DO
   // const deleteLenguage = async (nickname) => {
@@ -78,6 +77,6 @@ module.exports = (injectedStore) => {
     list,
     upsert,
     lnList
-    //deleteLenguage
+    // deleteLenguage
   }
 }

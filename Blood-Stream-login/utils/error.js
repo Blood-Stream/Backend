@@ -8,4 +8,3 @@ module.exports = (message, code) => {
   }
   return e
 }
-

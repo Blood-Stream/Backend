@@ -13,7 +13,6 @@ const Controller = require('../../Blood-Stream-login/api/components/messages')
 const message = require('./Mocks/message/Message')
 
 async function run () {
-
   console.log('Comienza Message')
   for (const element in message) {
     const el = message[element]

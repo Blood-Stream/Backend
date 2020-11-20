@@ -13,7 +13,6 @@ const Controller = require('../../Blood-Stream-login/api/components/games-rating
 const gamesRating = require('./Mocks/gamesRating/gamesRating')
 
 async function run () {
-
   console.log('Comienza gamesRating')
   for (const element in gamesRating) {
     const el = gamesRating[element]

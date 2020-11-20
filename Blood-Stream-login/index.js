@@ -11,7 +11,6 @@ const configuration = require('../config/config')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 
-
 app.use(cors())
 app.use(bodyParser.json())
 app.use(helmet())
@@ -20,7 +19,7 @@ app.use(
   session({
     resave: false,
     saveUninitialized: true,
-    secret: configuration(false).secret 
+    secret: configuration(false).secret
   })
 )
 

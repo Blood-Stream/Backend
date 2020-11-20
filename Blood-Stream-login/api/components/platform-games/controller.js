@@ -21,7 +21,7 @@ module.exports = (injectedStore) => {
     const platform = await Platform.findByPlatform(body.platform).catch(utils.handleFatalError)
     let games = await Games.findByName(body.game).catch(utils.handleFatalError)
     if (!platform || !games) return 'Not exist'
-    let platGame = await PlatformGames.findByPlGm(platform.id, games.id).catch(utils.handleFatalError)
+    const platGame = await PlatformGames.findByPlGm(platform.id, games.id).catch(utils.handleFatalError)
     let plGm = {
       uuid: null
     }
@@ -46,13 +46,13 @@ module.exports = (injectedStore) => {
 
     return plGm
   }
-  
-  const gamesByPlatforms2 = async(platform, page) => {
+
+  const gamesByPlatforms2 = async (platform, page) => {
     const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Games, PlatformGames, Platform } = await store(config(false)).catch(utils.handleFatalError)
     let platforms = await Platform.findByPlatform(platform).catch(utils.handleFatalError)
-    platforms = await PlatformGames.findByGameAll(platforms.id, page2, pageSize).catch(utils.handleFatalError) 
+    platforms = await PlatformGames.findByGameAll(platforms.id, page2, pageSize).catch(utils.handleFatalError)
     let collection = []
     let games
     for (const element in platforms) {
@@ -67,7 +67,7 @@ module.exports = (injectedStore) => {
     return collection
   }
 
-  const gamesByPlatforms = async(game, page) => {
+  const gamesByPlatforms = async (game, page) => {
     const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Games, PlatformGames } = await store(config(false)).catch(utils.handleFatalError)
@@ -75,7 +75,7 @@ module.exports = (injectedStore) => {
     if (games === null) return 'Not found'
     let platforms = await PlatformGames.findByGame(games.id).catch(utils.handleFatalError)
     if (platforms === null) return 'Not found'
-    platforms = await PlatformGames.findByGameAll(platforms.platformId, page2, pageSize).catch(utils.handleFatalError) 
+    platforms = await PlatformGames.findByGameAll(platforms.platformId, page2, pageSize).catch(utils.handleFatalError)
     let collection = []
     for (const element in platforms) {
       const el = platforms[element]
@@ -89,16 +89,16 @@ module.exports = (injectedStore) => {
     return collection
   }
 
-  //TO DO
-  //const deletePlatform = async (platform) => {
+  // TO DO
+  // const deletePlatform = async (platform) => {
 
-  //}
+  // }
 
   return {
     list,
     upsert,
     // deletePlatform,
     gamesByPlatforms,
-    gamesByPlatforms2,
+    gamesByPlatforms2
   }
 }

@@ -3,13 +3,7 @@
 const { nanoid } = require('nanoid')
 const bcrypt = require('bcrypt')
 const utils = require('../../../../Blood-Stream-db/utils')
-const auth = require('../../../auth/index')
 const config = require('../../../../config/config')
-const passport = require('passport')
-const { BasicStrategy } = require('passport-http')
-const jwt = require('jsonwebtoken')
-const boom = require('@hapi/boom')
-const response = require('../../../network/response')
 
 require('../../../utils/auth/strategies/basic')
 
