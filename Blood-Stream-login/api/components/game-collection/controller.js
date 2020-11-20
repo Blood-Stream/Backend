@@ -3,7 +3,6 @@
 const { nanoid } = require('nanoid')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
-const randomNumber = require('../../../utils/random')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
@@ -62,12 +61,11 @@ module.exports = (injectedStore) => {
   }
 
   const gamesByCollection = async (user, page) => {
-    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Users, Games, GamesCollection } = await store(config(false)).catch(utils.handleFatalError)
     const users = await Users.findByNickname(user).catch(utils.handleFatalError)
     let collections = await GamesCollection.findByUser(users.id).catch(utils.handleFatalError)
-    collections = await GamesCollection.findByGameAll(collections.userId, page2, pageSize).catch(utils.handleFatalError)
+    collections = await GamesCollection.findByGameAll(collections.userId, page, pageSize).catch(utils.handleFatalError)
     let collection = []
     let games
     for (const element in collections) {
