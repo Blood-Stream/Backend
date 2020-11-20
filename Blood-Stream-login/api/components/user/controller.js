@@ -6,20 +6,22 @@ const config = require('../../../../config/config')
 const controller = require('../auth/index')
 const jwt = require('jsonwebtoken')
 let users
+const randomNumber = require('../../../utils/random')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
   const list = async (page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Users } = await store(config(false)).catch(utils.handleFatalError)
-    users = await Users.findAll(page, pageSize).catch(utils.handleFatalError)
+    users = await Users.findAll(page2, pageSize).catch(utils.handleFatalError)
     return users
   }
 
   const get = async (nickname) => {
     const { Users, Contact, AccessRol, Platform, Password } = await store(config(false)).catch(utils.handleFatalError)
-    let users = await Users.findByNickname(nickname).catch(utils.handleFatalError)
-    const contacts = await Contact.findById(users.contactId).catch(utils.handleFatalError)    
+    const users = await Users.findByNickname(nickname).catch(utils.handleFatalError)
+    const contacts = await Contact.findById(users.contactId).catch(utils.handleFatalError)
     const platform = await Platform.findById(users.platformId).catch(utils.handleFatalError)
     const accessRols = await AccessRol.findById(users.accessRolId).catch(utils.handleFatalError)
     let authData = await Password.findById(users.passwordId).catch(utils.handleFatalError)
@@ -57,10 +59,10 @@ module.exports = (injectedStore) => {
     let userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
     if (body.page) {
       if (contactExist && userExist) {
-        throw Error ('Unauthorized')
+        throw Error('Unauthorized')
       }
     }
-    
+
     if (userExist || contactExist) {
       userExist = await Users.findByNickname(body.nickname).catch(utils.handleFatalError)
       user = {
@@ -73,26 +75,25 @@ module.exports = (injectedStore) => {
         Level: userExist.Level
       }
     } else {
-        user = {
-          Nickname: body.nickname,
-          Country: body.country,
-          Postal_Code: body.postal_Code,
-          Birthday: body.birthday,
-          Status: body.status,
-          Avatar: body.avatar,
-          Level: body.level
-        }
+      user = {
+        Nickname: body.nickname,
+        Country: body.country,
+        Postal_Code: body.postal_Code,
+        Birthday: body.birthday,
+        Status: body.status,
+        Avatar: body.avatar,
+        Level: body.level
+      }
     }
 
     if (!body.uuid) {
-      
       uuidContact = nanoid()
       uuidUser = nanoid()
       uuidPassword = nanoid()
 
       userExist = await Users.userExists(body.nickname).catch(utils.handleFatalError)
       contactExist = await Contact.findByEmail(body.email).catch(utils.handleFatalError)
-      
+
       if (userExist) {
         userExist = await Users.findByNickname(body.nickname).catch(utils.handleFatalError)
         uuidUser = userExist.uuid
@@ -165,17 +166,17 @@ module.exports = (injectedStore) => {
     delete accessRols.id
     delete accessRols.createdAt
     delete accessRols.updatedAt
-    
+
     user.platformId = platform
     user.contactId = contacts
     user.accessRolId = accessRols
     user.passwordId = authData
 
     if (body.apiKeyToken) {
-      const apiKey = await ApiKey.findByToken(body.apiKeyToken).catch(utils.handleFatalError) 
+      const apiKey = await ApiKey.findByToken(body.apiKeyToken).catch(utils.handleFatalError)
       const Nickname = user.Nickname
       const email = contacts.email
-  
+
       const payload = {
         Nickname,
         email,

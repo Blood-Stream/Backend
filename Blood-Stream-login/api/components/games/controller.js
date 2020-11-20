@@ -4,11 +4,13 @@
 const {handleFatalError} = require('../../../../Blood-Stream-db/utils/index')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
+const randomNumber = require('../../../utils/random')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
 
   const list = async (page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     let array = []
     let value = null
@@ -16,7 +18,7 @@ module.exports = (injectedStore) => {
     let gameArray = []
 
     const { Games, PlatformGames, Platform, LenguagesGames, GenresGames, Genres, Lenguages, GamesRating } = await store(config(false)).catch(utils.handleFatalError)
-    const game = await Games.findAll(page, pageSize).catch(utils.handleFatalError)
+    const game = await Games.findAll(page2, pageSize).catch(utils.handleFatalError)
     for (const element in game) {
       const el = game[element]
       const genre = await GenresGames.findByGame(el.id).catch(utils.handleFatalError)
@@ -175,17 +177,19 @@ module.exports = (injectedStore) => {
   }
   
   const getByGroup = async (game, page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
     let games = await Games.findByName(game).catch(utils.handleFatalError)
-    games = await Games.findAllGroup(games.group, page, pageSize).catch(utils.handleFatalError)
+    games = await Games.findAllGroup(games.group, page2, pageSize).catch(utils.handleFatalError)
     return games
   }
 
   const getByPopular = async (page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
-    const games = await Games.findAllPopular(page, pageSize).catch(utils.handleFatalError)
+    const games = await Games.findAllPopular(page2, pageSize).catch(utils.handleFatalError)
     return games
   }
   // TO DO

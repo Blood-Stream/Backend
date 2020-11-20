@@ -3,14 +3,16 @@
 const { nanoid } = require('nanoid')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
+const randomNumber = require('../../../utils/random')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
 
   const list = async (page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { LenguagesGames } = await store(config(false)).catch(utils.handleFatalError)
-    const lenguages = await LenguagesGames.findAll(page, pageSize).catch(utils.handleFatalError)
+    const lenguages = await LenguagesGames.findAll(page2, pageSize).catch(utils.handleFatalError)
     return lenguages
   }
 
@@ -48,13 +50,14 @@ module.exports = (injectedStore) => {
     return lnGm
   }
   const lnList = async (ln, page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Games, LenguagesGames, Lenguages } = await store(config(false)).catch(utils.handleFatalError)
     let platforms = await Lenguages.findByLenguage(ln).catch(utils.handleFatalError)
-    platforms = await LenguagesGames.findByGameAll(platforms.id, page, pageSize).catch(utils.handleFatalError) 
+    platforms = await LenguagesGames.findByGameAll(platforms.id, page2, pageSize).catch(utils.handleFatalError) 
     let collection = []
     let games
-    for (const element in platforms){
+    for (const element in platforms) {
       const el = platforms[element]
       games = await Games.findById(el.gameId).catch(utils.handleFatalError)
       delete games.group

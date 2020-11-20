@@ -6,14 +6,16 @@ const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 const controller = require('../auth/index')
 let users
+const randomNumber = require('../../../utils/random')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
 
   const list = async (page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Message } = await store(config(false)).catch(utils.handleFatalError)
-    return Message.findAll(page, pageSize).catch(utils.handleFatalError)
+    return Message.findAll(page2, pageSize).catch(utils.handleFatalError)
   }
 
   // TO DO
