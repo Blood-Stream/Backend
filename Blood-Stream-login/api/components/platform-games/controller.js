@@ -3,14 +3,16 @@
 const { nanoid } = require('nanoid')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
+const randomNumber = require('../../../utils/random')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
 
   const list = async (page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { PlatformGames } = await store(config(false)).catch(utils.handleFatalError)
-    const platform = await PlatformGames.findAll(page, pageSize).catch(utils.handleFatalError)
+    const platform = await PlatformGames.findAll(page2, pageSize).catch(utils.handleFatalError)
     return platform
   }
 
@@ -46,13 +48,14 @@ module.exports = (injectedStore) => {
   }
   
   const gamesByPlatforms2 = async(platform, page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Games, PlatformGames, Platform } = await store(config(false)).catch(utils.handleFatalError)
     let platforms = await Platform.findByPlatform(platform).catch(utils.handleFatalError)
-    platforms = await PlatformGames.findByGameAll(platforms.id, page, pageSize).catch(utils.handleFatalError) 
+    platforms = await PlatformGames.findByGameAll(platforms.id, page2, pageSize).catch(utils.handleFatalError) 
     let collection = []
     let games
-    for (const element in platforms){
+    for (const element in platforms) {
       const el = platforms[element]
       games = await Games.findById(el.gameId).catch(utils.handleFatalError)
       delete games.group
@@ -65,15 +68,16 @@ module.exports = (injectedStore) => {
   }
 
   const gamesByPlatforms = async(game, page) => {
+    const page2 = randomNumber
     const pageSize = utils.totalPage()
     const { Games, PlatformGames } = await store(config(false)).catch(utils.handleFatalError)
     let games = await Games.findByName(game).catch(utils.handleFatalError)
     if (games === null) return 'Not found'
     let platforms = await PlatformGames.findByGame(games.id).catch(utils.handleFatalError)
     if (platforms === null) return 'Not found'
-    platforms = await PlatformGames.findByGameAll(platforms.platformId, page, pageSize).catch(utils.handleFatalError) 
+    platforms = await PlatformGames.findByGameAll(platforms.platformId, page2, pageSize).catch(utils.handleFatalError) 
     let collection = []
-    for (const element in platforms){
+    for (const element in platforms) {
       const el = platforms[element]
       games = await Games.findById(el.gameId).catch(utils.handleFatalError)
       delete games.group

@@ -3,15 +3,17 @@
 const { nanoid } = require('nanoid')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
+const randomNumber = require('../../../utils/random')
 
 module.exports = (injectedStore) => {
   const store = injectedStore
 
   const get = async (page) => {
+    const page2 = randomNumber
     const pagination = utils.totalPage()
     const { Games } = await store(config(false)).catch(utils.handleFatalError)
     
-    let game = await Games.findAllRating(page, pagination).catch(utils.handleFatalError)
+    let game = await Games.findAllRating(page2, pagination).catch(utils.handleFatalError)
     return game 
 
   }
