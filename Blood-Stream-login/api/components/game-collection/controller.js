@@ -1,7 +1,6 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
-const gamesCollection = require('../../../../Blood-Stream-db/lib/gamesCollection')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
 const randomNumber = require('../../../utils/random')
@@ -91,6 +90,7 @@ module.exports = (injectedStore) => {
     let gameCollection = await GamesCollection.findByUsGm(users.id, games.id).catch(utils.handleFatalError)
     try {
       gameCollection = await GamesCollection.deleteById(gameCollection.id).catch(utils.handleFatalError)
+      console.log(gameCollection)
       return 'Erased'
     } catch (err) {
       return 'Not found'

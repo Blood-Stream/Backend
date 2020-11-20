@@ -72,6 +72,7 @@ module.exports = (injectedStore) => {
     let gameRate = await GamesRating.findByUsGm(users.id, games.id).catch(utils.handleFatalError)
     try {
       gameRate = await GamesRating.deleteById(gameRate.id).catch(utils.handleFatalError)
+      console.log(gameRate)
       return 'Erased'
     } catch (err) {
       return 'Not found'

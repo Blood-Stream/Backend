@@ -14,7 +14,7 @@ passport.use(
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
   },
   async (tokenPayload, cb) => {
-    const { Users, Platform, Contact, AccessRol } = await store(config(false)).catch(utils.handleFatalError)
+    const { Users, Platform, Contact } = await store(config(false)).catch(utils.handleFatalError)
     try {
       const user = await Users.findByNickname(tokenPayload.Nickname)
       const platform = await Platform.findById(user.platformId)

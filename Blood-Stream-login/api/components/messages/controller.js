@@ -1,11 +1,8 @@
 'use strict'
 
 const { nanoid } = require('nanoid')
-const { use } = require('passport')
 const utils = require('../../../../Blood-Stream-db/utils/index')
 const config = require('../../../../config/config')
-const controller = require('../auth/index')
-let users
 const randomNumber = require('../../../utils/random')
 
 module.exports = (injectedStore) => {
